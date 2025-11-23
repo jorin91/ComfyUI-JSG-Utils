@@ -28,7 +28,7 @@ class JSGParsePath:
     )
 
     FUNCTION = "parse"
-    CATEGORY = "JSG Utils/Filesystem"
+    CATEGORY = "JSG Utils/File"
 
     def parse(self, path):
         if not path or not isinstance(path, str):

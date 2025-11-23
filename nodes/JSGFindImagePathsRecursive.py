@@ -31,7 +31,7 @@ class JSGFindImagePathsRecursive:
     RETURN_NAMES = ("Paths",)
     OUTPUT_IS_LIST = (True,)
     FUNCTION = "scan"
-    CATEGORY = "JSG Utils/Filesystem"
+    CATEGORY = "JSG Utils/File"
 
     def _parse_exts(self, ext_string):
         parts = [e.strip().lower() for e in ext_string.split(",") if e.strip()]
