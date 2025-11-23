@@ -9,8 +9,8 @@ class JSGDeleteFilePassImage:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "file_path": ("STRING", {"multiline": False}),
                 "passthrough": ("IMAGE", {}),
+                "file_path": ("STRING", {"multiline": False}),
             }
         }
 
@@ -37,8 +37,8 @@ class JSGDeleteFilePassAny:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "file_path": ("STRING", {"multiline": False}),
                 "passthrough": ("*", {}),
+                "file_path": ("STRING", {"multiline": False}),
             }
         }
 
@@ -65,8 +65,8 @@ class JSGDeleteFilePassString:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "file_path": ("STRING", {"multiline": False}),
                 "passthrough": ("STRING", {}),
+                "file_path": ("STRING", {"multiline": False}),
             }
         }
 
