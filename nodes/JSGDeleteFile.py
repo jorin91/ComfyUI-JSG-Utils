@@ -11,6 +11,7 @@ class JSGDeleteFilePassImage:
             "required": {
                 "passthrough": ("IMAGE", {}),
                 "file_path": ("STRING", {"multiline": False}),
+                "delete_enabled": ("BOOLEAN", {"default": False}),
             }
         }
 
@@ -18,11 +19,12 @@ class JSGDeleteFilePassImage:
     RETURN_NAMES = ("passthrough",)
     FUNCTION = "delete_file"
 
-    def delete_file(self, file_path, passthrough):
+    def delete_file(self, file_path, passthrough, delete_enabled):
         path = (file_path or "").strip().strip('"').strip("'")
-        if os.path.isfile(path):
+        if delete_enabled and os.path.isfile(path):
             try:
                 os.remove(path)
+                print(f"[JSGDeleteFile] File '{path}' deleted!")
             except Exception as e:
                 print(f"[JSGDeleteFile] Could not delete file '{path}': {e}")
 
@@ -39,6 +41,7 @@ class JSGDeleteFilePassAny:
             "required": {
                 "passthrough": ("*", {}),
                 "file_path": ("STRING", {"multiline": False}),
+                "delete_enabled": ("BOOLEAN", {"default": False}),
             }
         }
 
@@ -46,11 +49,12 @@ class JSGDeleteFilePassAny:
     RETURN_NAMES = ("passthrough",)
     FUNCTION = "delete_file"
 
-    def delete_file(self, file_path, passthrough):
+    def delete_file(self, file_path, passthrough, delete_enabled):
         path = (file_path or "").strip().strip('"').strip("'")
-        if os.path.isfile(path):
+        if delete_enabled and os.path.isfile(path):
             try:
                 os.remove(path)
+                print(f"[JSGDeleteFile] File '{path}' deleted!")
             except Exception as e:
                 print(f"[JSGDeleteFile] Could not delete file '{path}': {e}")
 
@@ -67,6 +71,7 @@ class JSGDeleteFilePassString:
             "required": {
                 "passthrough": ("STRING", {}),
                 "file_path": ("STRING", {"multiline": False}),
+                "delete_enabled": ("BOOLEAN", {"default": False}),
             }
         }
 
@@ -74,11 +79,12 @@ class JSGDeleteFilePassString:
     RETURN_NAMES = ("passthrough",)
     FUNCTION = "delete_file"
 
-    def delete_file(self, file_path, passthrough):
+    def delete_file(self, file_path, passthrough, delete_enabled):
         path = (file_path or "").strip().strip('"').strip("'")
-        if os.path.isfile(path):
+        if delete_enabled and os.path.isfile(path):
             try:
                 os.remove(path)
+                print(f"[JSGDeleteFile] File '{path}' deleted!")
             except Exception as e:
                 print(f"[JSGDeleteFile] Could not delete file '{path}': {e}")
 
