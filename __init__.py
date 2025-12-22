@@ -3,7 +3,7 @@ from .nodes.JSGParsePath import JSGParsePath
 from .nodes.JSGFindImagePathsRecursive import JSGFindImagePathsRecursive
 from .nodes.JSGLoadImageFromPath import JSGLoadImageFromPath
 from .nodes.JSGDeleteFile import JSGDeleteFilePassImage, JSGDeleteFilePassAny, JSGDeleteFilePassString
-from .nodes.JSGRandomColor import JSGRandomColorHSV
+from .nodes.JSGRandomColor import JSGRandomColorHSVA
 
 NODE_CLASS_MAPPINGS = {
     "JSGFindImagesRecursiveList": JSGFindImagesRecursiveList,
@@ -13,7 +13,7 @@ NODE_CLASS_MAPPINGS = {
     "JSGDeleteFilePassImage": JSGDeleteFilePassImage,
     "JSGDeleteFilePassAny": JSGDeleteFilePassAny,
     "JSGDeleteFilePassString": JSGDeleteFilePassString,
-    "JSGRandomColorHSV": JSGRandomColorHSV
+    "JSGRandomColorHSVA": JSGRandomColorHSVA
 }
 
 #  =================================================================================
@@ -25,5 +25,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "JSGDeleteFilePassImage": "Delete File (Image Passthrough)",
     "JSGDeleteFilePassAny": "Delete File (* Passthrough)",
     "JSGDeleteFilePassString": "Delete File (String Passthrough)",
-    "JSGRandomColorHSV": "Random Color (HSV)"
+    "JSGRandomColorHSVA": "Random Color (HSVA)"
 }
