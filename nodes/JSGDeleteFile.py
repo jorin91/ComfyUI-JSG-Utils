@@ -4,6 +4,7 @@ class JSGDeleteFilePassImage:
     DESCRIPTION = "Delete a file from disk and passthrough the input."
     CATEGORY = "JSG Utils/File"
     IS_CHANGED = True
+    OUTPUT_NODE = True
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -34,6 +35,7 @@ class JSGDeleteFilePassAny:
     DESCRIPTION = "Delete a file from disk and passthrough the input."
     CATEGORY = "JSG Utils/File"
     IS_CHANGED = True
+    OUTPUT_NODE = True
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -64,6 +66,7 @@ class JSGDeleteFilePassString:
     DESCRIPTION = "Delete a file from disk and passthrough the input."
     CATEGORY = "JSG Utils/File"
     IS_CHANGED = True
+    OUTPUT_NODE = True
 
     @classmethod
     def INPUT_TYPES(cls):
