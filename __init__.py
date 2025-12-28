@@ -8,6 +8,7 @@ from .nodes.JSGSaveImage import JSGSaveImage
 from .nodes.JSGSetMetadata import JSGSetMetadata
 from .nodes.JSGAddMetadata import JSGAddMetadata
 from .nodes.JSGRemoveMetadata import JSGRemoveMetadata
+from .nodes.JSGCaptionBuilder import JSGCaptionBuilder
 
 NODE_CLASS_MAPPINGS = {
     "JSGFindImagesRecursiveList": JSGFindImagesRecursiveList,
@@ -22,6 +23,7 @@ NODE_CLASS_MAPPINGS = {
     "JSGSetMetadata": JSGSetMetadata,
     "JSGAddMetadata": JSGAddMetadata,
     "JSGRemoveMetadata": JSGRemoveMetadata,
+    "JSGCaptionBuilder": JSGCaptionBuilder,
 }
 
 #  =================================================================================
@@ -38,4 +40,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "JSGSetMetadata": "Set Metadata",
     "JSGAddMetadata": "Add Metadata",
     "JSGRemoveMetadata": "Remove Metadata",
+    "JSGCaptionBuilder": "Caption Builder (Key + Tags + Description)",
 }
