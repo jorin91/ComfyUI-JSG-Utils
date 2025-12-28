@@ -8,6 +8,7 @@ class JSGSaveImage:
     FUNCTION = "save"
     RETURN_TYPES = ("IMAGE", "STRING")
     RETURN_NAMES = ("Image", "FilePath")
+    OUTPUT_NODE = True
 
     DESCRIPTION = (
         "Saves an IMAGE tensor to disk with optional metadata.\n\n"
@@ -45,6 +46,7 @@ class JSGSaveImage:
             "optional": {
                 "metadata": ("JSGMETADATA",),
                 "dpi": ("INT", {"default": 600, "min": 0, "max": 1200, "step": 1}),
+                "caption": ("STRING", {"default": "", "multiline": False}),
             }
         }
 
@@ -54,21 +56,16 @@ class JSGSaveImage:
         return out_dir
 
     def _pick_filepath(self, out_dir, base_name, ext, overwrite, delim, pad):
-        # sanitize minimal
         base_name = (base_name or "image").strip()
         if not base_name:
             base_name = "image"
 
-        candidate = os.path.join(out_dir, f"{base_name}.{ext}")
-
+        # overwrite = exact filename, geen nummer
         if overwrite == "overwrite":
-            return candidate
+            return os.path.join(out_dir, f"{base_name}.{ext}")
 
-        # add_number: find first free
-        if not os.path.exists(candidate):
-            return candidate
-
-        i = 1
+        # add_number: altijd nummeren, start bij 0
+        i = 0
         while True:
             num = str(i).zfill(pad) if pad and pad > 0 else str(i)
             candidate = os.path.join(out_dir, f"{base_name}{delim}{num}.{ext}")
@@ -152,7 +149,7 @@ class JSGSaveImage:
         return kwargs
 
     def save(self, image, output_path, filename, overwrite, number_delimiter,
-             number_padding, file_type, quality, lossless, metadata=None, dpi=0):
+             number_padding, file_type, quality, lossless, metadata=None, dpi=0, caption=""):
 
         if not output_path:
             raise ValueError("output_path is empty")
@@ -165,6 +162,14 @@ class JSGSaveImage:
 
         save_kwargs = self._apply_metadata_save_kwargs(ext, metadata, dpi, quality, lossless)
         pil_img.save(path, **save_kwargs)
+
+        # Optional caption sidecar (.txt) with same base name as saved image
+        if caption is not None:
+            cap = str(caption).strip()
+            if cap != "":
+                txt_path = os.path.splitext(path)[0] + ".txt"
+                with open(txt_path, "w", encoding="utf-8", newline="\n") as f:
+                    f.write(cap)
 
         # passthrough image + full filepath
         return (image, path)
