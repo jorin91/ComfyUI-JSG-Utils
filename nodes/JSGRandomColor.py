@@ -36,7 +36,7 @@ class JSGRandomColorHSVA:
                 "alpha": ("FLOAT", {"default": 1.0, "min": -1.0, "max": 1.0, "step": 0.01, "tooltip": "The normalized alpha value. Values below 0 randomize this channel."}),
 
                 "use_alpha": ("BOOLEAN", {"default": False, "tooltip": "Whether to include alpha in the hex outputs."}),
-                "always_load": ("BOOLEAN", {"default": False, "tooltip": "Whether to force this node to re-execute every run."}),
+                "always_load": ("BOOLEAN", {"default": True, "tooltip": "Whether to force this node to re-execute every run."}),
             }
         }
 

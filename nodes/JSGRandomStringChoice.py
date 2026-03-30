@@ -22,7 +22,7 @@ class JSGRandomStringChoice:
     def INPUT_TYPES(cls):
         required = {
             "seed": ("INT", {"default": 0, "min": 0, "max": 0x7FFFFFFFFFFFFFFF, "control_after_generate": True, "tooltip": "The seed used for the current selection."}),
-            "always_load": ("BOOLEAN", {"default": False, "tooltip": "Whether to force this node to re-execute every run."}),
+            "always_load": ("BOOLEAN", {"default": True, "tooltip": "Whether to force this node to re-execute every run."}),
         }
 
         optional = {}

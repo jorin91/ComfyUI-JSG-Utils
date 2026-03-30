@@ -18,7 +18,7 @@ class JSGCombineStrings:
             "prefix": ("STRING", {"default": "", "tooltip": "The text added before each included string."}),
             "suffix": ("STRING", {"default": "", "tooltip": "The text added after each included string."}),
             "separator": ("STRING", {"default": ", ", "tooltip": "The separator inserted between the formatted strings."}),
-            "always_load": ("BOOLEAN", {"default": False, "tooltip": "Whether to force this node to re-execute every run."}),
+            "always_load": ("BOOLEAN", {"default": True, "tooltip": "Whether to force this node to re-execute every run."}),
         }
 
         optional = {}

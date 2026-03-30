@@ -17,7 +17,7 @@ class JSGBoolToString:
                 "condition": ("BOOLEAN", {"default": False, "tooltip": "The boolean value that selects the output string."}),
                 "true_string": ("STRING", {"default": "", "tooltip": "The string returned when the boolean value is true."}),
                 "false_string": ("STRING", {"default": "", "tooltip": "The string returned when the boolean value is false."}),
-                "always_load": ("BOOLEAN", {"default": False, "tooltip": "Whether to force this node to re-execute every run."}),
+                "always_load": ("BOOLEAN", {"default": True, "tooltip": "Whether to force this node to re-execute every run."}),
             }
         }
 
