@@ -3,11 +3,7 @@ import colorsys
 
 class JSGRandomColorHSVA:
     DESCRIPTION = (
-        "Generates a color from HSVA.\n"
-        "Inputs are normalized floats 0.00-1.00 (step 0.01). If a channel is < 0, it will be randomized.\n"
-        "If use_alpha is enabled, outputs #RRGGBBAA, otherwise #RRGGBB.\n"
-        "COLORCODE output is intended for ComfyUI-RMBG compatibility, Hex is a string representation, "
-        "all remaining outputs are INT values (H is degrees 0-360, S/V/A are 0-255, RGB are 0-255)."
+        "Generates a color from HSVA values."
     )
 
     CATEGORY = "JSG Utils/Color"
@@ -15,21 +11,32 @@ class JSGRandomColorHSVA:
 
     RETURN_TYPES = ("COLORCODE", "STRING", "INT", "INT", "INT", "INT", "INT", "INT", "INT")
     RETURN_NAMES = ("ColorCode", "Hex", "H_deg", "S", "V", "A", "R", "G", "B")
+    OUTPUT_TOOLTIPS = (
+        "Returns the generated color code.",
+        "Returns the generated hex color string.",
+        "Returns the hue in degrees.",
+        "Returns the saturation value.",
+        "Returns the value channel.",
+        "Returns the alpha channel.",
+        "Returns the red channel.",
+        "Returns the green channel.",
+        "Returns the blue channel.",
+    )
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
                 # Normalized inputs: 0.00..1.00, <0 means random
-                "hue": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 1.0, "step": 0.01}),
-                "saturation": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 1.0, "step": 0.01}),
-                "value": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 1.0, "step": 0.01}),
+                "hue": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 1.0, "step": 0.01, "tooltip": "The normalized hue value. Values below 0 randomize this channel."}),
+                "saturation": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 1.0, "step": 0.01, "tooltip": "The normalized saturation value. Values below 0 randomize this channel."}),
+                "value": ("FLOAT", {"default": -1.0, "min": -1.0, "max": 1.0, "step": 0.01, "tooltip": "The normalized value channel. Values below 0 randomize this channel."}),
 
                 # Alpha default opaque (1.00). <0 means random alpha.
-                "alpha": ("FLOAT", {"default": 1.0, "min": -1.0, "max": 1.0, "step": 0.01}),
+                "alpha": ("FLOAT", {"default": 1.0, "min": -1.0, "max": 1.0, "step": 0.01, "tooltip": "The normalized alpha value. Values below 0 randomize this channel."}),
 
-                "use_alpha": ("BOOLEAN", {"default": False}),
-                "always_load": ("BOOLEAN", {"default": False}),
+                "use_alpha": ("BOOLEAN", {"default": False, "tooltip": "Whether to include alpha in the hex outputs."}),
+                "always_load": ("BOOLEAN", {"default": False, "tooltip": "Whether to force this node to re-execute every run."}),
             }
         }
 

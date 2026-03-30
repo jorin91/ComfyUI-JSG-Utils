@@ -5,30 +5,20 @@ class JSGSetMetadata:
     FUNCTION = "set"
     RETURN_TYPES = ("JSGMETADATA",)
     RETURN_NAMES = ("Metadata",)
+    OUTPUT_TOOLTIPS = ("Returns the metadata object with the specified root-level values set.",)
 
     DESCRIPTION = (
-        "Sets (overwrites) multiple metadata entries on a single JSGMETADATA object (ROOT ONLY).\n\n"
-        "INPUT FORMAT:\n"
-        "- 'keys' and 'values' are multiline text fields.\n"
-        "- Each line represents one entry.\n"
-        "- keys[n] is paired with values[n].\n\n"
-        "VALUE MAPPING RULES:\n"
-        "- No values given: all keys set an empty string\n"
-        "- One value given: applied to all keys\n"
-        "- Fewer values than keys: missing values become empty\n\n"
-        "VALUE MODE:\n"
-        "- raw: values are stored as strings\n"
-        "- json: each value is parsed with JSON (numbers, booleans, lists, objects)"
+        "Sets values on a metadata object at the root level."
     )
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "metadata": ("JSGMETADATA",),
-                "keys": ("STRING", {"default": "", "multiline": True}),
-                "values": ("STRING", {"default": "", "multiline": True}),
-                "value_mode": (["raw", "json"], {"default": "raw"}),
+                "metadata": ("JSGMETADATA", {"tooltip": "The metadata object to modify."}),
+                "keys": ("STRING", {"default": "", "multiline": True, "tooltip": "The root-level keys to set, one per line or comma-separated."}),
+                "values": ("STRING", {"default": "", "multiline": True, "tooltip": "The values paired with the keys."}),
+                "value_mode": (["raw", "json"], {"default": "raw", "tooltip": "How the input values are interpreted before they are stored."}),
             }
         }
 

@@ -3,20 +3,18 @@ class JSGRemoveMetadata:
     FUNCTION = "remove"
     RETURN_TYPES = ("JSGMETADATA",)
     RETURN_NAMES = ("Metadata",)
+    OUTPUT_TOOLTIPS = ("Returns the metadata object with the selected root-level keys removed.",)
 
     DESCRIPTION = (
-        "Removes multiple metadata keys from a single JSGMETADATA object (ROOT ONLY).\n\n"
-        "INPUT FORMAT:\n"
-        "- 'keys' is a multiline text field.\n"
-        "- Each line represents one key to remove."
+        "Removes keys from a metadata object at the root level."
     )
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "metadata": ("JSGMETADATA",),
-                "keys": ("STRING", {"default": "", "multiline": True}),
+                "metadata": ("JSGMETADATA", {"tooltip": "The metadata object to edit."}),
+                "keys": ("STRING", {"default": "", "multiline": True, "tooltip": "The root-level keys to remove, one per line or comma-separated."}),
             }
         }
 

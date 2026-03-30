@@ -3,17 +3,14 @@ import re
 
 class JSGParsePath:
     DESCRIPTION = (
-    "Parses a filesystem path and returns detailed information.\n"
-    "Outputs whether the path is a folder or a file, the folder path,\n"
-    "the filename with extension, the filename without extension, and the extension.\n"
-    "Useful for preprocessing, filtering, and organizing file-based workflows."
+    "Inspects a filesystem path to identify its file or folder characteristics."
     )
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "path": ("STRING", {"default": ""}),
+                "path": ("STRING", {"default": "", "tooltip": "The filesystem path to inspect. It must already exist."}),
             }
         }
 
@@ -25,6 +22,14 @@ class JSGParsePath:
         "FilenameExt",
         "FilenameOnly",
         "ExtensionOnly",
+    )
+    OUTPUT_TOOLTIPS = (
+        "Returns whether the path is a folder.",
+        "Returns whether the path is a file.",
+        "Returns the folder portion of the path.",
+        "Returns the filename with extension.",
+        "Returns the filename without extension.",
+        "Returns the file extension without a leading dot.",
     )
 
     FUNCTION = "parse"

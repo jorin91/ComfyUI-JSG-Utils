@@ -8,42 +8,33 @@ from PIL import ExifTags
 
 class JSGFindImagesRecursiveList:
     DESCRIPTION = (
-        "Recursively scans a directory and loads all matching images.\n"
-        "\n"
-        "Features:\n"
-        "- max_level <= 0 → unlimited recursion depth\n"
-        "- max_level > 0 → scan only this many directory levels deep\n"
-        "- start_index → skip the first N items after sorting\n"
-        "- load_cap → maximum number of images to load (0 = no limit)\n"
-        "- sorting_method → choose how the file list should be ordered before slicing\n"
-        "  (name, date, size, extension, directory, random, or none)\n"
-        "- Always Load → forces this node to re-execute each run\n"
-        "\n"
-        "Outputs two parallel lists:\n"
-        "1) A list of IMAGE tensors (not batched)\n"
-        "2) A list of file paths in the same order\n"
-        "Useful when you want to process multiple images at once without batching."
+        "Finds and loads multiple images from a directory tree."
     )
 
     CATEGORY = "JSG Utils/Image"
     FUNCTION = "scan"
     RETURN_TYPES = ("IMAGE", "STRING", "JSGMETADATA")
     RETURN_NAMES = ("Images", "Paths", "Metadata")
+    OUTPUT_TOOLTIPS = (
+        "Returns the loaded image tensors.",
+        "Returns the file paths for the loaded images.",
+        "Returns the metadata objects for the loaded images.",
+    )
     OUTPUT_IS_LIST = (True, True, True)
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "directory": ("STRING", {"default": ""}),
+                "directory": ("STRING", {"default": "", "tooltip": "The root directory to scan for images."}),
 
                 # max depth
-                "max_level": ("INT", {"default": 3, "min": -1, "max": 999, "step": 1}),
-                "include_subdirectories": ("BOOLEAN", {"default": True}),
+                "max_level": ("INT", {"default": 3, "min": -1, "max": 999, "step": 1, "tooltip": "The maximum recursion depth. Values less than or equal to 0 mean unlimited depth."}),
+                "include_subdirectories": ("BOOLEAN", {"default": True, "tooltip": "Whether to scan subdirectories recursively."}),
 
                 # index + cap
-                "start_index": ("INT", {"default": 0, "min": 0, "max": 999999}),
-                "load_cap": ("INT", {"default": 0, "min": 0, "max": 999999}),
+                "start_index": ("INT", {"default": 0, "min": 0, "max": 999999, "tooltip": "The number of sorted items to skip before loading begins."}),
+                "load_cap": ("INT", {"default": 0, "min": 0, "max": 999999, "tooltip": "The maximum number of images to load. Use 0 for no limit."}),
 
                 # sorting as dropdown enum
                 "sorting_method": ([
@@ -59,18 +50,19 @@ class JSGFindImagesRecursiveList:
                     "directory_desc",
                     "random",
                     "none"
-                ], {"default": "name_asc"}),
+                ], {"default": "name_asc", "tooltip": "How the discovered files are ordered before start_index and load_cap are applied."}),
 
                 # extension filter
                 "extensions": ("STRING", {
                     "default": ".png,.jpg,.jpeg,.webp,.avif,.bmp,.tif,.tiff",
-                    "multiline": False
+                    "multiline": False,
+                    "tooltip": "The file extensions to include, separated by commas."
                 }),
 
-                "apply_exif_orientation": ("BOOLEAN", {"default": True}),
+                "apply_exif_orientation": ("BOOLEAN", {"default": True, "tooltip": "Whether to apply EXIF orientation before loading the image."}),
 
                 # Always Load toggle
-                "always_load": ("BOOLEAN", {"default": True}),
+                "always_load": ("BOOLEAN", {"default": True, "tooltip": "Whether to force this node to re-execute every run."}),
             }
         }
 

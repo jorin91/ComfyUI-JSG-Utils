@@ -2,13 +2,10 @@ import os
 
 class JSGFindImagePathsRecursive:
     IS_CHANGED = True
+    OUTPUT_TOOLTIPS = ("Returns the matching image file paths.",)
 
     DESCRIPTION = (
-    "Recursively scans a directory and returns a LIST of image file paths.\n"
-    "- max_level <= 0 → unlimited recursion depth\n"
-    "- max_level > 0 → scan only this many directory levels deep\n"
-    "Includes or excludes subdirectories based on the 'include_subdirectories' flag.\n"
-    "Only collects files whose extensions match the provided extension list."
+    "Finds image file paths in a directory tree."
     )
 
 
@@ -16,13 +13,14 @@ class JSGFindImagePathsRecursive:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "directory": ("STRING", {"default": ""}),
+                "directory": ("STRING", {"default": "", "tooltip": "The root directory to scan for image files."}),
                 # min nu negatief toestaan zodat <=0 mogelijk is
-                "max_level": ("INT", {"default": 3, "min": -1, "max": 999, "step": 1}),
-                "include_subdirectories": ("BOOLEAN", {"default": True}),
+                "max_level": ("INT", {"default": 3, "min": -1, "max": 999, "step": 1, "tooltip": "The maximum recursion depth. Values less than or equal to 0 mean unlimited depth."}),
+                "include_subdirectories": ("BOOLEAN", {"default": True, "tooltip": "Whether to scan subdirectories recursively."}),
                 "extensions": ("STRING", {
                     "default": ".png,.jpg,.jpeg,.webp,.avif,.bmp,.tif,.tiff",
-                    "multiline": False
+                    "multiline": False,
+                    "tooltip": "The file extensions to include, separated by commas."
                 }),
             }
         }

@@ -7,11 +7,14 @@ from PIL import ExifTags
 
 class JSGLoadImageFromPath:
     IS_CHANGED = True
+    OUTPUT_TOOLTIPS = (
+        "Returns the loaded image tensor.",
+        "Returns the loaded file path.",
+        "Returns the extracted image metadata.",
+    )
 
     DESCRIPTION = (
-    "Loads a single image from a file path.\n"
-    "Returns the IMAGE tensor and the original path.\n"
-    "Useful when iterating over a list of paths using a loop or ForEach pattern."
+    "Loads an image from a file path."
     )
 
 
@@ -19,8 +22,8 @@ class JSGLoadImageFromPath:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "path": ("STRING", {"default": ""}),
-                "apply_exif_orientation": ("BOOLEAN", {"default": True})
+                "path": ("STRING", {"default": "", "tooltip": "The file path of the image to load."}),
+                "apply_exif_orientation": ("BOOLEAN", {"default": True, "tooltip": "Whether to apply EXIF orientation before loading the image."})
             }
         }
 

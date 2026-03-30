@@ -1,18 +1,19 @@
 import os
 
 class JSGDeleteFilePassImage:
-    DESCRIPTION = "Delete a file from disk and passthrough the input."
+    DESCRIPTION = "Deletes a file from disk in a passthrough workflow."
     CATEGORY = "JSG Utils/File"
     IS_CHANGED = True
     OUTPUT_NODE = True
+    OUTPUT_TOOLTIPS = ("Returns the original image input unchanged.",)
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "passthrough": ("IMAGE", {}),
-                "file_path": ("STRING", {"multiline": False}),
-                "delete_enabled": ("BOOLEAN", {"default": False}),
+                "passthrough": ("IMAGE", {"tooltip": "The image value to pass through unchanged."}),
+                "file_path": ("STRING", {"multiline": False, "tooltip": "The file path to delete."}),
+                "delete_enabled": ("BOOLEAN", {"default": False, "tooltip": "Whether to delete the file."}),
             }
         }
 
@@ -32,18 +33,19 @@ class JSGDeleteFilePassImage:
         return (passthrough,)
     
 class JSGDeleteFilePassAny:
-    DESCRIPTION = "Delete a file from disk and passthrough the input."
+    DESCRIPTION = "Deletes a file from disk in a passthrough workflow."
     CATEGORY = "JSG Utils/File"
     IS_CHANGED = True
     OUTPUT_NODE = True
+    OUTPUT_TOOLTIPS = ("Returns the original input value unchanged.",)
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "passthrough": ("*", {}),
-                "file_path": ("STRING", {"multiline": False}),
-                "delete_enabled": ("BOOLEAN", {"default": False}),
+                "passthrough": ("*", {"tooltip": "The input value to pass through unchanged."}),
+                "file_path": ("STRING", {"multiline": False, "tooltip": "The file path to delete."}),
+                "delete_enabled": ("BOOLEAN", {"default": False, "tooltip": "Whether to delete the file."}),
             }
         }
 
@@ -63,18 +65,19 @@ class JSGDeleteFilePassAny:
         return (passthrough,)
     
 class JSGDeleteFilePassString:
-    DESCRIPTION = "Delete a file from disk and passthrough the input."
+    DESCRIPTION = "Deletes a file from disk in a passthrough workflow."
     CATEGORY = "JSG Utils/File"
     IS_CHANGED = True
     OUTPUT_NODE = True
+    OUTPUT_TOOLTIPS = ("Returns the original string input unchanged.",)
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "passthrough": ("STRING", {}),
-                "file_path": ("STRING", {"multiline": False}),
-                "delete_enabled": ("BOOLEAN", {"default": False}),
+                "passthrough": ("STRING", {"tooltip": "The string value to pass through unchanged."}),
+                "file_path": ("STRING", {"multiline": False, "tooltip": "The file path to delete."}),
+                "delete_enabled": ("BOOLEAN", {"default": False, "tooltip": "Whether to delete the file."}),
             }
         }
 

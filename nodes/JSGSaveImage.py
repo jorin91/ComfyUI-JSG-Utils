@@ -8,45 +8,36 @@ class JSGSaveImage:
     FUNCTION = "save"
     RETURN_TYPES = ("IMAGE", "STRING")
     RETURN_NAMES = ("Image", "FilePath")
+    OUTPUT_TOOLTIPS = (
+        "Returns the original image input unchanged.",
+        "Returns the written file path.",
+    )
     OUTPUT_NODE = True
 
     DESCRIPTION = (
-        "Saves an IMAGE tensor to disk with optional metadata.\n\n"
-        "QUALITY BEHAVIOR:\n"
-        "- PNG / TIFF / BMP: always lossless (quality setting ignored).\n"
-        "- JPG / JPEG: lossy, controlled by 'quality' (0–100).\n"
-        "- WEBP:\n"
-        "  • lossless = True  → true lossless WEBP\n"
-        "  • lossless = False → lossy WEBP controlled by 'quality'.\n\n"
-        "METADATA:\n"
-        "- DPI and ICC profile are preserved when available.\n"
-        "- EXIF is preserved for JPG/JPEG/TIFF when provided.\n"
-        "- PNG stores metadata as text chunks.\n\n"
-        "RETURNS:\n"
-        "- Passthrough IMAGE\n"
-        "- Full output file path"
+        "Saves an image to disk."
     )
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "image": ("IMAGE",),
-                "output_path": ("STRING", {"default": ""}),
-                "filename": ("STRING", {"default": "image"}),
-                "overwrite": (["overwrite", "add_number"], {"default": "add_number"}),
-                "number_delimiter": ("STRING", {"default": "_"}),
-                "number_padding": ("INT", {"default": 2, "min": 0, "max": 8, "step": 1}),
+                "image": ("IMAGE", {"tooltip": "The image tensor to save."}),
+                "output_path": ("STRING", {"default": "", "tooltip": "The directory where the file should be written."}),
+                "filename": ("STRING", {"default": "image", "tooltip": "The base filename without an extension."}),
+                "overwrite": (["overwrite", "add_number"], {"default": "add_number", "tooltip": "How filename conflicts are handled."}),
+                "number_delimiter": ("STRING", {"default": "_", "tooltip": "The delimiter inserted before the numbering suffix."}),
+                "number_padding": ("INT", {"default": 2, "min": 0, "max": 8, "step": 1, "tooltip": "The zero-padding width for the numbering suffix."}),
                 "file_type": ([
                     "png", "jpg", "jpeg", "webp", "bmp", "gif", "tiff"
-                ], {"default": "png"}),
-                "quality": ("INT", {"default": 100, "min": 0, "max": 100, "step": 1}),
-                "lossless": ("BOOLEAN", {"default": True}),
+                ], {"default": "png", "tooltip": "The output image format."}),
+                "quality": ("INT", {"default": 100, "min": 0, "max": 100, "step": 1, "tooltip": "The compression quality for lossy formats."}),
+                "lossless": ("BOOLEAN", {"default": True, "tooltip": "Whether to use lossless mode when the format supports it."}),
             },
             "optional": {
-                "metadata": ("JSGMETADATA",),
-                "dpi": ("INT", {"default": 600, "min": 0, "max": 1200, "step": 1}),
-                "caption": ("STRING", {"default": "", "multiline": False}),
+                "metadata": ("JSGMETADATA", {"tooltip": "The optional metadata object to embed into the saved file."}),
+                "dpi": ("INT", {"default": 600, "min": 0, "max": 1200, "step": 1, "tooltip": "The optional DPI value to write into supported image formats."}),
+                "caption": ("STRING", {"default": "", "multiline": False, "tooltip": "The optional caption written to a sidecar text file."}),
             }
         }
 

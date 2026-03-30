@@ -3,44 +3,23 @@ class JSGCaptionBuilder:
     FUNCTION = "build"
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("Caption",)
+    OUTPUT_TOOLTIPS = ("Returns the final caption string.",)
 
     DESCRIPTION = (
-        "Builds a multiline caption for LoRA training with optional filtering.\n\n"
-        "OUTPUT FORMAT:\n"
-        "Line 1: <key_token>, <filtered taglist>   (taglist only if provided)\n"
-        "Line 2: <filtered description>            (only if provided)\n\n"
-        "TAG FILTERING:\n"
-        "- Tags are split by commas.\n"
-        "- Each tag is split into words by spaces and underscores.\n"
-        "- Exclude list is comma-separated entries.\n"
-        "  • Single-word exclude removes a tag if that exact word is present.\n"
-        "  • Multi-word exclude removes a tag if ALL exclude-words are present (order independent).\n"
-        "- Matching is exact per word (e.g. 'leg' does not match 'legs').\n"
-        "- Remaining tags are rebuilt as a comma-separated list.\n\n"
-        "DESCRIPTION FILTERING:\n"
-        "- Description is split on periods and commas into fragments.\n"
-        "- A fragment is removed if ANY exclude entry matches:\n"
-        "  • single-word: exact word present\n"
-        "  • multi-word: all words present (order independent)\n"
-        "- Punctuation is normalized to prevent '..', ',,' or ',.' artifacts.\n\n"
-        "INPUT NOTES:\n"
-        "- key_token is required.\n"
-        "- taglist, description and exclude lists are optional.\n"
-        "- Exclude lists are comma-separated entries (entries may contain spaces/underscores).\n"
-        "- Output is a single multiline STRING."
+        "Builds a filtered multiline training caption."
     )
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "key_token": ("STRING", {"default": ""}),
+                "key_token": ("STRING", {"default": "", "tooltip": "The leading token placed at the start of the caption."}),
             },
             "optional": {
-                "taglist": ("STRING", {"default": "", "multiline": True}),
-                "tag_exclude": ("STRING", {"default": ""}),
-                "description": ("STRING", {"default": "", "multiline": True}),
-                "description_exclude": ("STRING", {"default": ""}),
+                "taglist": ("STRING", {"default": "", "multiline": True, "tooltip": "The tags to append after the key token."}),
+                "tag_exclude": ("STRING", {"default": "", "tooltip": "The exclude entries used to remove matching tags."}),
+                "description": ("STRING", {"default": "", "multiline": True, "tooltip": "The description text to place on the next line."}),
+                "description_exclude": ("STRING", {"default": "", "tooltip": "The exclude entries used to remove matching description fragments."}),
             }
         }
 
