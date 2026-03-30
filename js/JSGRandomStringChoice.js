@@ -1,7 +1,7 @@
 import { app } from "../../../scripts/app.js";
 
-const STRING_INPUT_NODES = new Set(["JSGRandomStringChoice", "JSGCombineStrings"]);
-const SEED_CONTROL_NODES = new Set(["JSGRandomStringChoice"]);
+const STRING_INPUT_NODES = new Set(["JSGRandomStringChoice", "JSGCombineStrings", "JSGMatchStringList"]);
+const SEED_CONTROL_NODES = new Set(["JSGRandomStringChoice", "JSGRandomStringChoiceList", "JSGRandomBool"]);
 const MAX_OPTIONS = 128;
 const HIDDEN_TYPE = "jsg-hidden-string";
 const MAX_SAFE_RANDOM = 1125899906842624;
@@ -177,48 +177,53 @@ function applySeedControl(node) {
 app.registerExtension({
     name: "JSG.Utils.StringInputNodes",
     async beforeRegisterNodeDef(nodeType, nodeData) {
-        if (!STRING_INPUT_NODES.has(nodeData.name)) {
+        const supportsStringInputs = STRING_INPUT_NODES.has(nodeData.name);
+        const supportsSeedControl = SEED_CONTROL_NODES.has(nodeData.name);
+
+        if (!supportsStringInputs && !supportsSeedControl) {
             return;
         }
 
-        const onNodeCreated = nodeType.prototype.onNodeCreated;
-        nodeType.prototype.onNodeCreated = function () {
-            const result = onNodeCreated ? onNodeCreated.apply(this, arguments) : undefined;
+        if (supportsStringInputs) {
+            const onNodeCreated = nodeType.prototype.onNodeCreated;
+            nodeType.prototype.onNodeCreated = function () {
+                const result = onNodeCreated ? onNodeCreated.apply(this, arguments) : undefined;
 
-            for (const widget of getStringWidgets(this)) {
-                wrapWidgetCallback(this, widget);
-            }
+                for (const widget of getStringWidgets(this)) {
+                    wrapWidgetCallback(this, widget);
+                }
 
-            refreshVisibleWidgets(this);
-            return result;
-        };
+                refreshVisibleWidgets(this);
+                return result;
+            };
 
-        const onConfigure = nodeType.prototype.onConfigure;
-        nodeType.prototype.onConfigure = function () {
-            const result = onConfigure ? onConfigure.apply(this, arguments) : undefined;
+            const onConfigure = nodeType.prototype.onConfigure;
+            nodeType.prototype.onConfigure = function () {
+                const result = onConfigure ? onConfigure.apply(this, arguments) : undefined;
 
-            for (const widget of getStringWidgets(this)) {
-                wrapWidgetCallback(this, widget);
-            }
+                for (const widget of getStringWidgets(this)) {
+                    wrapWidgetCallback(this, widget);
+                }
 
-            refreshVisibleWidgets(this);
-            return result;
-        };
+                refreshVisibleWidgets(this);
+                return result;
+            };
 
-        const onConnectionsChange = nodeType.prototype.onConnectionsChange;
-        nodeType.prototype.onConnectionsChange = function () {
-            const result = onConnectionsChange ? onConnectionsChange.apply(this, arguments) : undefined;
-            refreshVisibleWidgets(this);
-            return result;
-        };
+            const onConnectionsChange = nodeType.prototype.onConnectionsChange;
+            nodeType.prototype.onConnectionsChange = function () {
+                const result = onConnectionsChange ? onConnectionsChange.apply(this, arguments) : undefined;
+                refreshVisibleWidgets(this);
+                return result;
+            };
+        }
 
-        const onExecuted = nodeType.prototype.onExecuted;
-        nodeType.prototype.onExecuted = function () {
-            const result = onExecuted ? onExecuted.apply(this, arguments) : undefined;
-            if (SEED_CONTROL_NODES.has(nodeData.name)) {
+        if (supportsSeedControl) {
+            const onExecuted = nodeType.prototype.onExecuted;
+            nodeType.prototype.onExecuted = function () {
+                const result = onExecuted ? onExecuted.apply(this, arguments) : undefined;
                 applySeedControl(this);
-            }
-            return result;
-        };
+                return result;
+            };
+        }
     },
 });

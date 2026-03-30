@@ -5,13 +5,18 @@ from .nodes.JSGLoadImageFromPath import JSGLoadImageFromPath
 from .nodes.JSGDeleteFile import JSGDeleteFilePassImage, JSGDeleteFilePassAny, JSGDeleteFilePassString
 from .nodes.JSGRandomColor import JSGRandomColorHSVA
 from .nodes.JSGSaveImage import JSGSaveImage
-from .nodes.JSGSetMetadata import JSGSetMetadata
-from .nodes.JSGAddMetadata import JSGAddMetadata
+from .nodes.JSGCreateBlankMetadata import JSGCreateBlankMetadata
+from .nodes.JSGSetMetadataField import JSGSetMetadataField
+from .nodes.JSGSetMetadataFields import JSGSetMetadataFields
+from .nodes.JSGSetStandardMetadataField import JSGSetStandardMetadataField
 from .nodes.JSGRemoveMetadata import JSGRemoveMetadata
 from .nodes.JSGCaptionBuilder import JSGCaptionBuilder
 from .nodes.JSGRandomStringChoice import JSGRandomStringChoice
+from .nodes.JSGRandomStringChoiceList import JSGRandomStringChoiceList
 from .nodes.JSGCombineStrings import JSGCombineStrings
 from .nodes.JSGBoolToString import JSGBoolToString
+from .nodes.JSGMatchStringList import JSGMatchStringList
+from .nodes.JSGRandomBool import JSGRandomBool
 
 WEB_DIRECTORY = "./js"
 
@@ -25,13 +30,18 @@ NODE_CLASS_MAPPINGS = {
     "JSGDeleteFilePassString": JSGDeleteFilePassString,
     "JSGRandomColorHSVA": JSGRandomColorHSVA,
     "JSGSaveImage": JSGSaveImage,
-    "JSGSetMetadata": JSGSetMetadata,
-    "JSGAddMetadata": JSGAddMetadata,
+    "JSGCreateBlankMetadata": JSGCreateBlankMetadata,
+    "JSGSetMetadataField": JSGSetMetadataField,
+    "JSGSetMetadataFields": JSGSetMetadataFields,
+    "JSGSetStandardMetadataField": JSGSetStandardMetadataField,
     "JSGRemoveMetadata": JSGRemoveMetadata,
     "JSGCaptionBuilder": JSGCaptionBuilder,
     "JSGRandomStringChoice": JSGRandomStringChoice,
+    "JSGRandomStringChoiceList": JSGRandomStringChoiceList,
     "JSGCombineStrings": JSGCombineStrings,
     "JSGBoolToString": JSGBoolToString,
+    "JSGMatchStringList": JSGMatchStringList,
+    "JSGRandomBool": JSGRandomBool,
 }
 
 #  =================================================================================
@@ -45,11 +55,16 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "JSGDeleteFilePassString": "Delete File (String Passthrough)",
     "JSGRandomColorHSVA": "Random Color (HSVA)",
     "JSGSaveImage": "Save Image",
-    "JSGSetMetadata": "Set Metadata",
-    "JSGAddMetadata": "Add Metadata",
+    "JSGCreateBlankMetadata": "Create Blank Metadata",
+    "JSGSetMetadataField": "Set Metadata Field",
+    "JSGSetMetadataFields": "Set Metadata Fields",
+    "JSGSetStandardMetadataField": "Set Standard Metadata Field",
     "JSGRemoveMetadata": "Remove Metadata",
     "JSGCaptionBuilder": "Caption Builder (Key + Tags + Description)",
     "JSGRandomStringChoice": "Random String Choice",
+    "JSGRandomStringChoiceList": "Random String Choice (Comma List)",
     "JSGCombineStrings": "Combine Strings",
     "JSGBoolToString": "Bool To String",
+    "JSGMatchStringList": "Match String List",
+    "JSGRandomBool": "Random Bool",
 }

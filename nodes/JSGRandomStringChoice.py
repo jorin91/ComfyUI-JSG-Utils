@@ -22,6 +22,7 @@ class JSGRandomStringChoice:
     def INPUT_TYPES(cls):
         required = {
             "seed": ("INT", {"default": 0, "min": 0, "max": 0x7FFFFFFFFFFFFFFF, "control_after_generate": True, "tooltip": "The seed used for the current selection."}),
+            "include_empty_strings": ("BOOLEAN", {"default": True, "tooltip": "Whether empty visible string inputs are valid choices."}),
             "always_load": ("BOOLEAN", {"default": True, "tooltip": "Whether to force this node to re-execute every run."}),
         }
 
@@ -40,20 +41,24 @@ class JSGRandomStringChoice:
             return float("NaN")
         return hash(frozenset(kwargs.items()))
 
-    def _normalized_options(self, kwargs):
+    def _normalized_options(self, kwargs, include_empty_strings=False):
         options = []
         for index in range(1, self.MAX_OPTIONS + 1):
-            value = kwargs.get(f"string_{index}", "")
+            key = f"string_{index}"
+            if key not in kwargs:
+                continue
+
+            value = kwargs.get(key, "")
             text = value.strip() if isinstance(value, str) else ""
-            if text:
+            if text or include_empty_strings:
                 options.append(text)
         return options
 
-    def choose(self, seed=0, always_load=False, **kwargs):
-        options = self._normalized_options(kwargs)
-        if not options:
-            raise ValueError("Fill in at least one string input.")
-
+    def choose(self, seed=0, include_empty_strings=False, always_load=False, **kwargs):
         used_seed = int(seed)
+        options = self._normalized_options(kwargs, include_empty_strings=include_empty_strings)
+        if not options:
+            return ("", used_seed)
+
         selected = random.Random(used_seed).choice(options)
         return (selected, used_seed)

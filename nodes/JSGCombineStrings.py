@@ -46,8 +46,12 @@ class JSGCombineStrings:
         return options
 
     def combine(self, prefix="", suffix="", separator=", ", always_load=False, **kwargs):
+        options = self._normalized_options(kwargs)
+        if not options:
+            return ("",)
+
         combined = separator.join(
             f"{prefix}{option}{suffix}"
-            for option in self._normalized_options(kwargs)
+            for option in options
         )
         return (combined,)

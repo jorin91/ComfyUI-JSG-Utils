@@ -1,7 +1,15 @@
 import os
-from PIL import Image, PngImagePlugin
+from PIL import Image
 import numpy as np
 import torch
+
+from .JSGMetadataUtils import (
+    build_exif_bytes_from_metadata,
+    build_pnginfo_from_metadata,
+    build_xmp_bytes_from_metadata,
+    ensure_windows_png_metadata_layout,
+    ensure_metadata,
+)
 
 class JSGSaveImage:
     CATEGORY = "JSG Utils/Image"
@@ -78,7 +86,11 @@ class JSGSaveImage:
         return Image.fromarray(arr, mode="RGB")
 
     def _apply_metadata_save_kwargs(self, ext, meta, dpi_value, quality, lossless):
+        meta = ensure_metadata(meta) if isinstance(meta, dict) else meta
         kwargs = {}
+        text = meta.get("text") if isinstance(meta, dict) else {}
+        exif_bytes = build_exif_bytes_from_metadata(meta) if isinstance(meta, dict) else None
+        xmp_bytes = build_xmp_bytes_from_metadata(meta) if isinstance(meta, dict) else None
 
         # DPI
         if dpi_value and dpi_value > 0:
@@ -99,11 +111,12 @@ class JSGSaveImage:
         if ext in ("jpg", "jpeg"):
             kwargs["quality"] = int(quality)
             kwargs["optimize"] = True
-            # EXIF bytes (als aanwezig)
-            if isinstance(meta, dict):
-                exif_bytes = (((meta.get("exif") or {}).get("exif_bytes")))
-                if isinstance(exif_bytes, (bytes, bytearray)):
-                    kwargs["exif"] = bytes(exif_bytes)
+            if isinstance(exif_bytes, (bytes, bytearray)):
+                kwargs["exif"] = bytes(exif_bytes)
+
+            comment = str((text or {}).get("Comments", "")).strip()
+            if comment:
+                kwargs["comment"] = comment.encode("utf-8")
 
         elif ext == "webp":
             if lossless:
@@ -111,30 +124,38 @@ class JSGSaveImage:
             else:
                 kwargs["quality"] = int(quality)
 
+            if isinstance(exif_bytes, (bytes, bytearray)):
+                kwargs["exif"] = bytes(exif_bytes)
+
+            if isinstance(xmp_bytes, (bytes, bytearray)):
+                kwargs["xmp"] = bytes(xmp_bytes)
+
         elif ext == "png":
-            # PNG text chunks
             if isinstance(meta, dict):
-                text = meta.get("text") or {}
-                if isinstance(text, dict) and text:
-                    pnginfo = PngImagePlugin.PngInfo()
-                    for k, v in text.items():
-                        # alleen string achtige dingen; maak het voorspelbaar
-                        if v is None:
-                            s = ""
-                        elif isinstance(v, (str, int, float, bool)):
-                            s = str(v)
-                        else:
-                            s = str(v)
-                        # pillow verwacht string keys/values
-                        pnginfo.add_text(str(k), s)
+                pnginfo = build_pnginfo_from_metadata(meta)
+                if pnginfo is not None:
                     kwargs["pnginfo"] = pnginfo
 
-        elif ext == "tiff":
-            # TIFF kan exif soms ook
-            if isinstance(meta, dict):
-                exif_bytes = (((meta.get("exif") or {}).get("exif_bytes")))
                 if isinstance(exif_bytes, (bytes, bytearray)):
                     kwargs["exif"] = bytes(exif_bytes)
+
+        elif ext == "tiff":
+            description = str((text or {}).get("Description", "")).strip()
+            software = str((text or {}).get("ProgramName", "")).strip()
+            author = str((text or {}).get("Authors", "")).strip()
+            copyright_text = str((text or {}).get("Copyright", "")).strip()
+
+            if description:
+                kwargs["description"] = description
+            if software:
+                kwargs["software"] = software
+            if author:
+                kwargs["artist"] = author
+            if copyright_text:
+                kwargs["copyright"] = copyright_text
+
+            if isinstance(exif_bytes, (bytes, bytearray)):
+                kwargs["exif"] = bytes(exif_bytes)
 
         # bmp/gif: nauwelijks metadata ondersteuning
         return kwargs
@@ -153,6 +174,9 @@ class JSGSaveImage:
 
         save_kwargs = self._apply_metadata_save_kwargs(ext, metadata, dpi, quality, lossless)
         pil_img.save(path, **save_kwargs)
+
+        if ext == "png" and isinstance(metadata, dict):
+            ensure_windows_png_metadata_layout(path, metadata)
 
         # Optional caption sidecar (.txt) with same base name as saved image
         if caption is not None:
