@@ -72,6 +72,8 @@ XMP_NAMESPACES = {
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dc": "http://purl.org/dc/elements/1.1/",
     "xmp": "http://ns.adobe.com/xap/1.0/",
+    "tiff": "http://ns.adobe.com/tiff/1.0/",
+    "exif": "http://ns.adobe.com/exif/1.0/",
     "jsg": JSG_XMP_NAMESPACE,
 }
 
@@ -355,6 +357,7 @@ def _load_text_from_xmp(info):
 
     mappings = {
         "Title": first_alt_text("title"),
+        "Comments": (root.findtext(f".//{{{XMP_NAMESPACES['exif']}}}UserComment") or "").strip() or first_alt_text("description"),
         "Description": first_alt_text("description"),
         "Copyright": first_alt_text("rights"),
         "Authors": first_seq_text("creator"),
@@ -362,6 +365,9 @@ def _load_text_from_xmp(info):
         "Source": (root.findtext(f".//{{{XMP_NAMESPACES['dc']}}}source") or "").strip(),
         "ProgramName": (root.findtext(f".//{{{XMP_NAMESPACES['xmp']}}}CreatorTool") or "").strip(),
         "DateTaken": (root.findtext(f".//{{{XMP_NAMESPACES['xmp']}}}CreateDate") or "").strip(),
+        "Rating": (root.findtext(f".//{{{XMP_NAMESPACES['xmp']}}}Rating") or "").strip(),
+        "CameraMaker": (root.findtext(f".//{{{XMP_NAMESPACES['tiff']}}}Make") or "").strip(),
+        "CameraModel": (root.findtext(f".//{{{XMP_NAMESPACES['tiff']}}}Model") or "").strip(),
     }
 
     for key, value in mappings.items():
@@ -482,6 +488,7 @@ def _build_windows_png_xmp_bytes(metadata):
 
     description_parts = []
     title = _normalize_text_value(text.get("Title", ""))
+    comments = _normalize_text_value(text.get("Comments", ""))
     description = _normalize_text_value(text.get("Description", ""))
     copyright_text = _normalize_text_value(text.get("Copyright", ""))
     author = _normalize_text_value(text.get("Authors", ""))
@@ -491,6 +498,14 @@ def _build_windows_png_xmp_bytes(metadata):
             "<dc:title><rdf:Alt xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">"
             f"<rdf:li xml:lang=\"x-default\">{html.escape(title)}</rdf:li>"
             "</rdf:Alt></dc:title>"
+        )
+
+    # Windows "Opmerkingen" (System.Comment) reads exif:UserComment from XMP
+    if comments:
+        description_parts.append(
+            "<exif:UserComment><rdf:Alt xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">"
+            f"<rdf:li xml:lang=\"x-default\">{html.escape(comments)}</rdf:li>"
+            "</rdf:Alt></exif:UserComment>"
         )
 
     if description:
@@ -524,14 +539,6 @@ def _build_windows_png_xmp_bytes(metadata):
     if software:
         description_parts.append(
             f"<xmp:CreatorTool>{html.escape(software)}</xmp:CreatorTool>"
-        )
-
-    comment = _normalize_text_value(text.get("Comments", ""))
-    if comment:
-        description_parts.append(
-            "<xmp:Nickname>"
-            f"{html.escape(comment)}"
-            "</xmp:Nickname>"
         )
 
     date_taken = _normalize_text_value(text.get("DateTaken", ""))
@@ -630,7 +637,7 @@ def _build_windows_png_xmp_bytes(metadata):
         "<?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d'?>\n"
         "<x:xmpmeta xmlns:x=\"adobe:ns:meta/\">"
         "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">"
-        "<rdf:Description rdf:about=\"uuid:faf5bdd5-ba3d-11da-ad31-d33d75182f1b\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\" xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\" xmlns:photoshop=\"http://ns.adobe.com/photoshop/1.0/\" xmlns:xmpRights=\"http://ns.adobe.com/xap/1.0/rights/\" xmlns:jsg=\"https://github.com/jsg/comfyui-jsg-utils/metadata/1.0/\">"
+        "<rdf:Description rdf:about=\"uuid:faf5bdd5-ba3d-11da-ad31-d33d75182f1b\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\" xmlns:exif=\"http://ns.adobe.com/exif/1.0/\" xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\" xmlns:photoshop=\"http://ns.adobe.com/photoshop/1.0/\" xmlns:xmpRights=\"http://ns.adobe.com/xap/1.0/rights/\" xmlns:jsg=\"https://github.com/jsg/comfyui-jsg-utils/metadata/1.0/\">"
         f"{body}"
         "</rdf:Description></rdf:RDF></x:xmpmeta>\n"
         "<?xpacket end='w'?>"
@@ -833,7 +840,7 @@ def build_xmp_bytes_from_metadata(metadata):
     description = ET.SubElement(rdf, f"{{{XMP_NAMESPACES['rdf']}}}Description")
 
     _add_alt_text(description, "title", _normalize_text_value(text.get("Title", "")))
-    _add_alt_text(description, "description", _normalize_text_value(text.get("Description", "")))
+    _add_alt_text(description, "description", _normalize_text_value(text.get("Comments", "")))
     _add_alt_text(description, "rights", _normalize_text_value(text.get("Copyright", "")))
     _add_seq_text(description, "creator", [_normalize_text_value(text.get("Authors", ""))])
     _add_seq_text(description, "publisher", [_normalize_text_value(text.get("Publisher", ""))])
