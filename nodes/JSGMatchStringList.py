@@ -63,6 +63,10 @@ class JSGMatchStringList:
                 "STRING",
                 {"default": "", "tooltip": "The required control string. Trimmed before comparison; split on the separator when 'treat_as_list' is enabled."},
             ),
+            "default_when_no_candidates": (
+                "BOOLEAN",
+                {"default": False, "tooltip": "Default return value used only when matching is impossible due to missing candidates or a missing control value."},
+            ),
         }
 
         optional = {}
@@ -141,13 +145,14 @@ class JSGMatchStringList:
         separator=",",
         control_all_must_match=False,
         control_value="",
+        default_when_no_candidates=False,
         **kwargs,
     ):
         control_words = self._build_control_words(control_value, treat_as_list, separator)
         candidates = self._build_candidate_words(kwargs, treat_as_list, separator)
 
         if not control_words or not candidates:
-            return (False,)
+            return (default_when_no_candidates,)
 
         if not case_sensitive:
             control_words = [w.lower() for w in control_words]

@@ -17,6 +17,7 @@ from .nodes.JSGCombineStrings import JSGCombineStrings
 from .nodes.JSGBoolToString import JSGBoolToString
 from .nodes.JSGMatchStringList import JSGMatchStringList
 from .nodes.JSGRandomBool import JSGRandomBool
+from .nodes.JSGBoolSwitch import JSGBoolSwitch
 
 WEB_DIRECTORY = "./js"
 
@@ -42,6 +43,7 @@ NODE_CLASS_MAPPINGS = {
     "JSGBoolToString": JSGBoolToString,
     "JSGMatchStringList": JSGMatchStringList,
     "JSGRandomBool": JSGRandomBool,
+    "JSGBoolSwitch": JSGBoolSwitch,
 }
 
 #  =================================================================================
@@ -67,4 +69,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "JSGBoolToString": "Bool To String",
     "JSGMatchStringList": "Match String List",
     "JSGRandomBool": "Random Bool",
+    "JSGBoolSwitch": "Bool Switch",
 }
