@@ -58,13 +58,13 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 2,
               "blacklist": ""
             }
@@ -102,25 +102,25 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 1,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 3,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 4,
               "blacklist": ""
             }
@@ -146,19 +146,19 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 2,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 4,
               "blacklist": ""
             }
@@ -183,25 +183,25 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 1,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 2,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 3,
               "blacklist": ""
             }
@@ -225,7 +225,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -249,7 +249,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -273,7 +273,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -297,7 +297,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -322,7 +322,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -346,13 +346,13 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 3,
               "blacklist": ""
             }
@@ -376,7 +376,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -402,7 +402,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 0,
+              "targetSubIndex": 1,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -444,7 +444,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 1,
+              "targetSubIndex": 2,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -470,7 +470,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 1,
+              "targetSubIndex": 2,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -496,7 +496,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 1,
+              "targetSubIndex": 2,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -520,7 +520,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 1,
+              "targetSubIndex": 2,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -545,7 +545,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 1,
+              "targetSubIndex": 2,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -569,7 +569,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 1,
+              "targetSubIndex": 2,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -611,7 +611,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 2,
+              "targetSubIndex": 3,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -633,7 +633,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 2,
+              "targetSubIndex": 3,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -657,7 +657,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 2,
+              "targetSubIndex": 3,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -682,7 +682,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 2,
+              "targetSubIndex": 3,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -706,7 +706,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 2,
+              "targetSubIndex": 3,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -731,7 +731,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 2,
+              "targetSubIndex": 3,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -753,7 +753,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 2,
+              "targetSubIndex": 3,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -813,13 +813,13 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 2,
               "blacklist": ""
             }
@@ -843,13 +843,13 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 1,
               "blacklist": ""
             }
@@ -871,7 +871,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -893,7 +893,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -917,7 +917,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -941,13 +941,13 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 7,
               "blacklist": ""
             }
@@ -969,13 +969,13 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 4,
+              "targetSubIndex": 5,
               "targetPartsIndex": 6,
               "blacklist": ""
             }
@@ -1069,12 +1069,6 @@
               "targetSubIndex": 6,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 6,
-              "targetPartsIndex": 4,
-              "blacklist": ""
             }
           ]
         },
@@ -1099,12 +1093,6 @@
               "targetIndex": 4,
               "targetSubIndex": 6,
               "targetPartsIndex": 0,
-              "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 6,
-              "targetPartsIndex": 3,
               "blacklist": ""
             }
           ]
@@ -1280,19 +1268,19 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 4,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 6,
               "blacklist": ""
             }
@@ -1316,7 +1304,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -1340,7 +1328,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -1364,19 +1352,19 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 1,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 6,
               "blacklist": ""
             }
@@ -1398,7 +1386,7 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 0,
               "blacklist": ""
             }
@@ -1420,19 +1408,19 @@
           "filters": [
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 0,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 1,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
-              "targetSubIndex": 3,
+              "targetSubIndex": 8,
               "targetPartsIndex": 4,
               "blacklist": ""
             }
@@ -1442,12 +1430,12 @@
     },
     {
       "subIndex": 9,
-      "description": "Vulva general body part subIndex. This is the main vulva toggle. All other vulva-related subIndexes should filter against this main toggle instead of repeating the subject filters.",
+      "description": "Vulva general body part subIndex. This is the main vulva toggle for this body part and also the master toggle for the related vulva subparts in their own subIndexes. This toggle also gates on valid subject gender via subject filtering.",
       "separator": true,
       "parts": [
         {
           "partsIndex": 0,
-          "description": "Vulva main toggle. Filters on subject values girl or woman with filtersRequireAll false so one match is enough.",
+          "description": "Vulva main toggle. This is both the local anchor for this subIndex and the master toggle that the related vulva subpart subIndexes should filter against. It also filters on subject values girl or woman with filtersRequireAll false so one match is enough.",
           "separator": false,
           "values": [
             "vulva",

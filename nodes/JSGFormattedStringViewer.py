@@ -1,8 +1,8 @@
 class JSGFormattedStringViewer:
     DESCRIPTION = (
-        "Splits a string on a separator, trims each part, and displays them "
-        "line by line inside the node. Passes the original text through unchanged "
-        "and also outputs the cleaned, reformatted text."
+        "Splits an incoming string on a separator and displays each segment "
+        "on its own line inside the node as a read-only viewer. "
+        "Outputs the original text unchanged and the formatted view as a string."
     )
 
     CATEGORY = "JSG Utils/String"
@@ -12,8 +12,10 @@ class JSGFormattedStringViewer:
     RETURN_NAMES = ("Original", "Formatted")
     OUTPUT_TOOLTIPS = (
         "The original input text, unchanged.",
-        "The text split on the separator, each part trimmed and terminated with the separator, joined by newlines.",
+        "Each segment on its own line, trimmed, with the separator appended.",
     )
+
+    OUTPUT_NODE = True
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -22,35 +24,30 @@ class JSGFormattedStringViewer:
                 "text": (
                     "STRING",
                     {
-                        "default": "",
-                        "multiline": True,
-                        "tooltip": "The input text to format.",
+                        "forceInput": True,
+                        "tooltip": "Connect a string output here to view its formatted breakdown.",
                     },
                 ),
                 "separator": (
                     "STRING",
                     {
-                        "default": ",",
+                        "default": ", ",
                         "multiline": False,
-                        "tooltip": "The separator used to split the text. The whole value is treated as a single separator.",
+                        "tooltip": "Separator used to split the text. The whole value is treated as one separator.",
                     },
                 ),
             },
         }
 
     def format(self, text: str, separator: str):
-        sep = separator  # whole string is the separator
+        sep = separator
 
         if sep and sep in text:
             parts = [p.strip() for p in text.split(sep)]
         else:
             parts = [text.strip()] if text.strip() else []
 
-        # Remove empty parts that result from trailing/leading separators
         parts = [p for p in parts if p]
-
-        # Formatted: each part trimmed + separator appended, one per line
         formatted = "\n".join(p + sep for p in parts) if parts else ""
 
-        # Preview shown inside the node via the STRING widget
-        return (text, formatted)
+        return {"ui": {"formatted": [formatted]}, "result": (text, formatted)}
