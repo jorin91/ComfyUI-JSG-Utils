@@ -1,0 +1,51 @@
+{
+  "name": "Subject",
+  "index": 0,
+  "description": "Primary subject category for the generated prompt.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Main subject selection subIndex.",
+      "separator": false,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Main subject selection subIndex. part 0.",
+          "separator": false,
+          "values": [
+            "young child boy (age 3-5)",
+            "young child girl (age 3-5)",
+            "child boy (age 6-9)",
+            "child girl (age 6-9)",
+            "preteen boy (age 10-12)",
+            "",
+            "preteen girl (age 10-12)",
+            "teen boy (age 13-15)",
+            "teen girl (age 13-15)",
+            "late teen boy (age 16-17)",
+            "late teen girl (age 16-17)",
+            "",
+            "young adult man (age 18-23)",
+            "young adult woman (age 18-23)",
+            "adult man (age 24-34)",
+            "adult woman (age 24-34)",
+            "prime adult man (age 35-44)",
+            "",
+            "prime adult woman (age 35-44)",
+            "middle-aged man (age 45-59)",
+            "middle-aged woman (age 45-59)",
+            "older adult man (age 60-74)",
+            "older adult woman (age 60-74)",
+            "",
+            "elderly man (age 75+)",
+            "elderly woman (age 75+)",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

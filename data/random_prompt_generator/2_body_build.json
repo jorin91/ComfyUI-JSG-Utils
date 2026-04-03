@@ -1,0 +1,163 @@
+{
+  "name": "Body Build",
+  "index": 2,
+  "description": "Structural body build category covering overall build, frame, proportions, and mass.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Overall body build subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Overall body build values as a standalone build descriptor.",
+          "separator": false,
+          "values": [
+            "a petite build",
+            "a very petite build",
+            "a slender build",
+            "a lean build",
+            "a lightweight build",
+            "",
+            "an athletic build",
+            "a soft build",
+            "a curvy build",
+            "a full-bodied build",
+            "a muscular build",
+            "",
+            "a compact build",
+            "a balanced build",
+            "an elongated build",
+            "a graceful build",
+            "a refined build",
+            "",
+            "a strong build",
+            "a delicate build",
+            "a solid build",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "subIndex": 1,
+      "description": "Body frame subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Body frame values as a standalone structural descriptor.",
+          "separator": false,
+          "values": [
+            "a narrow frame",
+            "a broad frame",
+            "a delicate frame",
+            "a sturdy frame",
+            "a fine-boned frame",
+            "",
+            "a strong-boned frame",
+            "a light skeletal frame",
+            "a compact frame",
+            "an elongated frame",
+            "a small-shouldered frame",
+            "",
+            "a broad-shouldered frame",
+            "a narrow ribcage",
+            "a broader ribcage",
+            "narrow hips",
+            "broad hips",
+            "",
+            "a balanced structural frame",
+            "refined bone structure",
+            "pronounced bone structure",
+            "a graceful frame",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "subIndex": 2,
+      "description": "Body proportions subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Body proportions values as a standalone proportional descriptor.",
+          "separator": false,
+          "values": [
+            "petite proportions",
+            "compact proportions",
+            "balanced proportions",
+            "elongated proportions",
+            "statuesque proportions",
+            "",
+            "long-legged proportions",
+            "short-legged proportions",
+            "a long torso",
+            "a short torso",
+            "balanced upper and lower body proportions",
+            "",
+            "top-heavy proportions",
+            "bottom-heavy proportions",
+            "a narrow waist",
+            "broad hips",
+            "straight proportions",
+            "",
+            "tapered proportions",
+            "gracefully extended proportions",
+            "compact balanced proportions",
+            "a delicately proportioned figure",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "subIndex": 3,
+      "description": "Body mass subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Body mass values as a standalone mass or volume descriptor.",
+          "separator": false,
+          "values": [
+            "low body mass",
+            "light body mass",
+            "moderate body mass",
+            "full body mass",
+            "soft body mass",
+            "",
+            "firm body mass",
+            "lean mass distribution",
+            "soft weight distribution",
+            "even weight distribution",
+            "more upper-body weight emphasis",
+            "",
+            "more lower-body weight emphasis",
+            "a lightly built body mass",
+            "substantial body mass",
+            "trim body mass",
+            "dense muscular mass",
+            "",
+            "softly carried body weight",
+            "a refined low-mass physique",
+            "balanced body mass distribution",
+            "a slim low-mass frame",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

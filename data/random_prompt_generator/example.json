@@ -1,0 +1,84 @@
+{
+  "name": "Example",
+  "index": 99,
+  "description": "Example category.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Main clothing description subIndex.",
+      "separator": false,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Primary clothing state. Drives filters on partsIndex 1.",
+          "separator": false,
+          "values": [
+            "nude",
+            "wearing a dress",
+            "wearing jeans",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "_filter_tree": "Target path: Index . SubIndex . PartIndex — tree stops at deepest valid level provided.",
+              "_tree_index": "targetIndex only (subIndex/partsIndex absent or null/<0) -> whole index joined",
+              "_tree_slot": "targetIndex + targetSubIndex (partsIndex absent or null/<0) -> whole subIndex joined",
+              "_tree_part": "all three valid (int >= 0) -> specific part value",
+              "_tree_skip": "targetIndex absent or null/<0 -> filter ignored",
+              "targetIndex": 99,
+              "targetSubIndex": 0,
+              "targetPartsIndex": null,
+              "blacklist": "",
+              "_blacklist_comment": "String or array. If any term is a substring of the target, this part resolves to empty.",
+              "whitelist": "",
+              "_whitelist_comment": "String or array. Target must contain at least one term, otherwise this part resolves to empty."
+            }
+          ]
+        },
+        {
+          "partsIndex": 1,
+          "description": "Clothing colour. Suppressed when partsIndex 0 chose 'nude'.",
+          "separator": false,
+          "values": [
+            "red",
+            "blue",
+            "black",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "_comment": "Suppress this part when the primary clothing state (partsIndex 0) is 'nude'.",
+              "targetIndex": 99,
+              "targetSubIndex": 0,
+              "targetPartsIndex": 0,
+              "blacklist": "nude",
+              "whitelist": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subIndex": 1,
+      "description": "Accessory add-on subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "An accessory tag, comma-separated from the main clothing description.",
+          "separator": false,
+          "values": [
+            "wearing sunglasses",
+            "wearing a hat",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

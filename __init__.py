@@ -18,6 +18,12 @@ from .nodes.JSGBoolToString import JSGBoolToString
 from .nodes.JSGMatchStringList import JSGMatchStringList
 from .nodes.JSGRandomBool import JSGRandomBool
 from .nodes.JSGBoolSwitch import JSGBoolSwitch
+from .nodes.JSGRandomPromptBuilder import JSGRandomPromptBuilder
+from .nodes.JSGObjectBuilder import JSGObjectBuilder
+from .nodes.JSGObjectUnpack import JSGObjectUnpack
+from .nodes.JSGIteratorInputs import JSGIteratorInputs
+from .nodes.JSGIteratorList import JSGIteratorList
+from .nodes.JSGFormattedStringViewer import JSGFormattedStringViewer
 
 WEB_DIRECTORY = "./js"
 
@@ -44,6 +50,12 @@ NODE_CLASS_MAPPINGS = {
     "JSGMatchStringList": JSGMatchStringList,
     "JSGRandomBool": JSGRandomBool,
     "JSGBoolSwitch": JSGBoolSwitch,
+    "JSGRandomPromptBuilder": JSGRandomPromptBuilder,
+    "JSGObjectBuilder": JSGObjectBuilder,
+    "JSGObjectUnpack": JSGObjectUnpack,
+    "JSGIteratorInputs": JSGIteratorInputs,
+    "JSGIteratorList": JSGIteratorList,
+    "JSGFormattedStringViewer": JSGFormattedStringViewer,
 }
 
 #  =================================================================================
@@ -70,4 +82,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "JSGMatchStringList": "Match String List",
     "JSGRandomBool": "Random Bool",
     "JSGBoolSwitch": "Bool Switch",
+    "JSGRandomPromptBuilder": "Random Prompt Builder",
+    "JSGObjectBuilder": "Object Builder",
+    "JSGObjectUnpack": "Object Unpack",
+    "JSGIteratorInputs": "Iterator (Inputs)",
+    "JSGIteratorList": "Iterator (List)",
+    "JSGFormattedStringViewer": "Formatted String Viewer",
 }

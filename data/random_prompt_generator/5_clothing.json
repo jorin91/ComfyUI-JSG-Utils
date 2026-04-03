@@ -1,0 +1,70 @@
+{
+  "name": "Clothing",
+  "index": 5,
+  "description": "General clothing category for the main clothing state and related clothing description.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Main clothing category subIndex.",
+      "separator": false,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Main clothing category subIndex. part 0.",
+          "separator": false,
+          "values": [
+            "nude",
+            "wearing underwear",
+            "wearing lingerie",
+            "wearing sleepwear",
+            "wearing nightwear",
+            "",
+            "wearing loungewear",
+            "wearing casualwear",
+            "wearing streetwear",
+            "wearing denimwear",
+            "wearing knitwear",
+            "",
+            "wearing sportswear",
+            "wearing activewear",
+            "wearing gymwear",
+            "wearing dancewear",
+            "wearing gymnastics wear",
+            "",
+            "wearing swimwear",
+            "wearing beachwear",
+            "wearing outdoor wear",
+            "wearing a bikini",
+            "wearing a swimsuit",
+            "",
+            "wearing summerwear",
+            "wearing springwear",
+            "wearing autumnwear",
+            "wearing winterwear",
+            "wearing eveningwear",
+            "",
+            "wearing formalwear",
+            "wearing partywear",
+            "wearing clubwear",
+            "wearing officewear",
+            "wearing businesswear",
+            "",
+            "wearing workwear",
+            "wearing homewear",
+            "wearing resortwear",
+            "wearing festivalwear",
+            "wearing cosplay",
+            "",
+            "wearing fantasy clothing",
+            "wearing historical clothing",
+            "wearing traditional clothing",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

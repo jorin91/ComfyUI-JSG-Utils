@@ -1,0 +1,25 @@
+{
+  "name": "Pose",
+  "index": 6,
+  "description": "Pose category describing body posture or posing stance.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Main pose category subIndex.",
+      "separator": false,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Main pose category subIndex. part 0.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Style",
+  "index": 11,
+  "description": "Style category describing rendering or artistic presentation style.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Main style category subIndex.",
+      "separator": false,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Main style category subIndex. part 0.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

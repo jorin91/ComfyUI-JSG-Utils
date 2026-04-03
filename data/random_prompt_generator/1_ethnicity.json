@@ -1,0 +1,108 @@
+{
+  "name": "Ethnicity",
+  "index": 1,
+  "description": "Ethnicity category with optional mix and separate skin-tone nuance.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Base ethnicity and mix subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Base ethnicity anchor. This value is the main ethnicity reference for the later parts in this subIndex.",
+          "separator": false,
+          "values": [
+            "European ethnicity",
+            "Northern European ethnicity",
+            "Western European ethnicity",
+            "Eastern European ethnicity",
+            "Southern European ethnicity",
+            "",
+            "Mediterranean ethnicity",
+            "Middle Eastern ethnicity",
+            "North African ethnicity",
+            "Sub-Saharan African ethnicity",
+            "East Asian ethnicity",
+            "",
+            "Southeast Asian ethnicity",
+            "South Asian ethnicity",
+            "Central Asian ethnicity",
+            "Latina ethnicity",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        },
+        {
+          "partsIndex": 1,
+          "description": "Mixed ethnicity. This part depends on the base ethnicity anchor and should stay interpretable as an ethnicity extension when earlier optional parts are absent. Custom empty-string rule: 1 empty string per 3 non-empty values, rounded upward, placement must be preserved unless explicitly changed.",
+          "separator": false,
+          "values": [
+            "with mixed European ethnicity",
+            "with mixed Northern European ethnicity",
+            "with mixed Western European ethnicity",
+            "",
+            "with mixed Eastern European ethnicity",
+            "with mixed Southern European ethnicity",
+            "with mixed Mediterranean ethnicity",
+            "",
+            "with mixed Middle Eastern ethnicity",
+            "with mixed North African ethnicity",
+            "with mixed Sub-Saharan African ethnicity",
+            "",
+            "with mixed East Asian ethnicity",
+            "with mixed Southeast Asian ethnicity",
+            "with mixed South Asian ethnicity",
+            "",
+            "with mixed Central Asian ethnicity",
+            "with mixed Latina ethnicity",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 1,
+              "targetSubIndex": 0,
+              "targetPartsIndex": 0,
+              "blacklist": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subIndex": 1,
+      "description": "Skin tone subIndex that may also work independently of ethnicity.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Skin tone anchor for ethnicity-related or independent skin tone prompting.",
+          "separator": false,
+          "values": [
+            "very fair skin",
+            "fair skin",
+            "light skin",
+            "light warm-toned skin",
+            "light olive skin",
+            "",
+            "olive skin",
+            "golden skin",
+            "tan skin",
+            "light brown skin",
+            "medium brown skin",
+            "",
+            "rich brown skin",
+            "deep brown skin",
+            "dark skin",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Action",
+  "index": 7,
+  "description": "Action category describing what the subject is doing.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Main action category subIndex.",
+      "separator": false,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Main action category subIndex. part 0.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

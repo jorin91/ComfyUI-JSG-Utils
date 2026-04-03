@@ -1,0 +1,198 @@
+{
+  "name": "Body Appearance",
+  "index": 3,
+  "description": "Global body appearance category covering visible overall look, skin, contour, and visible definition.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Overall body appearance subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Overall body appearance as a standalone descriptor.",
+          "separator": false,
+          "values": [
+            "a soft natural body appearance",
+            "a refined body appearance",
+            "a defined body appearance",
+            "a youthful body appearance",
+            "a mature body appearance",
+            "",
+            "a balanced physical appearance",
+            "a delicate body appearance",
+            "a striking body appearance",
+            "a subtle physical presence",
+            "a physically striking presence",
+            "",
+            "a naturally soft physique",
+            "a visually refined physique",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "subIndex": 1,
+      "description": "Skin appearance subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Skin appearance as a standalone descriptor.",
+          "separator": false,
+          "values": [
+            "smooth skin",
+            "lightly textured skin",
+            "warm-toned skin",
+            "cool-toned skin",
+            "lightly tanned skin",
+            "",
+            "softly freckled skin",
+            "clear skin",
+            "natural skin variation",
+            "even-looking skin",
+            "softly detailed skin",
+            "",
+            "visible skin texture",
+            "refined skin detail",
+            "soft surface variation",
+            "subtle skin tonal variation",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "subIndex": 2,
+      "description": "Muscle visibility subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Muscle visibility as a standalone descriptor.",
+          "separator": false,
+          "values": [
+            "subtle visible muscle contour",
+            "visible muscle contour",
+            "soft muscular outlining",
+            "athletic-looking definition",
+            "lightly defined musculature",
+            "",
+            "clearly visible musculature",
+            "soft muscle separation",
+            "sharp muscle separation",
+            "visible upper body muscle contour",
+            "visible lower body muscle contour",
+            "",
+            "faint muscular definition",
+            "moderate muscular definition",
+            "pronounced muscular definition",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "subIndex": 3,
+      "description": "Bone visibility subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Bone visibility as a standalone descriptor.",
+          "separator": false,
+          "values": [
+            "light visible bone definition",
+            "visible bone structure",
+            "pronounced visible bone definition",
+            "subtle skeletal outlining",
+            "clearly visible bone structure",
+            "",
+            "visible collarbone definition",
+            "visible shoulder bone definition",
+            "visible rib contour",
+            "visible hip bone contour",
+            "fine-boned visual structure",
+            "",
+            "faint bone visibility",
+            "moderate bone visibility",
+            "strong bone visibility",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "subIndex": 4,
+      "description": "Body contour subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Body contour as a standalone descriptor.",
+          "separator": false,
+          "values": [
+            "smooth body contours",
+            "sharp body contours",
+            "soft body contours",
+            "crisp body contours",
+            "gently flowing contours",
+            "",
+            "clearly readable contours",
+            "softly rounded contours",
+            "sharply defined contours",
+            "a clean body outline",
+            "a soft body outline",
+            "",
+            "a sharply readable outline",
+            "a gently sculpted outline",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    },
+    {
+      "subIndex": 5,
+      "description": "Physical detail level subIndex.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Physical detail level as a standalone descriptor.",
+          "separator": false,
+          "values": [
+            "delicate physical detail",
+            "refined physical details",
+            "subtle physical detail",
+            "pronounced physical detail",
+            "soft visible detail",
+            "",
+            "crisp visible detail",
+            "clean surface detail",
+            "a softly detailed appearance",
+            "a clearly detailed appearance",
+            "a finely detailed appearance",
+            "",
+            "a high level of visible body detail",
+            "a restrained level of visible detail",
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}

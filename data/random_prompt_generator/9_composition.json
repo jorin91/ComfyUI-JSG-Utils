@@ -1,0 +1,25 @@
+{
+  "name": "Composition",
+  "index": 9,
+  "description": "Composition category describing framing, shot type, and visual arrangement.",
+  "separator": false,
+  "subIndexes": [
+    {
+      "subIndex": 0,
+      "description": "Main composition category subIndex.",
+      "separator": false,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Main composition category subIndex. part 0.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": []
+        }
+      ]
+    }
+  ]
+}
