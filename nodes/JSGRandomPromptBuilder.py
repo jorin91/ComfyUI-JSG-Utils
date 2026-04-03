@@ -344,6 +344,8 @@ def _combine_prompt(parts, final_values, id_lora):
             normal_part_vals = []
             sep_part_vals    = []
             for p in _get_parts_list(sub_data):
+                if not p.get("includeInPrompt", True):
+                    continue
                 v = final_values.get((index, si, p["partsIndex"]), "").strip()
                 if not v:
                     continue

@@ -43,7 +43,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     }

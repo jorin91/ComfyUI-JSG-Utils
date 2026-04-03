@@ -33,7 +33,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
@@ -68,7 +69,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -100,7 +102,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     }

@@ -17,7 +17,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     },
@@ -35,10 +36,22 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Breast. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Breast development",
           "separator": false,
           "values": [
@@ -65,13 +78,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 1,
-              "targetPartsIndex": 2,
+              "targetPartsIndex": 3,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Breast cup size, custom empty-string rule: 1 empty string after every single non-empty value to keep this option rare because cup labels can add model noise. This part must resolve to empty when other breast size-defining parts are active.",
           "separator": false,
           "values": [
@@ -109,13 +123,7 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 1,
-              "targetPartsIndex": 1,
-              "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 1,
-              "targetPartsIndex": 3,
+              "targetPartsIndex": 2,
               "blacklist": ""
             },
             {
@@ -123,11 +131,18 @@
               "targetSubIndex": 1,
               "targetPartsIndex": 4,
               "blacklist": ""
+            },
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 1,
+              "targetPartsIndex": 5,
+              "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Breast shape",
           "separator": false,
           "values": [
@@ -153,19 +168,20 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 1,
-              "targetPartsIndex": 2,
+              "targetPartsIndex": 3,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
               "targetSubIndex": 1,
-              "targetPartsIndex": 4,
+              "targetPartsIndex": 5,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Breast proportion",
           "separator": false,
           "values": [
@@ -190,12 +206,6 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 1,
-              "targetPartsIndex": 1,
-              "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 1,
               "targetPartsIndex": 2,
               "blacklist": ""
             },
@@ -204,11 +214,18 @@
               "targetSubIndex": 1,
               "targetPartsIndex": 3,
               "blacklist": ""
+            },
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 1,
+              "targetPartsIndex": 4,
+              "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Breast fullness distribution",
           "separator": false,
           "values": [
@@ -229,10 +246,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Breast orientation",
           "separator": false,
           "values": [
@@ -253,10 +271,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Breast placement",
           "separator": false,
           "values": [
@@ -277,10 +296,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 8,
+          "partsIndex": 9,
           "description": "Breast firmness",
           "separator": false,
           "values": [
@@ -301,10 +321,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 9,
+          "partsIndex": 10,
           "description": "Breast lift sag or support",
           "separator": false,
           "values": [
@@ -326,10 +347,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 10,
+          "partsIndex": 11,
           "description": "Breast profile or pointiness",
           "separator": false,
           "values": [
@@ -353,13 +375,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 1,
-              "targetPartsIndex": 3,
+              "targetPartsIndex": 4,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 11,
+          "partsIndex": 12,
           "description": "Breast skin tone",
           "separator": false,
           "values": [
@@ -380,10 +403,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 12,
+          "partsIndex": 13,
           "description": "Visible breast veins",
           "separator": false,
           "values": [
@@ -406,7 +430,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -424,10 +449,22 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Areola. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Areola size",
           "separator": false,
           "values": [
@@ -448,10 +485,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Areola shape and skin transition",
           "separator": false,
           "values": [
@@ -474,10 +512,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Areola surface texture",
           "separator": false,
           "values": [
@@ -500,10 +539,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Areola bumps or gland detail",
           "separator": false,
           "values": [
@@ -524,10 +564,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Areola color",
           "separator": false,
           "values": [
@@ -549,10 +590,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Areola raisedness or projection",
           "separator": false,
           "values": [
@@ -573,7 +615,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -591,10 +634,22 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Nipple. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Nipple width or size",
           "separator": false,
           "values": [
@@ -615,10 +670,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Nipple length",
           "separator": false,
           "values": [
@@ -637,10 +693,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Nipple direction or angle",
           "separator": false,
           "values": [
@@ -661,10 +718,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Nipple color",
           "separator": false,
           "values": [
@@ -686,10 +744,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Nipple tip color",
           "separator": false,
           "values": [
@@ -710,10 +769,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Nipple surface texture",
           "separator": false,
           "values": [
@@ -735,10 +795,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Nipple erection state",
           "separator": false,
           "values": [
@@ -757,7 +818,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -774,7 +836,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     },
@@ -792,10 +855,22 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Belly. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Belly flatness or fullness",
           "separator": false,
           "values": [
@@ -820,13 +895,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 5,
-              "targetPartsIndex": 2,
+              "targetPartsIndex": 3,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Lower belly fullness",
           "separator": false,
           "values": [
@@ -850,13 +926,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 5,
-              "targetPartsIndex": 1,
+              "targetPartsIndex": 2,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Belly depth",
           "separator": false,
           "values": [
@@ -875,10 +952,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Belly width",
           "separator": false,
           "values": [
@@ -897,10 +975,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Belly contour or outline",
           "separator": false,
           "values": [
@@ -921,10 +1000,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Abdominal definition",
           "separator": false,
           "values": [
@@ -948,13 +1028,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 5,
-              "targetPartsIndex": 7,
+              "targetPartsIndex": 8,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Central abdominal line or segmentation",
           "separator": false,
           "values": [
@@ -976,10 +1057,11 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 5,
-              "targetPartsIndex": 6,
+              "targetPartsIndex": 7,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -997,10 +1079,22 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Navel. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Navel size",
           "separator": false,
           "values": [
@@ -1021,10 +1115,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Navel depth",
           "separator": false,
           "values": [
@@ -1045,10 +1140,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Navel inner shape",
           "separator": false,
           "values": [
@@ -1070,10 +1166,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Navel opening orientation or outer shape",
           "separator": false,
           "values": [
@@ -1095,10 +1192,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Navel placement height",
           "separator": false,
           "values": [
@@ -1117,10 +1215,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Navel hooding or overhang",
           "separator": false,
           "values": [
@@ -1141,10 +1240,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Navel rim definition",
           "separator": false,
           "values": [
@@ -1165,10 +1265,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 8,
+          "partsIndex": 9,
           "description": "Surrounding navel contour",
           "separator": false,
           "values": [
@@ -1189,10 +1290,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 9,
+          "partsIndex": 10,
           "description": "Navel symmetry or neatness",
           "separator": false,
           "values": [
@@ -1213,7 +1315,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -1230,7 +1333,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     },
@@ -1248,10 +1352,22 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Mons pubis. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Mons pubis projection or fullness",
           "separator": false,
           "values": [
@@ -1275,19 +1391,20 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 8,
-              "targetPartsIndex": 4,
+              "targetPartsIndex": 5,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
               "targetSubIndex": 8,
-              "targetPartsIndex": 6,
+              "targetPartsIndex": 7,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Mons pubis side transition or side depth",
           "separator": false,
           "values": [
@@ -1308,10 +1425,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Mons pubis outline or prominence",
           "separator": false,
           "values": [
@@ -1332,10 +1450,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Mons pubis mound shape",
           "separator": false,
           "values": [
@@ -1359,19 +1478,20 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 8,
-              "targetPartsIndex": 1,
+              "targetPartsIndex": 2,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
               "targetSubIndex": 8,
-              "targetPartsIndex": 6,
+              "targetPartsIndex": 7,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Mons pubis surface softness",
           "separator": false,
           "values": [
@@ -1390,10 +1510,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Mons pubis fullness distribution",
           "separator": false,
           "values": [
@@ -1415,16 +1536,17 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 8,
-              "targetPartsIndex": 1,
+              "targetPartsIndex": 2,
               "blacklist": ""
             },
             {
               "targetIndex": 4,
               "targetSubIndex": 8,
-              "targetPartsIndex": 4,
+              "targetPartsIndex": 5,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -1452,10 +1574,22 @@
                 "woman"
               ]
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Vulva main. This is both the local anchor for this subIndex and the master that the related vulva subpart subIndexes should filter against. It also filters on subject values girl or woman with filtersRequireAll false so one match is enough.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Vulva development state",
           "separator": false,
           "values": [
@@ -1477,10 +1611,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Vulva overall shape",
           "separator": false,
           "values": [
@@ -1501,10 +1636,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Vulva placement",
           "separator": false,
           "values": [
@@ -1523,10 +1659,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Vulva side transition to the groin",
           "separator": false,
           "values": [
@@ -1545,10 +1682,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Vulva contour and definition",
           "separator": false,
           "values": [
@@ -1569,10 +1707,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Vulva visibility or prominence",
           "separator": false,
           "values": [
@@ -1591,10 +1730,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Vulva moisture state",
           "separator": false,
           "values": [
@@ -1612,7 +1752,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -1637,10 +1778,29 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Pubic hair. This depends on the main vulva.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 9,
+              "targetPartsIndex": 1,
+              "blacklist": ""
+            }
+          ],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Pubic hair amount or density",
           "separator": false,
           "values": [
@@ -1662,13 +1822,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 10,
-              "targetPartsIndex": 6,
+              "targetPartsIndex": 7,
               "blacklist": "with fully shaved grooming"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Pubic hair distribution",
           "separator": false,
           "values": [
@@ -1690,13 +1851,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 10,
-              "targetPartsIndex": 6,
+              "targetPartsIndex": 7,
               "blacklist": "with fully shaved grooming"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Pubic hair length",
           "separator": false,
           "values": [
@@ -1718,13 +1880,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 10,
-              "targetPartsIndex": 6,
+              "targetPartsIndex": 7,
               "blacklist": "with fully shaved grooming"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Pubic hair texture",
           "separator": false,
           "values": [
@@ -1746,13 +1909,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 10,
-              "targetPartsIndex": 6,
+              "targetPartsIndex": 7,
               "blacklist": "with fully shaved grooming"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Pubic hair style",
           "separator": false,
           "values": [
@@ -1774,13 +1938,14 @@
             {
               "targetIndex": 4,
               "targetSubIndex": 10,
-              "targetPartsIndex": 6,
+              "targetPartsIndex": 7,
               "blacklist": "with fully shaved grooming"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Pubic hair grooming state",
           "separator": false,
           "values": [
@@ -1799,7 +1964,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -1824,10 +1990,29 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Labia majora. This depends on the main vulva.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 9,
+              "targetPartsIndex": 1,
+              "blacklist": ""
+            }
+          ],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Labia majora color",
           "separator": false,
           "values": [
@@ -1849,10 +2034,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Labia majora skin to labia color transition",
           "separator": false,
           "values": [
@@ -1871,10 +2057,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Labia majora front length",
           "separator": false,
           "values": [
@@ -1892,10 +2079,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Labia majora back length",
           "separator": false,
           "values": [
@@ -1913,10 +2101,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Labia majora front thickness",
           "separator": false,
           "values": [
@@ -1934,10 +2123,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Labia majora back thickness",
           "separator": false,
           "values": [
@@ -1955,10 +2145,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Labia majora asymmetry",
           "separator": false,
           "values": [
@@ -1976,10 +2167,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 8,
+          "partsIndex": 9,
           "description": "Labia majora closed or open resting position",
           "separator": false,
           "values": [
@@ -1997,10 +2189,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 9,
+          "partsIndex": 10,
           "description": "Labia majora contour",
           "separator": false,
           "values": [
@@ -2019,10 +2212,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 10,
+          "partsIndex": 11,
           "description": "Labia majora softness or fullness",
           "separator": false,
           "values": [
@@ -2041,10 +2235,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 11,
+          "partsIndex": 12,
           "description": "Labia majora surface skin detail",
           "separator": false,
           "values": [
@@ -2063,7 +2258,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -2088,10 +2284,29 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Labia minora. This depends on the main vulva.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 9,
+              "targetPartsIndex": 1,
+              "blacklist": ""
+            }
+          ],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Labia minora color",
           "separator": false,
           "values": [
@@ -2113,10 +2328,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Labia minora color intensity",
           "separator": false,
           "values": [
@@ -2135,10 +2351,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Labia minora length",
           "separator": false,
           "values": [
@@ -2156,10 +2373,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Labia minora thickness",
           "separator": false,
           "values": [
@@ -2177,10 +2395,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Labia minora asymmetry",
           "separator": false,
           "values": [
@@ -2198,10 +2417,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Labia minora openness or exposure",
           "separator": false,
           "values": [
@@ -2219,17 +2439,12 @@
               "targetSubIndex": 12,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 11,
-              "targetPartsIndex": 8,
-              "blacklist": "with a closed resting position"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Labia minora contour",
           "separator": false,
           "values": [
@@ -2248,10 +2463,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 8,
+          "partsIndex": 9,
           "description": "Labia minora wrinkles",
           "separator": false,
           "values": [
@@ -2270,10 +2486,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 9,
+          "partsIndex": 10,
           "description": "Labia minora grooves",
           "separator": false,
           "values": [
@@ -2292,10 +2509,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 10,
+          "partsIndex": 11,
           "description": "Labia minora edge definition",
           "separator": false,
           "values": [
@@ -2313,10 +2531,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 11,
+          "partsIndex": 12,
           "description": "Labia minora folding complexity",
           "separator": false,
           "values": [
@@ -2334,7 +2553,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -2359,10 +2579,29 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Clitoral area. This depends on the main vulva.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 9,
+              "targetPartsIndex": 1,
+              "blacklist": ""
+            }
+          ],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Clitoral color",
           "separator": false,
           "values": [
@@ -2381,10 +2620,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Clitoral skin texture",
           "separator": false,
           "values": [
@@ -2403,10 +2643,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Clitoral size",
           "separator": false,
           "values": [
@@ -2425,10 +2666,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Clitoral visibility",
           "separator": false,
           "values": [
@@ -2453,10 +2695,11 @@
               "targetPartsIndex": 2,
               "blacklist": "with full coverage"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Clitoral placement",
           "separator": false,
           "values": [
@@ -2475,10 +2718,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Clitoral prominence",
           "separator": false,
           "values": [
@@ -2503,7 +2747,8 @@
               "targetPartsIndex": 2,
               "blacklist": "with full coverage"
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -2528,10 +2773,29 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Clitoral hood. This depends on the main vulva.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 9,
+              "targetPartsIndex": 1,
+              "blacklist": ""
+            }
+          ],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Clitoral hood size",
           "separator": false,
           "values": [
@@ -2550,10 +2814,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Clitoral hood coverage",
           "separator": false,
           "values": [
@@ -2572,10 +2837,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Clitoral hood shape",
           "separator": false,
           "values": [
@@ -2594,10 +2860,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Clitoral hood contour",
           "separator": false,
           "values": [
@@ -2616,10 +2883,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Clitoral hood texture",
           "separator": false,
           "values": [
@@ -2638,10 +2906,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Clitoral hood prominence or projection",
           "separator": false,
           "values": [
@@ -2660,10 +2929,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Clitoral hood closure or openness",
           "separator": false,
           "values": [
@@ -2681,7 +2951,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -2706,10 +2977,29 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Vaginal opening. This depends on the main vulva.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 9,
+              "targetPartsIndex": 1,
+              "blacklist": ""
+            }
+          ],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Vaginal opening open or closed state",
           "separator": false,
           "values": [
@@ -2727,17 +3017,12 @@
               "targetSubIndex": 15,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 11,
-              "targetPartsIndex": 8,
-              "blacklist": "with a closed resting position"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Vaginal opening shape",
           "separator": false,
           "values": [
@@ -2756,10 +3041,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Vaginal opening looseness or tightness",
           "separator": false,
           "values": [
@@ -2778,10 +3064,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Vaginal opening width",
           "separator": false,
           "values": [
@@ -2799,10 +3086,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Vaginal opening contour",
           "separator": false,
           "values": [
@@ -2820,10 +3108,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Vaginal opening prominence or visibility",
           "separator": false,
           "values": [
@@ -2841,17 +3130,12 @@
               "targetSubIndex": 15,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 11,
-              "targetPartsIndex": 8,
-              "blacklist": "with a closed resting position"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Vaginal opening inner rim definition",
           "separator": false,
           "values": [
@@ -2869,10 +3153,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 8,
+          "partsIndex": 9,
           "description": "Vaginal opening depth impression",
           "separator": false,
           "values": [
@@ -2890,10 +3175,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 9,
+          "partsIndex": 10,
           "description": "Vaginal opening development influence from the main vulva development state",
           "separator": false,
           "values": [
@@ -2909,14 +3195,9 @@
               "targetSubIndex": 15,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 9,
-              "targetPartsIndex": 1,
-              "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -2941,10 +3222,29 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Urethral opening. This depends on the main vulva.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 9,
+              "targetPartsIndex": 1,
+              "blacklist": ""
+            }
+          ],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Urethral opening visibility",
           "separator": false,
           "values": [
@@ -2962,17 +3262,12 @@
               "targetSubIndex": 16,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 11,
-              "targetPartsIndex": 8,
-              "blacklist": "with a closed resting position"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Urethral opening size",
           "separator": false,
           "values": [
@@ -2990,10 +3285,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Urethral opening shape",
           "separator": false,
           "values": [
@@ -3011,10 +3307,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Urethral opening placement",
           "separator": false,
           "values": [
@@ -3031,10 +3328,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Urethral opening prominence",
           "separator": false,
           "values": [
@@ -3051,17 +3349,12 @@
               "targetSubIndex": 16,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 11,
-              "targetPartsIndex": 8,
-              "blacklist": "with a closed resting position"
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Urethral opening state",
           "separator": false,
           "values": [
@@ -3079,10 +3372,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Urethral opening rim definition",
           "separator": false,
           "values": [
@@ -3100,10 +3394,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 8,
+          "partsIndex": 9,
           "description": "Urethral opening depth impression",
           "separator": false,
           "values": [
@@ -3121,10 +3416,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 9,
+          "partsIndex": 10,
           "description": "Urethral opening surrounding texture",
           "separator": false,
           "values": [
@@ -3142,7 +3438,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -3167,10 +3464,29 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Inner vulvar tissue. This depends on the main vulva.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 9,
+              "targetPartsIndex": 1,
+              "blacklist": ""
+            }
+          ],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Inner tissue color",
           "separator": false,
           "values": [
@@ -3189,10 +3505,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Inner tissue redness or pinkness range",
           "separator": false,
           "values": [
@@ -3211,10 +3528,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Inner tissue tonal variation",
           "separator": false,
           "values": [
@@ -3232,10 +3550,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Inner tissue texture",
           "separator": false,
           "values": [
@@ -3253,17 +3572,12 @@
               "targetSubIndex": 17,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 12,
-              "targetPartsIndex": 0,
-              "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 5,
+          "partsIndex": 6,
           "description": "Inner tissue softness",
           "separator": false,
           "values": [
@@ -3281,10 +3595,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 6,
+          "partsIndex": 7,
           "description": "Inner tissue visibility between the labia",
           "separator": false,
           "values": [
@@ -3302,17 +3617,12 @@
               "targetSubIndex": 17,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 12,
-              "targetPartsIndex": 0,
-              "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 7,
+          "partsIndex": 8,
           "description": "Inner tissue surface folds",
           "separator": false,
           "values": [
@@ -3330,17 +3640,12 @@
               "targetSubIndex": 17,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 12,
-              "targetPartsIndex": 0,
-              "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 8,
+          "partsIndex": 9,
           "description": "Inner tissue development influence from the main vulva development state",
           "separator": false,
           "values": [
@@ -3356,14 +3661,9 @@
               "targetSubIndex": 17,
               "targetPartsIndex": 0,
               "blacklist": ""
-            },
-            {
-              "targetIndex": 4,
-              "targetSubIndex": 9,
-              "targetPartsIndex": 1,
-              "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -3388,10 +3688,29 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
           "partsIndex": 1,
+          "description": "Exposed toggle for Vulva to anus transition. This depends on the main vulva.. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [
+            {
+              "targetIndex": 4,
+              "targetSubIndex": 9,
+              "targetPartsIndex": 1,
+              "blacklist": ""
+            }
+          ],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 2,
           "description": "Perineal contour transition",
           "separator": false,
           "values": [
@@ -3410,10 +3729,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 2,
+          "partsIndex": 3,
           "description": "Perineal depth of transition",
           "separator": false,
           "values": [
@@ -3431,10 +3751,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 3,
+          "partsIndex": 4,
           "description": "Perineal softness or sharpness",
           "separator": false,
           "values": [
@@ -3452,10 +3773,11 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         },
         {
-          "partsIndex": 4,
+          "partsIndex": 5,
           "description": "Perineal surface continuity",
           "separator": false,
           "values": [
@@ -3473,7 +3795,8 @@
               "targetPartsIndex": 0,
               "blacklist": ""
             }
-          ]
+          ],
+          "includeInPrompt": true
         }
       ]
     },
@@ -3490,7 +3813,19 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 1,
+          "description": "Exposed toggle for Penis. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     },
@@ -3507,7 +3842,19 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
+        },
+        {
+          "partsIndex": 1,
+          "description": "Exposed toggle for Butt. This toggle is the standard internal control point for exposure-dependent details and should become the central bridge between clothing outputs and this body-part branch.",
+          "separator": false,
+          "values": [
+            ""
+          ],
+          "filtersRequireAll": true,
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     }

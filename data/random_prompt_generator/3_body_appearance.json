@@ -31,7 +31,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     },
@@ -64,7 +65,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     },
@@ -96,7 +98,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     },
@@ -128,7 +131,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     },
@@ -159,7 +163,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     },
@@ -190,7 +195,8 @@
             ""
           ],
           "filtersRequireAll": true,
-          "filters": []
+          "filters": [],
+          "includeInPrompt": true
         }
       ]
     }
