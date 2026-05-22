@@ -10,8 +10,13 @@ _PROMPTS_DIR = os.path.join(
     os.path.dirname(__file__), "..", "data", "random_prompt_generator"
 )
 
+# Path to the state and triggers configuration file.
+_STATE_FILE = os.path.join(
+    os.path.dirname(__file__), "..", "data", "random_prompt_generator", "state.json"
+)
+
 # Base names (without extension, case-insensitive) that are always skipped.
-_SKIP_FILENAMES = {"example"}
+_SKIP_FILENAMES = {"example", "state"}
 
 _LOG = "[JSGRandomPromptBuilder]"
 
@@ -95,33 +100,6 @@ def _load_prompt_parts():
     return parts
 
 
-# ── Filter helpers ────────────────────────────────────────────────────────────
-
-def _to_terms(raw):
-    """Normalise a blacklist/whitelist value to a list of lowercase stripped strings.
-
-    A single empty string (``""``) as the whole value means "no filter" (backward
-    compatible with existing JSON files).  An empty string *inside a list*
-    (``[""]``) is a valid term: it matches when the target value is exactly empty.
-    """
-    if isinstance(raw, str):
-        return [raw.strip().lower()] if raw.strip() else []
-    if isinstance(raw, list):
-        return [str(s).strip().lower() for s in raw]   # keep "" items in lists
-    return []
-
-
-def _terms_match(terms, target, require_all):
-    def _match(t):
-        # Empty term means "target must be empty" (substring check would always
-        # be True for "", so we use equality here instead).
-        return target == "" if t == "" else t in target
-
-    if require_all:
-        return all(_match(t) for t in terms)
-    return any(_match(t) for t in terms)
-
-
 # ── Parts normalisation ──────────────────────────────────────────────────────
 
 def _get_subindexes_list(data):
@@ -156,17 +134,350 @@ def _get_parts_list(subindex_data):
     return sorted(result, key=lambda p: p["partsIndex"])
 
 
+# ── Value normalisation ───────────────────────────────────────────────────────
+
+def _normalize_value(v):
+    """Normalise a raw JSON value entry to a canonical dict.
+
+    Accepts:
+      - plain string  → {text, tags: [], removeTags: [], kv: []}
+      - object        → validates fields and fills defaults
+
+    Valid kv entries must have both 'key' (str, non-empty) and 'value' (str).
+    Entries missing either field are silently dropped.
+    'priority' is optional, defaults to 0; non-numeric values are coerced to 0.
+    """
+    if isinstance(v, str):
+        return {
+            "positiveText": v.strip(), "negativeText": "",
+            "tags": [], "removeTags": [], "kv": [],
+            "triggers": [],
+            "filtersRequired": [], "filtersAny": [], "includeInPrompt": True,
+        }
+
+    if not isinstance(v, dict):
+        return {
+            "positiveText": "", "negativeText": "",
+            "tags": [], "removeTags": [], "kv": [],
+            "triggers": [],
+            "filtersRequired": [], "filtersAny": [], "includeInPrompt": True,
+        }
+
+    positive_text = str(v.get("positiveText") or "").strip()
+    negative_text = str(v.get("negativeText") or "").strip()
+
+    raw_tags = v.get("tags") or []
+    tags = [str(t) for t in raw_tags if isinstance(t, str) and t]
+
+    raw_remove = v.get("removeTags") or []
+    remove_tags = [str(t) for t in raw_remove if isinstance(t, str) and t]
+
+    raw_kv = v.get("kv") or []
+    kv = []
+    if isinstance(raw_kv, list):
+        for entry in raw_kv:
+            if not isinstance(entry, dict):
+                continue
+            k = entry.get("key")
+            val = entry.get("value")
+            if not isinstance(k, str) or not k:
+                continue
+            if not isinstance(val, str):
+                continue
+            priority = entry.get("priority", 0)
+            if not isinstance(priority, (int, float)):
+                priority = 0
+            kv.append({"key": k, "value": val, "priority": int(priority)})
+
+    raw_required = v.get("filtersRequired") or []
+    filters_required = [f for f in raw_required if isinstance(f, dict)]
+    raw_any = v.get("filtersAny") or []
+    filters_any = [f for f in raw_any if isinstance(f, dict)]
+    raw_triggers = v.get("triggers") or []
+    triggers_list = [str(t) for t in raw_triggers if isinstance(t, str) and t]
+    include_in_prompt = bool(v.get("includeInPrompt", True))
+
+    return {
+        "positiveText": positive_text, "negativeText": negative_text,
+        "tags": tags, "removeTags": remove_tags, "kv": kv,
+        "triggers": triggers_list,
+        "filtersRequired": filters_required, "filtersAny": filters_any,
+        "includeInPrompt": include_in_prompt,
+    }
+
+
+# ── Global state helpers ──────────────────────────────────────────────────────
+
+def _accumulate_state(value_obj, global_tags, global_kv, trigger_defs=None):
+    """Update global_tags and global_kv from a passing value object.
+
+    Processing order within each value:
+      1. triggers   — named presets applied in array order; each preset runs
+                      its own removeTags → tags → kv before the next starts.
+      2. removeTags — value's own tag removals.
+      3. tags       — value's own tags.
+      4. kv         — value's own kv entries.
+
+    global_tags : set of str
+    global_kv   : dict of key -> {"value": str, "priority": int}
+
+    KV priority rule: a new entry only overwrites an existing key when its
+    priority is greater than or equal to the stored priority.
+    """
+    # 1. Triggers — in array order; each: removeTags → tags → kv
+    if trigger_defs:
+        for name in value_obj["triggers"]:
+            trig = trigger_defs.get(name)
+            if trig is None:
+                print(f"{_LOG} WARNING: unknown trigger '{name}'")
+                continue
+            for tag in trig["removeTags"]:
+                global_tags.discard(tag)
+            for tag in trig["tags"]:
+                global_tags.add(tag)
+            for entry in trig["kv"]:
+                k = entry["key"]
+                p = entry["priority"]
+                if k not in global_kv or p >= global_kv[k]["priority"]:
+                    global_kv[k] = {"value": entry["value"], "priority": p}
+
+    # 2. Own removeTags
+    for tag in value_obj["removeTags"]:
+        global_tags.discard(tag)
+
+    # 3. Own tags
+    for tag in value_obj["tags"]:
+        global_tags.add(tag)
+
+    # 4. Own kv
+    for entry in value_obj["kv"]:
+        k = entry["key"]
+        p = entry["priority"]
+        if k not in global_kv or p >= global_kv[k]["priority"]:
+            global_kv[k] = {"value": entry["value"], "priority": p}
+
+
+# ── Filter evaluation ─────────────────────────────────────────────────────────
+
+def _eval_filter_object(flt, global_tags, global_kv):
+    """Evaluate a single filter object against the current global state.
+
+    Returns (has_conditions: bool, passed: bool).
+
+    has_conditions is False when no valid filter conditions were found in this
+    object — the caller treats such objects as non-contributing (skipped).
+
+    Within a single filter object ALL conditions must pass (AND logic).
+    Invalid or empty entries within each list are silently skipped and do not
+    count as conditions.
+
+    Supported keys:
+      tagWhitelist  — list of str; each tag must be present in global_tags.
+      tagBlacklist  — list of str; none of the tags may be present.
+      kvWhitelist   — list of {key, value}; global_kv[key] must equal value.
+      kvBlacklist   — list of {key, value}; global_kv[key] must NOT equal value.
+    """
+    conditions = []
+
+    tag_wl = [t for t in (flt.get("tagWhitelist") or []) if isinstance(t, str) and t]
+    for tag in tag_wl:
+        conditions.append(tag in global_tags)
+
+    tag_bl = [t for t in (flt.get("tagBlacklist") or []) if isinstance(t, str) and t]
+    for tag in tag_bl:
+        conditions.append(tag not in global_tags)
+
+    kv_wl = flt.get("kvWhitelist") or []
+    if isinstance(kv_wl, list):
+        for entry in kv_wl:
+            if not isinstance(entry, dict):
+                continue
+            k = entry.get("key")
+            v = entry.get("value")
+            if not isinstance(k, str) or not k or not isinstance(v, str):
+                continue
+            current = global_kv.get(k)
+            conditions.append(current is not None and current["value"] == v)
+
+    kv_bl = flt.get("kvBlacklist") or []
+    if isinstance(kv_bl, list):
+        for entry in kv_bl:
+            if not isinstance(entry, dict):
+                continue
+            k = entry.get("key")
+            v = entry.get("value")
+            if not isinstance(k, str) or not k or not isinstance(v, str):
+                continue
+            current = global_kv.get(k)
+            conditions.append(current is None or current["value"] != v)
+
+    if not conditions:
+        return False, True  # no valid conditions → skip this object
+
+    return True, all(conditions)
+
+
+def _eval_filters(filters_required, filters_any, global_tags, global_kv):
+    """Evaluate filter lists for a part or value against the current global state.
+
+    filtersRequired — every contributing filter object must pass (AND).
+    filtersAny      — at least one contributing filter object must pass (OR).
+
+    Filter objects with no valid conditions are skipped (non-contributing).
+    If a list is empty or no objects contribute conditions, that list passes.
+
+    Returns True if the part/value should be included.
+    """
+    # Phase 1: required filters — all must pass
+    for flt in (filters_required or []):
+        if not isinstance(flt, dict):
+            continue
+        has_conditions, passed = _eval_filter_object(flt, global_tags, global_kv)
+        if has_conditions and not passed:
+            return False
+
+    # Phase 2: any filters — at least one must pass (if any contribute)
+    if filters_any:
+        results = []
+        for flt in filters_any:
+            if not isinstance(flt, dict):
+                continue
+            has_conditions, passed = _eval_filter_object(flt, global_tags, global_kv)
+            if has_conditions:
+                results.append(passed)
+        if results and not any(results):
+            return False
+
+    return True
+
+
+# ── Per-value filter helpers ─────────────────────────────────────────────────
+
+def _value_filter_passes(value_obj, global_tags, global_kv):
+    """Return True when the value's own filters pass against the current global state."""
+    return _eval_filters(
+        value_obj["filtersRequired"],
+        value_obj["filtersAny"],
+        global_tags,
+        global_kv,
+    )
+
+
+def _resolve_value(initial_value_obj, part, global_tags, global_kv, rng):
+    """Return the final value object to use for a part.
+
+    If the initially chosen value passes its own filters, return it directly.
+    Otherwise collect all values from the part pool whose filters pass (or are
+    absent) and re-pick randomly from that subset — including any empty-string
+    entries that have no failing filter.
+
+    Returns a normalised value object. Falls back to an empty value if the
+    qualifying subset is empty.
+    """
+    if _value_filter_passes(initial_value_obj, global_tags, global_kv):
+        return initial_value_obj
+
+    qualifying = [
+        norm
+        for norm in (_normalize_value(v) for v in (part.get("values") or []))
+        if _value_filter_passes(norm, global_tags, global_kv)
+    ]
+
+    if not qualifying:
+        return _normalize_value("")  # empty fallback
+
+    return rng.choice(qualifying)
+
+
+# ── State loader ──────────────────────────────────────────────────────────────
+
+def _load_state():
+    """Load initial global state and trigger definitions from state.json.
+
+    Returns (initial_tags, initial_kv, trigger_defs):
+      initial_tags  : list of str — tags seeded into global_tags before evaluation.
+      initial_kv    : list of {key, value, priority} — kv seeded into global_kv
+                      before evaluation. Entries with null value are documentation
+                      placeholders and are skipped.
+      trigger_defs  : dict of name -> {tags, removeTags, kv} — named presets that
+                      value objects can reference via their "triggers" array.
+    """
+    if not os.path.isfile(_STATE_FILE):
+        return [], [], {}
+
+    try:
+        with open(_STATE_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as exc:
+        print(f"{_LOG} WARNING: could not load state.json — {exc}")
+        return [], [], {}
+
+    # ── Initial state ──────────────────────────────────────────────────────
+    init     = data.get("initialState") or {}
+    raw_tags = init.get("tags") or []
+    initial_tags = [str(t) for t in raw_tags if isinstance(t, str) and t]
+
+    initial_kv = []
+    for entry in (init.get("kv") or []):
+        if not isinstance(entry, dict):
+            continue
+        k = entry.get("key")
+        v = entry.get("value")
+        if not isinstance(k, str) or not k:
+            continue
+        if v is None:              # null → documentation placeholder, skip
+            continue
+        if not isinstance(v, str):
+            continue
+        p = entry.get("priority", 0)
+        if not isinstance(p, (int, float)):
+            p = 0
+        initial_kv.append({"key": k, "value": v, "priority": int(p)})
+
+    # ── Triggers ───────────────────────────────────────────────────────────
+    raw_triggers = data.get("triggers") or {}
+    trigger_defs = {}
+    if isinstance(raw_triggers, dict):
+        for name, trig in raw_triggers.items():
+            if not isinstance(trig, dict):
+                continue
+            t_tags   = [str(t) for t in (trig.get("tags")       or []) if isinstance(t, str) and t]
+            t_remove = [str(t) for t in (trig.get("removeTags") or []) if isinstance(t, str) and t]
+            t_kv     = []
+            for entry in (trig.get("kv") or []):
+                if not isinstance(entry, dict):
+                    continue
+                k = entry.get("key")
+                v = entry.get("value")
+                if not isinstance(k, str) or not k:
+                    continue
+                if v is None:
+                    continue
+                if not isinstance(v, str):
+                    continue
+                p = entry.get("priority", 0)
+                if not isinstance(p, (int, float)):
+                    p = 0
+                t_kv.append({"key": k, "value": v, "priority": int(p)})
+            trigger_defs[name] = {"tags": t_tags, "removeTags": t_remove, "kv": t_kv}
+
+    # ── Default negative prompt ────────────────────────────────────────────
+    default_negative = str(init.get("defaultNegativePrompt") or "").strip()
+
+    return initial_tags, initial_kv, trigger_defs, default_negative
+
+
 # ── Build steps ───────────────────────────────────────────────────────────────
 
 def _select_raw_values(parts, kwargs, rng):
-    """Step 1: pick a raw value (random or manual) for each part.
+    """Step 1: pick a raw normalised value object for each part.
 
-    Returns dict ``(index, subIndex, partsIndex) -> str``.
+    Returns dict ``(index, subIndex, partsIndex) -> normalised value dict``.
 
-    When ``use_random`` is True each part in the parts-list picks
-    independently from its own ``values`` pool.
-    When False the first part (partsIndex 0) receives the manual
-    ``Value {display}`` string and all other parts are set to "".
+    When ``use_random`` is True, each part picks independently from its own
+    ``values`` pool and the chosen entry is normalised via _normalize_value.
+    When False, the first part receives the manual ``Value {display}``
+    string (normalised) and all other parts receive an empty normalised value.
 
     ``rng`` is a ``random.Random`` instance seeded per build call from OS
     entropy, isolated from the global random state.
@@ -184,7 +495,8 @@ def _select_raw_values(parts, kwargs, rng):
                 for part in _get_parts_list(sub_data):
                     pi     = part["partsIndex"]
                     values = part.get("values") or []
-                    raw[(index, si, pi)] = (rng.choice(values) if values else "").strip()
+                    chosen = rng.choice(values) if values else ""
+                    raw[(index, si, pi)] = _normalize_value(chosen)
         else:
             manual   = (kwargs.get(f"Value {display}") or "").strip()
             is_first = True
@@ -192,114 +504,90 @@ def _select_raw_values(parts, kwargs, rng):
                 si = sub_data["subIndex"]
                 for part in _get_parts_list(sub_data):
                     pi = part["partsIndex"]
-                    raw[(index, si, pi)] = manual if is_first else ""
+                    raw[(index, si, pi)] = _normalize_value(manual if is_first else "")
                     is_first = False
 
     return raw
 
 
-def _pre_join_by_index(raw_values):
-    """Step 2: produce two join-maps used by filters.
+def _evaluate_and_accumulate(parts, kwargs, raw_values, rng):
+    """Step 2: streaming filter evaluation with live tag/kv accumulation.
 
-    Returns:
-      slot_joined  — ``{(index, subIndex): str}`` parts joined within each slot.
-      index_joined — ``{index: str}`` slots joined within each index.
+    Iterates all parts in strict (index, subIndex, partsIndex) order.
+    For each part:
+      - Non-random parts: always included, no tag/kv accumulation.
+      - Random parts:
+          1. Part-level filters are checked first. If they fail the part
+             resolves to empty and nothing is accumulated.
+          2. If part-level filters pass, the initially chosen value's own
+             filters are checked. If those fail, a re-pick is performed from
+             all values in the pool whose filters pass (or are absent).
+          3. The final chosen value's tags/kv are accumulated.
+          4. If the value's includeInPrompt is False its text is suppressed
+             (empty string stored) but accumulation still happens.
+
+    Part-level includeInPrompt is handled purely in _combine_prompt (output).
+    Value-level includeInPrompt suppresses the text in final_values but still
+    allows the value to accumulate tags/kv.
+
+    Returns ``({(index, subIndex, partsIndex): str}, {same keys: str}, global_tags, global_kv)``
+    — positive text dict, negative text dict, accumulated tags, accumulated kv.
     """
-    # Accumulate parts per slot
-    slot_parts = {}  # (idx, sub) -> [(partsIndex, val)]
-    for (idx, sub, pi), val in raw_values.items():
-        slot_parts.setdefault((idx, sub), []).append((pi, val))
+    initial_tags, initial_kv, trigger_defs, _ = _load_state()
 
-    slot_joined = {}
-    for (idx, sub), items in slot_parts.items():
-        items.sort(key=lambda x: x[0])
-        slot_joined[(idx, sub)] = " ".join(v for _, v in items if v)
+    global_tags = set(initial_tags)
+    global_kv   = {}  # key -> {"value": str, "priority": int}
+    for entry in initial_kv:
+        k = entry["key"]
+        p = entry["priority"]
+        if k not in global_kv or p >= global_kv[k]["priority"]:
+            global_kv[k] = {"value": entry["value"], "priority": p}
 
-    # Accumulate slots per index
-    index_subs = {}  # idx -> [(sub, val)]
-    for (idx, sub), val in slot_joined.items():
-        index_subs.setdefault(idx, []).append((sub, val))
-
-    index_joined = {}
-    for idx, items in index_subs.items():
-        items.sort(key=lambda x: x[0])
-        index_joined[idx] = " ".join(v for _, v in items if v)
-
-    return slot_joined, index_joined
-
-
-def _valid_idx(v):
-    """True when v is a usable tree-level value: a non-negative integer."""
-    return isinstance(v, int) and v >= 0
-
-
-def _apply_filters(parts, kwargs, raw_values, slot_raw_joined, index_raw_joined):
-    """Step 3: evaluate filter rules and resolve each part to its final value.
-
-    All raw values are already picked before this step. Filters are evaluated
-    in sorted (index, subIndex, partsIndex) order. Filter targets always
-    reference raw (pre-filter) values, so both forward and backward references
-    work identically.
-
-    Returns ``{(index, subIndex, partsIndex): str}``.
-
-    Filter target tree (Index.SubIndex.PartIndex):
-      - targetIndex missing/invalid          → filter skipped
-      - targetIndex valid only               → whole index joined
-      - targetIndex + targetSubIndex valid   → whole slot joined
-      - all three valid                      → specific part value
-    """
-    # Build flat list sorted by (index, subIndex, partsIndex)
     all_entries = []
     for base_name, data in parts:
         index      = data["index"]
+        eval_order = data.get("evaluationOrder")
+        if not (isinstance(eval_order, int) and eval_order >= 0):
+            eval_order = index
         use_random = kwargs.get(f"Random {data['name']}", True)
         for sub_data in _get_subindexes_list(data):
             si = sub_data["subIndex"]
             for part in _get_parts_list(sub_data):
-                all_entries.append((index, si, part["partsIndex"], use_random, part))
-    all_entries.sort(key=lambda x: (x[0], x[1], x[2]))
+                all_entries.append((eval_order, index, si, part["partsIndex"], use_random, part))
+    # Sort by evaluationOrder first, then subIndex and partsIndex within each file.
+    # Output order (index) is untouched — _combine_prompt sorts by index independently.
+    all_entries.sort(key=lambda x: (x[0], x[2], x[3]))
 
-    final = {}
-    for index, subindex, pi, use_random, part in all_entries:
+    final_pos = {}
+    final_neg = {}
+    for eval_order, index, subindex, pi, use_random, part in all_entries:
+        value_obj = raw_values[(index, subindex, pi)]
+
         if not use_random:
-            final[(index, subindex, pi)] = raw_values[(index, subindex, pi)]
+            final_pos[(index, subindex, pi)] = value_obj["positiveText"]
+            final_neg[(index, subindex, pi)] = ""
             continue
 
-        filters     = part.get("filters") or []
-        require_all = bool(part.get("filtersRequireAll", False))
-        valid       = True
+        # ── 1. Part-level filter ──────────────────────────────────────────
+        part_filters_required = part.get("filtersRequired") or []
+        part_filters_any      = part.get("filtersAny") or []
 
-        for flt in filters:
-            t_idx = flt.get("targetIndex")
-            t_sub = flt.get("targetSubIndex")
-            t_pi  = flt.get("targetPartsIndex")
+        if not _eval_filters(part_filters_required, part_filters_any, global_tags, global_kv):
+            final_pos[(index, subindex, pi)] = ""
+            final_neg[(index, subindex, pi)] = ""
+            continue
 
-            # Root must always be present
-            if not _valid_idx(t_idx):
-                continue
+        # ── 2. Value-level filter + optional re-pick ──────────────────────
+        chosen = _resolve_value(value_obj, part, global_tags, global_kv, rng)
 
-            # Walk the tree as far as each level is valid
-            if not _valid_idx(t_sub):
-                target_val = index_raw_joined.get(t_idx, "").lower()
-            elif not _valid_idx(t_pi):
-                target_val = slot_raw_joined.get((t_idx, t_sub), "").lower()
-            else:
-                target_val = raw_values.get((t_idx, t_sub, t_pi), "").lower()
+        # ── 3. Accumulate tags/kv from the final chosen value ─────────────
+        _accumulate_state(chosen, global_tags, global_kv, trigger_defs)
 
-            blacklist = _to_terms(flt.get("blacklist") or [])
-            whitelist = _to_terms(flt.get("whitelist") or [])
+        # ── 4. Store text (suppressed if value-level includeInPrompt=False) ─
+        final_pos[(index, subindex, pi)] = chosen["positiveText"] if chosen["includeInPrompt"] else ""
+        final_neg[(index, subindex, pi)] = chosen["negativeText"] if chosen["includeInPrompt"] else ""
 
-            if blacklist and _terms_match(blacklist, target_val, require_all):
-                valid = False
-                break
-            if whitelist and not _terms_match(whitelist, target_val, require_all):
-                valid = False
-                break
-
-        final[(index, subindex, pi)] = raw_values[(index, subindex, pi)] if valid else ""
-
-    return final
+    return final_pos, final_neg, global_tags, global_kv
 
 
 def _clean_prompt(s):
@@ -311,7 +599,7 @@ def _clean_prompt(s):
 
 
 def _combine_prompt(parts, final_values, id_lora):
-    """Step 4: assemble the final prompt.
+    """Step 3: assemble the final prompt.
 
     Separator logic is applied at three levels, innermost first:
 
@@ -326,6 +614,7 @@ def _combine_prompt(parts, final_values, id_lora):
     Index level (final output):
       All index results are comma-joined.
 
+    Parts with includeInPrompt=false are skipped here (output only).
     After assembly, duplicate spaces and commas are cleaned up.
     """
     index_results = []
@@ -384,9 +673,13 @@ def _combine_prompt(parts, final_values, id_lora):
 class JSGRandomPromptBuilder:
     CATEGORY = "JSG Utils/Prompt"
     FUNCTION = "build"
-    RETURN_TYPES = ("STRING",)
-    RETURN_NAMES = ("Prompt",)
-    OUTPUT_TOOLTIPS = ("The fully assembled prompt string.",)
+    RETURN_TYPES = ("STRING", "STRING", "STRING")
+    RETURN_NAMES = ("Positive Prompt", "Negative Prompt", "Debug")
+    OUTPUT_TOOLTIPS = (
+        "The fully assembled positive prompt string.",
+        "The fully assembled negative prompt string (default negative from state.json prepended).",
+        "Debug overview of all active tags and key/value state after evaluation.",
+    )
 
     DESCRIPTION = (
         "Modular random prompt generator. "
@@ -464,9 +757,24 @@ class JSGRandomPromptBuilder:
 
         parts = _load_prompt_parts()
 
-        raw_values                = _select_raw_values(parts, kwargs, rng)
-        slot_joined, index_joined = _pre_join_by_index(raw_values)
-        final_values              = _apply_filters(parts, kwargs, raw_values, slot_joined, index_joined)
-        prompt                    = _combine_prompt(parts, final_values, id_lora)
+        _, initial_kv, _trigger_defs, default_negative = _load_state()
 
-        return (prompt,)
+        raw_values                                     = _select_raw_values(parts, kwargs, rng)
+        final_pos, final_neg, global_tags, global_kv   = _evaluate_and_accumulate(parts, kwargs, raw_values, rng)
+        positive_prompt                                = _combine_prompt(parts, final_pos, id_lora)
+        neg_parts_prompt                               = _combine_prompt(parts, final_neg, "")
+
+        neg_pieces = [p for p in (default_negative, neg_parts_prompt) if p]
+        negative_prompt = _clean_prompt(", ".join(neg_pieces))
+
+        tag_lines = [f"  {t}" for t in sorted(global_tags)]
+        kv_lines  = [f"  {k} = {v['value']}  (priority {v['priority']})" for k, v in sorted(global_kv.items())]
+
+        debug = (
+            "── Tags ─────────────────────────────────────\n"
+            + ("\n".join(tag_lines) if tag_lines else "  (none)")
+            + "\n\n── KV ──────────────────────────────────────\n"
+            + ("\n".join(kv_lines) if kv_lines else "  (none)")
+        )
+
+        return (positive_prompt, negative_prompt, debug)

@@ -1,6 +1,7 @@
 {
   "name": "Style",
   "index": 11,
+  "evaluationOrder": 11,
   "description": "Style category describing rendering or artistic presentation style.",
   "separator": false,
   "subIndexes": [
@@ -16,9 +17,9 @@
           "values": [
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [],
-          "includeInPrompt": true
+          "includeInPrompt": true,
+          "filtersRequired": [],
+          "filtersAny": []
         }
       ]
     }

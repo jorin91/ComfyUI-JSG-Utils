@@ -1,0 +1,1714 @@
+{
+  "generators": [
+    {
+      "id": "generator.action.general",
+      "description": "General everyday action picker. Random Action/Pose mutual exclusion is handled by the internal activity.route state, not by Action-to-Pose compatibility state.",
+      "values": [
+        {
+          "text": "walking"
+        },
+        {
+          "text": "running"
+        },
+        {
+          "text": "jumping"
+        },
+        {
+          "text": "skipping"
+        },
+        {
+          "text": "crawling"
+        },
+        {
+          "text": "squatting against a wall",
+          "conditions": {
+            "any": [
+              {
+                "state": "environment.surface",
+                "op": "missing"
+              },
+              {
+                "state": "environment.surface",
+                "op": "equals",
+                "value": "the wall"
+              }
+            ]
+          }
+        },
+        {
+          "text": "leaning back against a surface"
+        },
+        {
+          "text": "leaning sideways against a surface"
+        },
+        {
+          "text": "sleeping"
+        },
+        "yawning",
+        {
+          "text": "washing hands"
+        },
+        {
+          "text": "washing the face"
+        },
+        {
+          "text": "washing the belly"
+        },
+        {
+          "text": "touching the face with the hands"
+        },
+        {
+          "text": "gently touching the face with the hands"
+        },
+        {
+          "text": "caressing the face with one hand"
+        },
+        {
+          "text": "touching the neck with the hands"
+        },
+        {
+          "text": "gently touching the neck with the hands"
+        },
+        {
+          "text": "touching the lower abdomen with the hands"
+        },
+        {
+          "text": "gently touching the lower abdomen with the hands"
+        },
+        {
+          "text": "touching the side of the torso with the hands"
+        },
+        {
+          "text": "touching the upper abdomen with the hands"
+        },
+        {
+          "text": "gently touching the upper abdomen with the hands"
+        },
+        "",
+        {
+          "text": "playing with a towel"
+        },
+        {
+          "text": "washing the hair"
+        },
+        {
+          "text": "combing the hair"
+        },
+        {
+          "text": "applying makeup"
+        },
+        {
+          "text": "adjusting clothing with one hand",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "adjusting upper clothing with one hand",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.upper_body.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "adjusting lower clothing with one hand",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.lower_body.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "cleaning"
+        },
+        {
+          "text": "looking at oneself in a mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a bedroom",
+                  "in a walk-in closet",
+                  "in a hallway",
+                  "on a landing",
+                  "in a living room",
+                  "in a public toilet",
+                  "in a toilet room",
+                  "in a fitting room",
+                  "in a fitting booth",
+                  "in a changing room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "looking at one's back in a mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a bedroom",
+                  "in a walk-in closet",
+                  "in a hallway",
+                  "on a landing",
+                  "in a living room",
+                  "in a public toilet",
+                  "in a toilet room",
+                  "in a fitting room",
+                  "in a fitting booth",
+                  "in a changing room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "posing in front of a mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a bedroom",
+                  "in a walk-in closet",
+                  "in a hallway",
+                  "on a landing",
+                  "in a living room",
+                  "in a public toilet",
+                  "in a toilet room",
+                  "in a fitting room",
+                  "in a fitting booth",
+                  "in a changing room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "reading a book"
+        },
+        {
+          "text": "using a computer"
+        },
+        "",
+        {
+          "text": "making the bed",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bedroom",
+                  "in a dorm room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "dancing"
+        },
+        "watching TV",
+        {
+          "text": "gaming"
+        },
+        {
+          "text": "drinking coffee"
+        },
+        {
+          "text": "drinking tea"
+        },
+        "laughing",
+        {
+          "text": "looking out a window",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        "dreaming",
+        {
+          "text": "watering plants"
+        },
+        "",
+        {
+          "text": "cuddling blankets"
+        },
+        {
+          "text": "cuddling a pillow"
+        },
+        {
+          "text": "cuddling stuffed animals"
+        },
+        {
+          "text": "playing"
+        },
+        {
+          "text": "studying"
+        },
+        {
+          "text": "drawing"
+        },
+        {
+          "text": "interacting with the environment"
+        },
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "generator.action.sport",
+      "description": "Sport, gymnastics, yoga, fitness, and dance action picker. Random Action/Pose mutual exclusion is handled by the internal activity.route state.",
+      "values": [
+        "doing general gymnastics",
+        "doing gymnastics",
+        "gymnastics training",
+        "stretching before a gymnastics routine",
+        "warming up for gymnastics",
+        "cooling down after gymnastics training",
+        {
+          "text": "applying chalk to hands before gymnastics"
+        },
+        "practicing a gymnastics routine",
+        "performing mid-routine gymnastics movement",
+        "balancing during gymnastics",
+        "",
+        "landing after a gymnastics routine",
+        {
+          "text": "preparing for a gymnastics vault",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        "concentrating before a gymnastics routine",
+        {
+          "text": "performing a gymnastics cartwheel"
+        },
+        {
+          "text": "performing a gymnastics backflip"
+        },
+        {
+          "text": "performing a gymnastics frontflip"
+        },
+        {
+          "text": "performing a gymnastics handspring"
+        },
+        {
+          "text": "performing a gymnastics roundoff"
+        },
+        {
+          "text": "performing an aerial gymnastics move"
+        },
+        {
+          "text": "performing a gymnastics split leap"
+        },
+        "",
+        {
+          "text": "performing a gymnastics tumbling pass"
+        },
+        {
+          "text": "performing a gymnastics vault jump",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "balancing on a gymnastics beam",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "swinging on gymnastics uneven bars",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "performing a gymnastics parallel bars routine",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "performing a gymnastics rings exercise",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "performing a gymnastics pommel horse routine",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        "performing a gymnastics floor exercise",
+        {
+          "text": "holding a gymnastics handstand"
+        },
+        "holding a gymnastics bridge pose",
+        "",
+        {
+          "text": "performing a gymnastics walkover"
+        },
+        {
+          "text": "performing a gymnastics backbend"
+        },
+        "doing a gymnastics split stretch",
+        "pointing toes in gymnastics",
+        "holding a gymnastics landing pose",
+        {
+          "text": "performing a gymnastics jump twist"
+        },
+        {
+          "text": "performing a gymnastics mid-air spin"
+        },
+        {
+          "text": "grabbing a gymnastics bar",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "swinging from gymnastics bars",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "flipping through the air in gymnastics"
+        },
+        "",
+        {
+          "text": "performing dynamic gymnastics acrobatics"
+        },
+        "doing yoga",
+        "practicing a yoga session",
+        "meditating during yoga",
+        "practicing mindful yoga breathing",
+        "stretching the body during yoga",
+        "practicing deep yoga breathing",
+        "holding a yoga pose",
+        "holding a yoga relaxation pose",
+        "cooldown stretching after yoga",
+        "",
+        "moving through a yoga flow",
+        "holding a controlled yoga posture",
+        "doing yoga balance training",
+        "holding a lotus yoga pose",
+        "holding a tree yoga pose",
+        {
+          "text": "holding a cobra yoga pose"
+        },
+        {
+          "text": "holding a downward dog yoga pose"
+        },
+        {
+          "text": "holding an upward dog yoga pose"
+        },
+        "holding a child yoga pose",
+        "holding a warrior yoga pose",
+        "",
+        "holding a triangle yoga pose",
+        {
+          "text": "doing a cat cow yoga stretch"
+        },
+        "holding a camel yoga pose",
+        "holding a boat yoga pose",
+        {
+          "text": "holding a crow yoga pose"
+        },
+        {
+          "text": "holding a yoga plank pose"
+        },
+        {
+          "text": "holding a yoga side plank"
+        },
+        {
+          "text": "holding a yoga headstand"
+        },
+        {
+          "text": "holding a yoga shoulder stand"
+        },
+        "holding a seated yoga twist",
+        "",
+        "doing a yoga forward fold",
+        "performing a yoga sun salutation",
+        "doing a standing yoga stretch",
+        "doing a yoga leg stretch",
+        "doing a yoga spinal twist",
+        {
+          "text": "reaching upward during yoga"
+        },
+        {
+          "text": "pressing palms together during yoga"
+        },
+        "meditating with eyes closed during yoga",
+        "moving slowly through yoga",
+        "holding a peaceful yoga posture",
+        "",
+        "doing a workout",
+        "gym training",
+        "fitness session",
+        "strength training",
+        "cardio workout",
+        "training intensely during a workout",
+        "staying focused during a workout",
+        "resting between sets",
+        {
+          "text": "lifting weights"
+        },
+        "performing a gym routine",
+        "",
+        "doing functional fitness training",
+        {
+          "text": "running on a treadmill during a workout",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "walking on a treadmill during a workout",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "jumping rope during a workout"
+        },
+        {
+          "text": "using a cycling machine",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "using a rowing machine",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "performing a bench press",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "performing a deadlift"
+        },
+        "performing a squat exercise",
+        "performing lunges",
+        "",
+        {
+          "text": "performing a pull-up"
+        },
+        {
+          "text": "performing a push-up"
+        },
+        "performing a sit-up",
+        "performing crunches",
+        {
+          "text": "performing a shoulder press"
+        },
+        {
+          "text": "performing a bicep curl"
+        },
+        {
+          "text": "performing a tricep extension"
+        },
+        {
+          "text": "performing a lat pulldown",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "performing a kettlebell swing"
+        },
+        {
+          "text": "using battle ropes",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "holding a plank exercise"
+        },
+        "stretching legs after a workout",
+        {
+          "text": "stretching arms after a workout"
+        },
+        {
+          "text": "adjusting workout gloves"
+        },
+        {
+          "text": "wiping sweat during a workout"
+        },
+        {
+          "text": "drinking water during a workout"
+        },
+        {
+          "text": "checking a smartwatch during a workout"
+        },
+        {
+          "text": "changing weight plates during a workout",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "spotting a workout partner"
+        },
+        {
+          "text": "using resistance bands during a workout"
+        },
+        "",
+        "doing an exercise on a yoga ball",
+        {
+          "text": "throwing a medicine ball during a workout"
+        },
+        {
+          "text": "performing a box jump"
+        },
+        {
+          "text": "performing burpees"
+        },
+        {
+          "text": "performing mountain climbers"
+        },
+        "doing high knees exercise",
+        "cooling down after a workout",
+        "performing a dance routine",
+        "practicing a dance routine",
+        "rehearsing dance choreography",
+        "",
+        "performing dance choreography",
+        "freestyle dancing",
+        "moving rhythmically while dancing",
+        "performing expressive dance movement",
+        "dancing with dynamic movement",
+        "spinning during a dance routine",
+        "performing flowing dance movement",
+        "moving with dance rhythm",
+        "swaying hips while dancing",
+        {
+          "text": "moving arms gracefully while dancing"
+        },
+        "",
+        "holding a mid-dance pose",
+        "partner dancing in a dance routine",
+        "performing group dance choreography",
+        "performing a dance stage performance",
+        "ballet dancing",
+        "rehearsing ballet choreography",
+        "performing a ballet pirouette",
+        "holding a ballet arabesque",
+        "performing a ballet plie",
+        "rising into a ballet releve",
+        "",
+        {
+          "text": "performing a ballet grand jete"
+        },
+        "pointing toes in a ballet pose",
+        "spinning gracefully in ballet",
+        {
+          "text": "stretching at a ballet barre"
+        },
+        "holding a ballet pose",
+        {
+          "text": "leaping through the air in ballet"
+        },
+        {
+          "text": "performing elegant ballet arm movement"
+        },
+        "hip hop dancing",
+        "performing street dance",
+        {
+          "text": "breakdancing"
+        },
+        "",
+        "performing hip hop popping",
+        "performing hip hop locking",
+        "freestyle hip hop dancing",
+        "performing a hip hop body wave",
+        "doing a moonwalk dance move",
+        {
+          "text": "performing a breakdance floor spin"
+        },
+        {
+          "text": "performing a breakdance hand glide"
+        },
+        {
+          "text": "performing a breakdance headspin"
+        },
+        "performing a krumping dance",
+        "performing in a hip hop dance battle",
+        "",
+        "performing urban dance movement",
+        "performing dynamic hip hop footwork",
+        "salsa dancing",
+        "performing a latin dance routine",
+        "performing a salsa partner spin",
+        {
+          "text": "holding a partner during salsa dancing"
+        },
+        "performing quick salsa footwork",
+        "moving hips in salsa dancing",
+        "performing a salsa dance turn",
+        "close partner salsa dancing",
+        "",
+        "performing rhythmic salsa stepping",
+        {
+          "text": "twirling a partner in salsa dancing"
+        },
+        "tango dancing",
+        "holding a dramatic tango dance pose",
+        {
+          "text": "holding a close tango embrace"
+        },
+        "performing a tango leg hook",
+        "performing slow tango movement",
+        "dancing tango with passionate movement",
+        "performing a sharp tango turn",
+        "holding intense eye contact while tango dancing",
+        "",
+        "performing elegant tango stepping",
+        "ballroom dancing",
+        "waltz dancing",
+        "dancing the foxtrot",
+        "dancing the quickstep",
+        "performing formal ballroom dancing",
+        "rotating through ballroom dance movement",
+        {
+          "text": "holding a ballroom dance frame"
+        },
+        "performing graceful ballroom stepping",
+        "gliding with a ballroom dance partner",
+        "",
+        "performing contemporary dance",
+        "performing emotional contemporary dance movement",
+        "performing contemporary dance floor movement",
+        "performing expressive contemporary dance",
+        "holding a dramatic contemporary dance pose",
+        {
+          "text": "rolling on the floor in contemporary dance"
+        },
+        {
+          "text": "reaching outward in contemporary dance"
+        },
+        "performing flowing contemporary choreography",
+        "performing artistic contemporary movement",
+        "extending the body in contemporary dance",
+        "",
+        "performing an idol dance routine",
+        "performing synchronized idol choreography",
+        "holding a cute idol dance pose",
+        "holding an idol performance pose",
+        "performing idol stage dancing",
+        "dancing in an idol group formation",
+        {
+          "text": "making a finger heart gesture during idol dancing"
+        },
+        "performing energetic idol choreography",
+        "holding a camera-facing idol dance pose",
+        ""
+      ]
+    },
+    {
+      "id": "generator.action.nsfw",
+      "description": "Adult-only NSFW action picker for gated private, nudity-directed, sensitive, or suggestive actions that are not necessarily sexual acts.",
+      "values": [
+        {
+          "text": "urinating"
+        },
+        {
+          "text": "showering",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a shower room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "taking a bath",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a bathroom"
+              }
+            ]
+          }
+        },
+        {
+          "text": "changing clothes",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "undressing",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "getting dressed",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "pulling upper clothing aside to expose the breasts to the camera",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              },
+              {
+                "state": "clothing.action.upper_body.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "pulling lower clothing aside to expose the buttocks to the camera",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.lower_body.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "pulling lower clothing aside to expose the vulva to the camera",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              },
+              {
+                "state": "clothing.action.lower_body.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "pulling lower clothing aside to expose the penis to the camera",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              },
+              {
+                "state": "clothing.action.lower_body.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "pulling lower clothing aside to expose the anus to the camera",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.lower_body.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "washing the body"
+        },
+        {
+          "text": "washing the buttocks"
+        },
+        {
+          "text": "washing the vulva",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "washing the penis",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "touching the breasts with the hands",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "gently touching the breasts with the hands",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "caressing a breast with one hand",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "cupping a breast with one hand",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "touching the nipples with the hands"
+        },
+        {
+          "text": "gently touching the nipples with the fingers"
+        },
+        {
+          "text": "touching the mons pubis with the hands"
+        },
+        {
+          "text": "touching the bikini line with the fingers"
+        },
+        {
+          "text": "touching the butt with the hands"
+        },
+        {
+          "text": "gently touching the butt with the hands"
+        },
+        {
+          "text": "touching the buttocks with the hands"
+        },
+        {
+          "text": "gently touching the buttocks with the hands"
+        },
+        "",
+        {
+          "text": "singing in the shower",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a shower room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "posing in the shower",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a shower room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "drying off"
+        },
+        {
+          "text": "posing suggestively in front of a mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a bedroom",
+                  "in a walk-in closet",
+                  "in a hallway",
+                  "on a landing",
+                  "in a living room",
+                  "in a public toilet",
+                  "in a toilet room",
+                  "in a fitting room",
+                  "in a fitting booth",
+                  "in a changing room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "putting on underwear",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.underwear.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "adjusting underwear with one hand",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.underwear.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "taking off underwear",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.underwear.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "putting on swimwear",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.swimwear.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "adjusting swimwear with one hand",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.swimwear.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "taking off swimwear",
+          "conditions": {
+            "all": [
+              {
+                "state": "clothing.action.swimwear.exist",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "generator.action.sexual",
+      "description": "Adult-only sexual action picker for small standalone sexual options that are not large enough for their own modular route.",
+      "values": [
+        {
+          "text": "spreading the labia with the fingers",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "spreading the buttocks to show the anus"
+        },
+        {
+          "text": "making a suggestive oral-sex gesture with one hand near the mouth"
+        },
+        {
+          "text": "posing sexually in front of a mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a bedroom",
+                  "in a walk-in closet",
+                  "in a hallway",
+                  "on a landing",
+                  "in a living room",
+                  "in a public toilet",
+                  "in a toilet room",
+                  "in a fitting room",
+                  "in a fitting booth",
+                  "in a changing room"
+                ]
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.action.sexual.penetration.bodypart",
+      "description": "Internal penetration body-part route picker. Values output no prompt text, but set route state for downstream penetration action wording.",
+      "values": [
+        {
+          "text": "",
+          "state_set": {
+            "action.sexual.penetration.bodypart": "anus"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.penetration.bodypart": "vagina"
+          }
+        },
+        {
+          "text": "",
+          "state_set": {
+            "action.sexual.penetration.bodypart": "mouth"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generator.action.sexual.penetration.action",
+      "description": "Internal penetration action-mode route picker selected after the penetration body-part route state is available.",
+      "values": [
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.penetration.bodypart",
+                "op": "in",
+                "value": [
+                  "anus",
+                  "vagina"
+                ]
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.penetration.action": "self_penetrating"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.penetration.bodypart",
+                "op": "equals",
+                "value": "mouth"
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.penetration.action": "oral_object"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.penetration.bodypart",
+                "op": "in",
+                "value": [
+                  "anus",
+                  "vagina"
+                ]
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.penetration.action": "riding"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.penetration.bodypart",
+                "op": "in",
+                "value": [
+                  "anus",
+                  "vagina"
+                ]
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.penetration.action": "sitting_onto"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.penetration.bodypart",
+                "op": "in",
+                "value": [
+                  "anus",
+                  "vagina"
+                ]
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.penetration.action": "using_for_penetration"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generator.action.sexual.penetration.object",
+      "description": "Object picker for modular penetration and object oral-sex wording.",
+      "values": [
+        "a banana",
+        "a cucumber",
+        "a dildo",
+        "a vibrator",
+        "a butt plug",
+        "a glass dildo",
+        "a pencil",
+        "a hairbrush handle",
+        "a toothbrush handle",
+        "a marker",
+        "a closed lipstick tube",
+        "a remote control",
+        "a paintbrush handle",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "generator.action.sexual.stimulation.target",
+      "description": "Internal sexual stimulation target route picker. Values output no prompt text, but set route state for downstream stimulation action wording.",
+      "values": [
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.stimulation.target": "breasts"
+          }
+        },
+        {
+          "text": "",
+          "state_set": {
+            "action.sexual.stimulation.target": "nipples"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.stimulation.target": "vulva"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.stimulation.target": "clitoris"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.stimulation.target": "penis"
+          }
+        },
+        {
+          "text": "",
+          "state_set": {
+            "action.sexual.stimulation.target": "anus"
+          }
+        },
+        {
+          "text": "",
+          "state_set": {
+            "action.sexual.stimulation.target": "buttocks"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.stimulation.target": "vulva_surface"
+          }
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          },
+          "state_set": {
+            "action.sexual.stimulation.target": "penis_surface"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generator.action.sexual.stimulation.action",
+      "description": "Sexual stimulation action wording selected after the stimulation target route state is available.",
+      "values": [
+        {
+          "text": "self-stimulating the breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "breasts"
+              }
+            ]
+          }
+        },
+        {
+          "text": "self-stimulating the nipples",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "nipples"
+              }
+            ]
+          }
+        },
+        {
+          "text": "self-stimulating the vulva",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "vulva"
+              }
+            ]
+          }
+        },
+        {
+          "text": "self-stimulating the clitoris",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "clitoris"
+              }
+            ]
+          }
+        },
+        {
+          "text": "self-stimulating the penis",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "penis"
+              }
+            ]
+          }
+        },
+        {
+          "text": "self-stimulating the anus",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "anus"
+              }
+            ]
+          }
+        },
+        {
+          "text": "sexually rubbing the buttocks",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "buttocks"
+              }
+            ]
+          }
+        },
+        {
+          "text": "rubbing the vulva against",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "vulva_surface"
+              }
+            ]
+          }
+        },
+        {
+          "text": "grinding the vulva against",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "vulva_surface"
+              }
+            ]
+          }
+        },
+        {
+          "text": "pressing the vulva against",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "vulva_surface"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "rubbing the penis against",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "penis_surface"
+              }
+            ]
+          }
+        },
+        {
+          "text": "pressing the penis against",
+          "conditions": {
+            "all": [
+              {
+                "state": "action.sexual.stimulation.target",
+                "op": "equals",
+                "value": "penis_surface"
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.action.sexual.stimulation.surface",
+      "description": "Surface or object picker for sexual grinding/rubbing stimulation routes.",
+      "values": [
+        "a pillow",
+        "a cushion",
+        "a bed edge",
+        "a blanket",
+        "a towel",
+        "a pole",
+        "a chair edge",
+        "a sofa armrest",
+        "a soft toy",
+        "a rolled-up blanket",
+        ""
+      ]
+    }
+  ]
+}

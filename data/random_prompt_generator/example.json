@@ -1,61 +1,76 @@
 {
   "name": "Example",
   "index": 99,
-  "description": "Example category.",
+  "evaluationOrder": 99,
+  "description": "Example category demonstrating all supported features: triggers, tags, kv, filtersRequired, filtersAny, separators and includeInPrompt. This file is always skipped by the loader and exists only as documentation.",
   "separator": false,
   "subIndexes": [
     {
       "subIndex": 0,
-      "description": "Main clothing description subIndex.",
+      "description": "Coverage logic toggle. Sets coverage kv state using triggers and own kv. Part is not written to the prompt (includeInPrompt: false on the part).",
       "separator": false,
       "parts": [
         {
           "partsIndex": 0,
-          "description": "Primary clothing state. Drives filters on partsIndex 1.",
+          "description": "Logic-only part. Uses triggers to apply bulk coverage state, then own kv to fine-tune. Not written to the prompt.",
+          "includeInPrompt": false,
           "separator": false,
+          "filtersRequired": [],
+          "filtersAny": [],
           "values": [
-            "nude",
-            "wearing a dress",
-            "wearing jeans",
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
+            "",
             {
-              "_filter_tree": "Target path: Index . SubIndex . PartIndex — tree stops at deepest valid level provided.",
-              "_tree_index": "targetIndex only (subIndex/partsIndex absent or null/<0) -> whole index joined",
-              "_tree_slot": "targetIndex + targetSubIndex (partsIndex absent or null/<0) -> whole subIndex joined",
-              "_tree_part": "all three valid (int >= 0) -> specific part value",
-              "_tree_skip": "targetIndex absent or null/<0 -> filter ignored",
-              "targetIndex": 99,
-              "targetSubIndex": 0,
-              "targetPartsIndex": null,
-              "blacklist": "",
-              "_blacklist_comment": "String or array. If any term is a substring of the target, this part resolves to empty.",
-              "whitelist": "",
-              "_whitelist_comment": "String or array. Target must contain at least one term, otherwise this part resolves to empty."
-            }
-          ]
-        },
-        {
-          "partsIndex": 1,
-          "description": "Clothing colour. Suppressed when partsIndex 0 chose 'nude'.",
-          "separator": false,
-          "values": [
-            "red",
-            "blue",
-            "black",
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
+              "_comment": "Trigger all_exposed sets every region to exposed in one call. Own kv then overrides only what differs.",
+              "positiveText": "",
+              "negativeText": "",
+              "triggers": [
+                "all_exposed"
+              ],
+              "tags": [
+                "lower_exposed"
+              ],
+              "removeTags": [],
+              "kv": []
+            },
             {
-              "_comment": "Suppress this part when the primary clothing state (partsIndex 0) is 'nude'.",
-              "targetIndex": 99,
-              "targetSubIndex": 0,
-              "targetPartsIndex": 0,
-              "blacklist": "nude",
-              "whitelist": ""
+              "_comment": "Trigger all_covered sets every region to covered. Own kv exposes only the lower arms.",
+              "positiveText": "",
+              "negativeText": "",
+              "triggers": [
+                "all_covered"
+              ],
+              "tags": [
+                "lower_clothed"
+              ],
+              "removeTags": [],
+              "kv": [
+                {
+                  "key": "lowerArmsCoverage",
+                  "value": "exposed"
+                }
+              ]
+            },
+            {
+              "_comment": "Combining two triggers: first all_covered, then arms_exposed. Triggers run in array order.",
+              "positiveText": "",
+              "negativeText": "",
+              "triggers": [
+                "all_covered",
+                "arms_exposed"
+              ],
+              "tags": [
+                "lower_clothed",
+                "upper_clothed",
+                "fully_clothed"
+              ],
+              "removeTags": [],
+              "kv": [
+                {
+                  "key": "lowerTorsoCoverage",
+                  "value": "exposed",
+                  "priority": 10
+                }
+              ]
             }
           ]
         }
@@ -63,22 +78,186 @@
     },
     {
       "subIndex": 1,
-      "description": "Accessory add-on subIndex.",
+      "description": "Clothing description. Demonstrates part-level and value-level filter logic.",
+      "separator": false,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Clothing item. Part-level filtersRequired blocks the part when lower body is exposed. Value-level filtersRequired and filtersAny narrow which items are eligible.",
+          "separator": false,
+          "filtersRequired": [
+            {
+              "_comment": "Hard block: never include when lower body is exposed.",
+              "tagBlacklist": [
+                "lower_exposed"
+              ]
+            }
+          ],
+          "filtersAny": [],
+          "values": [
+            {
+              "_comment": "No filters — always eligible once part-level passes.",
+              "positiveText": "wearing a long dress",
+              "negativeText": "",
+              "triggers": [],
+              "tags": [],
+              "removeTags": [],
+              "kv": [],
+              "filtersRequired": [],
+              "filtersAny": []
+            },
+            {
+              "_comment": "filtersRequired: skirt excluded when lowerCoverage is full.",
+              "positiveText": "wearing a skirt",
+              "negativeText": "",
+              "triggers": [],
+              "tags": [],
+              "removeTags": [],
+              "kv": [],
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "lowerTorsoCoverage",
+                      "value": "covered"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "_comment": "filtersAny: jeans eligible when lower_clothed OR fully_clothed tag is present.",
+              "positiveText": "wearing jeans",
+              "negativeText": "",
+              "triggers": [],
+              "tags": [],
+              "removeTags": [],
+              "kv": [],
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "tagWhitelist": [
+                    "lower_clothed"
+                  ]
+                },
+                {
+                  "tagWhitelist": [
+                    "fully_clothed"
+                  ]
+                }
+              ]
+            },
+            {
+              "_comment": "Mixed: one required hard-block + filtersAny OR selectors.",
+              "positiveText": "wearing shorts",
+              "negativeText": "",
+              "triggers": [],
+              "tags": [],
+              "removeTags": [],
+              "kv": [],
+              "filtersRequired": [
+                {
+                  "tagBlacklist": [
+                    "fully_clothed"
+                  ]
+                }
+              ],
+              "filtersAny": [
+                {
+                  "tagWhitelist": [
+                    "lower_clothed"
+                  ]
+                },
+                {
+                  "tagWhitelist": [
+                    "lower_exposed"
+                  ]
+                }
+              ]
+            },
+            ""
+          ]
+        },
+        {
+          "partsIndex": 1,
+          "description": "Clothing colour. Part-level filtersRequired blocks when lower body is exposed. filtersAny not used here.",
+          "separator": false,
+          "filtersRequired": [
+            {
+              "tagBlacklist": [
+                "lower_exposed"
+              ]
+            }
+          ],
+          "filtersAny": [],
+          "values": [
+            "red",
+            "blue",
+            "black",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "subIndex": 2,
+      "description": "Accessory. Comma-separated (separator: true). Suppressed via filtersRequired when fully clothed.",
       "separator": true,
       "parts": [
         {
           "partsIndex": 0,
-          "description": "An accessory tag, comma-separated from the main clothing description.",
+          "description": "Optional accessory. Hard-blocked when fully_clothed tag is active.",
           "separator": false,
+          "filtersRequired": [
+            {
+              "tagBlacklist": [
+                "fully_clothed"
+              ]
+            }
+          ],
+          "filtersAny": [],
           "values": [
             "wearing sunglasses",
             "wearing a hat",
             ""
+          ]
+        }
+      ]
+    },
+    {
+      "subIndex": 3,
+      "description": "Combined filter example. filtersRequired requires both conditions (AND). filtersAny not used.",
+      "separator": true,
+      "parts": [
+        {
+          "partsIndex": 0,
+          "description": "Only active when lower body is exposed AND upper body is fully covered.",
+          "separator": false,
+          "filtersRequired": [
+            {
+              "_comment": "Condition A: lower body must be exposed.",
+              "tagWhitelist": [
+                "lower_exposed"
+              ]
+            },
+            {
+              "_comment": "Condition B: upper torsoCoverage must be covered via kv.",
+              "kvWhitelist": [
+                {
+                  "key": "upperTorsoCoverage",
+                  "value": "covered"
+                }
+              ]
+            }
           ],
-          "filtersRequireAll": true,
-          "filters": []
+          "filtersAny": [],
+          "values": [
+            "interesting contrast outfit"
+          ]
         }
       ]
     }
-  ]
+  ],
+  "_evaluationOrder_comment": "Optional. Controls when this file is evaluated relative to others. Default is the index value. Lower = earlier. Output order in the prompt is always determined by index, not evaluationOrder."
 }

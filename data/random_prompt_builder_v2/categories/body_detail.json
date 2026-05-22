@@ -1,0 +1,109 @@
+{
+  "id": "body_detail",
+  "label": "Body Detail",
+  "order": 4,
+  "description": "Regional body detail category for body regions, body parts, subparts, surface details, bone definition, and region-specific tanning.",
+  "builders": [
+    {
+      "id": "builder.body_detail.hair_style",
+      "description": "General hairstyle picker for all ages. Some values validate against subject.gender when the wording is gendered.",
+      "values": [
+        {
+          "template": "{hair_style}",
+          "slots": {
+            "hair_style": {
+              "generator": "generator.body_detail.hair_style"
+            }
+          },
+          "state_export": {
+            "body_detail.hair_style": {
+              "slot": "hair_style"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.body_detail.hair_color",
+      "description": "General hair color picker for all ages, including natural and stylized fantasy colors.",
+      "values": [
+        {
+          "template": "{hair_color}",
+          "slots": {
+            "hair_color": {
+              "generator": "generator.body_detail.hair_color"
+            }
+          },
+          "state_export": {
+            "body_detail.hair_color": {
+              "slot": "hair_color"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.body_detail.breasts",
+      "description": "Female breast body-part builder. Values describe one breast aspect per prompt, currently focused on size through cup-size, development-style, or NSFW contextual wording routes. Phase limits live on the generator values so each route can use the full scale.",
+      "values": [
+        {
+          "template": "{breasts}",
+          "slots": {
+            "breasts": {
+              "generator": "generator.body_detail.breasts.size_cup"
+            }
+          },
+          "state_export": {
+            "body_detail.breasts": {
+              "slot": "breasts"
+            }
+          }
+        },
+        {
+          "template": "{breasts}",
+          "slots": {
+            "breasts": {
+              "generator": "generator.body_detail.breasts.development"
+            }
+          },
+          "state_export": {
+            "body_detail.breasts": {
+              "slot": "breasts"
+            }
+          }
+        },
+        {
+          "template": "{breasts}",
+          "slots": {
+            "breasts": {
+              "generator": "generator.body_detail.breasts.nsfw_size"
+            }
+          },
+          "state_export": {
+            "body_detail.breasts": {
+              "slot": "breasts"
+            }
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "conditions": {
+        "all": [
+          {
+            "state": "subject.gender",
+            "op": "equals",
+            "value": "female"
+          }
+        ]
+      }
+    }
+  ]
+}

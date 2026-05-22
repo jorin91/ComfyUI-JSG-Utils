@@ -47,17 +47,23 @@ app.registerExtension({
 
             container.appendChild(ta);
 
-            // addDOMWidget keeps the element inside the LiteGraph node frame
+            // addDOMWidget keeps the element inside the LiteGraph node frame.
+            // serialize: false prevents this display-only widget from being
+            // included in widgets_values, which avoids index mismatches that
+            // would cause the separator widget to receive the prompt text.
             this._jsgViewerWidget = this.addDOMWidget(
                 "jsg_viewer",  // widget name
                 "div",         // displayed element type (used by LG for sizing)
                 container,
                 {
-                    getValue: () => ta.value,
-                    setValue: (v) => { ta.value = v ?? ""; },
+                    getValue: () => "",   // display-only — never serialise
+                    setValue: () => {},   // nothing to restore on graph load
                     getMinHeight: () => VIEWER_HEIGHT + 12,
                 }
             );
+            if (this._jsgViewerWidget) {
+                this._jsgViewerWidget.serialize = false;
+            }
 
             // Store textarea reference for onExecuted
             this._jsgViewerTextarea = ta;

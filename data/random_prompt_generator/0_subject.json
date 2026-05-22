@@ -1,50 +1,293 @@
-{
+ {
   "name": "Subject",
   "index": 0,
+  "evaluationOrder": 0,
   "description": "Primary subject category for the generated prompt.",
   "separator": false,
   "subIndexes": [
     {
       "subIndex": 0,
-      "description": "Main subject selection subIndex.",
+      "description": "Main subject selection subIndex. Semantic tags: male, female. Semantic kv key: ageGroup.",
       "separator": false,
       "parts": [
         {
           "partsIndex": 0,
-          "description": "Main subject selection subIndex. part 0.",
+          "description": "Main subject selection values. Semantic tags: male, female. Semantic kv key: ageGroup.",
           "separator": false,
           "values": [
-            "young child boy (age 3-5)",
-            "young child girl (age 3-5)",
-            "child boy (age 6-9)",
-            "child girl (age 6-9)",
-            "preteen boy (age 10-12)",
+            {
+              "positiveText": "young child boy (age 3-5)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "child"
+                }
+              ]
+            },
+            {
+              "positiveText": "young child girl (age 3-5)",
+              "tags": [
+                "female"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "child"
+                }
+              ]
+            },
+            {
+              "positiveText": "child boy (age 6-9)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "child"
+                }
+              ]
+            },
+            {
+              "positiveText": "child girl (age 6-9)",
+              "tags": [
+                "female"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "child"
+                }
+              ]
+            },
+            {
+              "positiveText": "preteen boy (age 10-12)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "preteen"
+                }
+              ]
+            },
             "",
-            "preteen girl (age 10-12)",
-            "teen boy (age 13-15)",
-            "teen girl (age 13-15)",
-            "late teen boy (age 16-17)",
-            "late teen girl (age 16-17)",
+            {
+              "positiveText": "preteen girl (age 10-12)",
+              "tags": [
+                "female"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "preteen"
+                }
+              ]
+            },
+            {
+              "positiveText": "teen boy (age 13-15)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "teen"
+                }
+              ]
+            },
+            {
+              "positiveText": "teen girl (age 13-15)",
+              "tags": [
+                "female"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "teen"
+                }
+              ]
+            },
+            {
+              "positiveText": "late teen boy (age 16-17)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "teen"
+                }
+              ]
+            },
+            {
+              "positiveText": "late teen girl (age 16-17)",
+              "tags": [
+                "female"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "teen"
+                }
+              ]
+            },
             "",
-            "young adult man (age 18-23)",
-            "young adult woman (age 18-23)",
-            "adult man (age 24-34)",
-            "adult woman (age 24-34)",
-            "prime adult man (age 35-44)",
+            {
+              "positiveText": "young adult man (age 18-23)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "adult"
+                }
+              ]
+            },
+            {
+              "positiveText": "young adult woman (age 18-23)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "adult"
+                }
+              ]
+            },
+            {
+              "positiveText": "adult man (age 24-34)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "adult"
+                }
+              ]
+            },
+            {
+              "positiveText": "adult woman (age 24-34)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "adult"
+                }
+              ]
+            },
+            {
+              "positiveText": "prime adult man (age 35-44)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "adult"
+                }
+              ]
+            },
             "",
-            "prime adult woman (age 35-44)",
-            "middle-aged man (age 45-59)",
-            "middle-aged woman (age 45-59)",
-            "older adult man (age 60-74)",
-            "older adult woman (age 60-74)",
+            {
+              "positiveText": "prime adult woman (age 35-44)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "adult"
+                }
+              ]
+            },
+            {
+              "positiveText": "middle-aged man (age 45-59)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "adult"
+                }
+              ]
+            },
+            {
+              "positiveText": "middle-aged woman (age 45-59)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "adult"
+                }
+              ]
+            },
+            {
+              "positiveText": "older adult man (age 60-74)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "elder"
+                }
+              ]
+            },
+            {
+              "positiveText": "older adult woman (age 60-74)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "elder"
+                }
+              ]
+            },
             "",
-            "elderly man (age 75+)",
-            "elderly woman (age 75+)",
+            {
+              "positiveText": "elderly man (age 75+)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "elder"
+                }
+              ]
+            },
+            {
+              "positiveText": "elderly woman (age 75+)",
+              "tags": [
+                "male"
+              ],
+              "kv": [
+                {
+                  "key": "ageGroup",
+                  "value": "elder"
+                }
+              ]
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [],
-          "includeInPrompt": true
+          "includeInPrompt": true,
+          "filtersRequired": [],
+          "filtersAny": []
         }
       ]
     }

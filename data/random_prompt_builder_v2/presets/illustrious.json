@@ -1,0 +1,22 @@
+{
+  "id": "illustrious",
+  "label": "Illustrious",
+  "description": "Illustrious-style quality preset with common high-quality positive terms and artifact/anatomy negatives.",
+  "positive": [
+    "masterpiece",
+    "best quality",
+    "high quality",
+    "detailed"
+  ],
+  "negative": [
+    "worst quality",
+    "low quality",
+    "bad anatomy",
+    "bad hands",
+    "blurry",
+    "jpeg artifacts",
+    "watermark",
+    "text",
+    "signature"
+  ]
+}

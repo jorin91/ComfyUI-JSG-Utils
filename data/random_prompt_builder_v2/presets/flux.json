@@ -1,0 +1,13 @@
+{
+  "id": "flux",
+  "label": "FLUX",
+  "description": "FLUX preset with no positive quality boilerplate and a small set of generic negative cleanup terms.",
+  "positive": [],
+  "negative": [
+    "low quality",
+    "blurry",
+    "watermark",
+    "text",
+    "signature"
+  ]
+}

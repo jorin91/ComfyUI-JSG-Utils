@@ -19,11 +19,17 @@ from .nodes.JSGMatchStringList import JSGMatchStringList
 from .nodes.JSGRandomBool import JSGRandomBool
 from .nodes.JSGBoolSwitch import JSGBoolSwitch
 from .nodes.JSGRandomPromptBuilder import JSGRandomPromptBuilder
+from .nodes.JSGRandomPromptBuilderV2 import JSGRandomPromptBuilderV2
 from .nodes.JSGObjectBuilder import JSGObjectBuilder
 from .nodes.JSGObjectUnpack import JSGObjectUnpack
 from .nodes.JSGIteratorInputs import JSGIteratorInputs
 from .nodes.JSGIteratorList import JSGIteratorList
 from .nodes.JSGFormattedStringViewer import JSGFormattedStringViewer
+from .nodes.JSGNormalizeNumber import JSGNormalizeNumber
+from .nodes.JSGValueStepper import JSGValueStepper
+from .nodes.JSGModelInfo import JSGModelInfo
+from .nodes.JSGLoraStackLoader import JSGLoraStackLoader, JSGLoraStackLoaderAdvanced
+from .nodes.JSGImageSizeCalc import JSGImageSizeCalc
 
 WEB_DIRECTORY = "./js"
 
@@ -51,11 +57,18 @@ NODE_CLASS_MAPPINGS = {
     "JSGRandomBool": JSGRandomBool,
     "JSGBoolSwitch": JSGBoolSwitch,
     "JSGRandomPromptBuilder": JSGRandomPromptBuilder,
+    "JSGRandomPromptBuilderV2": JSGRandomPromptBuilderV2,
     "JSGObjectBuilder": JSGObjectBuilder,
     "JSGObjectUnpack": JSGObjectUnpack,
     "JSGIteratorInputs": JSGIteratorInputs,
     "JSGIteratorList": JSGIteratorList,
     "JSGFormattedStringViewer": JSGFormattedStringViewer,
+    "JSGNormalizeNumber": JSGNormalizeNumber,
+    "JSGValueStepper": JSGValueStepper,
+    "JSGModelInfo": JSGModelInfo,
+    "JSGLoraStackLoader": JSGLoraStackLoader,
+    "JSGLoraStackLoaderAdvanced": JSGLoraStackLoaderAdvanced,
+    "JSGImageSizeCalc": JSGImageSizeCalc,
 }
 
 #  =================================================================================
@@ -83,9 +96,16 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "JSGRandomBool": "Random Bool",
     "JSGBoolSwitch": "Bool Switch",
     "JSGRandomPromptBuilder": "Random Prompt Builder",
+    "JSGRandomPromptBuilderV2": "Random Prompt Builder V2",
     "JSGObjectBuilder": "Object Builder",
     "JSGObjectUnpack": "Object Unpack",
     "JSGIteratorInputs": "Iterator (Inputs)",
     "JSGIteratorList": "Iterator (List)",
     "JSGFormattedStringViewer": "Formatted String Viewer",
+    "JSGNormalizeNumber": "Normalize Number",
+    "JSGValueStepper": "Value Stepper",
+    "JSGModelInfo": "Model Info",
+    "JSGLoraStackLoader": "LoRA Stack Loader",
+    "JSGLoraStackLoaderAdvanced": "LoRA Stack Loader (Advanced)",
+    "JSGImageSizeCalc": "Image Size Calculator",
 }

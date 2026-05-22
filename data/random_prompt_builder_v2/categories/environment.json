@@ -1,0 +1,202 @@
+{
+  "id": "environment",
+  "label": "Environment",
+  "order": 7,
+  "description": "Environment category. Builds person-focused scene context in dependency order: domain, location, room/area, surface, condition, season, weather, time, social context, and props.",
+  "builders": [
+    {
+      "id": "builder.environment.domain",
+      "description": "Required indoor/outdoor scene domain. Emits broad scene context and sets environment.domain for later validation.",
+      "values": [
+        {
+          "text": "indoors",
+          "state_set": {
+            "environment.domain": "indoor"
+          }
+        },
+        {
+          "text": "outdoors",
+          "state_set": {
+            "environment.domain": "outdoor"
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.environment.location",
+      "description": "General location or setting. Domain compatibility belongs on generator values because many locations can work indoors, outdoors, or both.",
+      "values": [
+        {
+          "template": "{location}",
+          "slots": {
+            "location": {
+              "generator": "generator.environment.location"
+            }
+          },
+          "state_export": {
+            "environment.location": {
+              "slot": "location"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.environment.room_area",
+      "description": "Specific room or area within the selected domain and location. Compatibility belongs on generator values because it depends on both domain and location.",
+      "values": [
+        {
+          "template": "{room_area}",
+          "slots": {
+            "room_area": {
+              "generator": "generator.environment.room_area"
+            }
+          },
+          "state_export": {
+            "environment.room_area": {
+              "slot": "room_area"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.environment.surface",
+      "description": "Physical surface or support connected to the person, such as where they stand, sit, or lie. Compatibility should mostly validate against selected room/area.",
+      "values": [
+        {
+          "template": "{relation} {surface}",
+          "slots": {
+            "relation": {
+              "generator": "generator.environment.surface_relation",
+              "conditions": {
+                "all": [
+                  {
+                    "slot": "surface",
+                    "op": "exists"
+                  }
+                ]
+              }
+            },
+            "surface": {
+              "generator": "generator.environment.surface"
+            }
+          },
+          "state_export": {
+            "environment.surface_relation": {
+              "slot": "relation"
+            },
+            "environment.surface": {
+              "slot": "surface"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.environment.condition",
+      "description": "Optional condition or state of the environment. Keep sparse and validate generator values only where the condition is meaningfully constrained.",
+      "values": [
+        {
+          "text": "",
+          "allow_empty": true
+        }
+      ]
+    },
+    {
+      "id": "builder.environment.season",
+      "description": "Optional season context. Weather values can validate against this state, but if no season is selected weather remains broadly available.",
+      "values": [
+        {
+          "template": "{season}",
+          "slots": {
+            "season": {
+              "generator": "generator.environment.season"
+            }
+          },
+          "state_export": {
+            "environment.season": {
+              "slot": "season"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "all": [
+          {
+            "state": "environment.domain",
+            "op": "equals",
+            "value": "outdoor"
+          }
+        ]
+      }
+    },
+    {
+      "id": "builder.environment.weather",
+      "description": "Optional weather context. Compatibility belongs on generator values because some future weather-visible cases may be location or room dependent.",
+      "values": [
+        {
+          "template": "{weather}",
+          "slots": {
+            "weather": {
+              "generator": "generator.environment.weather"
+            }
+          },
+          "state_export": {
+            "environment.weather": {
+              "slot": "weather"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "all": [
+          {
+            "state": "environment.domain",
+            "op": "equals",
+            "value": "outdoor"
+          }
+        ]
+      }
+    },
+    {
+      "id": "builder.environment.time",
+      "description": "Optional time context. This can guide scene plausibility, while detailed light quality still belongs in the lighting category.",
+      "values": [
+        {
+          "template": "{time}",
+          "slots": {
+            "time": {
+              "generator": "generator.environment.time"
+            }
+          },
+          "state_export": {
+            "environment.time": {
+              "slot": "time"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.environment.social_context",
+      "description": "Optional public/private or crowd context. Keep this sparse and use it only when it changes the person's scene context meaningfully.",
+      "values": [
+        {
+          "text": "",
+          "allow_empty": true
+        }
+      ]
+    },
+    {
+      "id": "builder.environment.props",
+      "description": "Optional environment props or set dressing. Values should be limited to props that clarify or enrich the person-focused scene.",
+      "values": [
+        {
+          "text": "",
+          "allow_empty": true
+        }
+      ]
+    }
+  ]
+}

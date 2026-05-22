@@ -1,0 +1,7 @@
+{
+  "id": "quality",
+  "label": "Quality",
+  "order": 11,
+  "description": "Quality category scaffold.",
+  "builders": []
+}

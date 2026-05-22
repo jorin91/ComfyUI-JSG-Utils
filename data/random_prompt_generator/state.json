@@ -1,0 +1,248 @@
+{
+  "description": "Global initial state and named trigger presets for the random prompt builder. The initialState block seeds global tags and kv values before any part evaluation begins. Entries with null value in initialState.kv are documentation placeholders — they declare that a key is used in this system but do not apply any value. The triggers block defines named presets that value objects can reference via their triggers array. Processing order within a value is always: triggers (in array order, each running removeTags then tags then kv) then the value's own removeTags, tags, and kv.",
+
+  "initialState": {
+    "description": "Values applied once before part evaluation starts. null kv values are documentation placeholders and are not applied to the global state.",
+    "defaultNegativePrompt": "",
+    "tags": [],
+    "kv": [
+      { "key": "ageGroup", "value": null },
+      { "key": "ethnicity", "value": null },
+
+      { "key": "buildOverall", "value": null },
+      { "key": "buildFrame", "value": null },
+      { "key": "buildProportions", "value": null },
+      { "key": "buildMass", "value": null },
+
+      { "key": "bodyAppearanceOverall", "value": null },
+      { "key": "skinAppearance", "value": null },
+      { "key": "muscleVisibility", "value": null },
+      { "key": "boneVisibility", "value": null },
+      { "key": "bodyContour", "value": null },
+      { "key": "physicalDetailLevel", "value": null },
+
+      { "key": "upperTorsoCoverage", "value": "exposed" },
+      { "key": "lowerTorsoCoverage", "value": "exposed" },
+      { "key": "breastsCoverage", "value": "exposed" },
+      { "key": "upperArmsCoverage", "value": "exposed" },
+      { "key": "lowerArmsCoverage", "value": "exposed" },
+      { "key": "handsCoverage", "value": "exposed" },
+
+      { "key": "pelvicCoverage", "value": "exposed" },
+      { "key": "vaginaCoverage", "value": "exposed" },
+      { "key": "penisCoverage", "value": "exposed" },
+      { "key": "buttCoverage", "value": "exposed" },
+      { "key": "upperLegsCoverage", "value": "exposed" },
+      { "key": "lowerLegsCoverage", "value": "exposed" },
+      { "key": "feetCoverage", "value": "exposed" },
+
+      { "key": "headwearType", "value": null }
+    ]
+  },
+
+  "triggers": {
+
+    "all_exposed": {
+      "description": "Set all coverage regions to exposed.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperTorsoCoverage", "value": "exposed" },
+        { "key": "lowerTorsoCoverage", "value": "exposed" },
+        { "key": "breastsCoverage",    "value": "exposed" },
+        { "key": "upperArmsCoverage",  "value": "exposed" },
+        { "key": "lowerArmsCoverage",  "value": "exposed" },
+        { "key": "handsCoverage",      "value": "exposed" },
+        { "key": "pelvicCoverage",     "value": "exposed" },
+        { "key": "vaginaCoverage",     "value": "exposed" },
+        { "key": "penisCoverage",      "value": "exposed" },
+        { "key": "buttCoverage",       "value": "exposed" },
+        { "key": "upperLegsCoverage",  "value": "exposed" },
+        { "key": "lowerLegsCoverage",  "value": "exposed" },
+        { "key": "feetCoverage",       "value": "exposed" }
+      ]
+    },
+
+    "all_covered": {
+      "description": "Set all coverage regions to covered.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperTorsoCoverage", "value": "covered" },
+        { "key": "lowerTorsoCoverage", "value": "covered" },
+        { "key": "breastsCoverage",    "value": "covered" },
+        { "key": "upperArmsCoverage",  "value": "covered" },
+        { "key": "lowerArmsCoverage",  "value": "covered" },
+        { "key": "handsCoverage",      "value": "covered" },
+        { "key": "pelvicCoverage",     "value": "covered" },
+        { "key": "vaginaCoverage",     "value": "covered" },
+        { "key": "penisCoverage",      "value": "covered" },
+        { "key": "buttCoverage",       "value": "covered" },
+        { "key": "upperLegsCoverage",  "value": "covered" },
+        { "key": "lowerLegsCoverage",  "value": "covered" },
+        { "key": "feetCoverage",       "value": "covered" }
+      ]
+    },
+
+    "upper_body_exposed": {
+      "description": "Expose the full upper body: torso, breasts, arms, and hands.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperTorsoCoverage", "value": "exposed" },
+        { "key": "lowerTorsoCoverage", "value": "exposed" },
+        { "key": "breastsCoverage",    "value": "exposed" },
+        { "key": "upperArmsCoverage",  "value": "exposed" },
+        { "key": "lowerArmsCoverage",  "value": "exposed" },
+        { "key": "handsCoverage",      "value": "exposed" }
+      ]
+    },
+
+    "upper_body_covered": {
+      "description": "Cover the full upper body: torso, breasts, arms, and hands.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperTorsoCoverage", "value": "covered" },
+        { "key": "lowerTorsoCoverage", "value": "covered" },
+        { "key": "breastsCoverage",    "value": "covered" },
+        { "key": "upperArmsCoverage",  "value": "covered" },
+        { "key": "lowerArmsCoverage",  "value": "covered" },
+        { "key": "handsCoverage",      "value": "covered" }
+      ]
+    },
+
+    "torso_exposed": {
+      "description": "Expose the torso and breasts. Does not affect arms or hands.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperTorsoCoverage", "value": "exposed" },
+        { "key": "lowerTorsoCoverage", "value": "exposed" },
+        { "key": "breastsCoverage",    "value": "exposed" }
+      ]
+    },
+
+    "torso_covered": {
+      "description": "Cover the torso and breasts. Does not affect arms or hands.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperTorsoCoverage", "value": "covered" },
+        { "key": "lowerTorsoCoverage", "value": "covered" },
+        { "key": "breastsCoverage",    "value": "covered" }
+      ]
+    },
+
+    "arms_exposed": {
+      "description": "Expose upper and lower arms. Does not affect hands.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperArmsCoverage", "value": "exposed" },
+        { "key": "lowerArmsCoverage", "value": "exposed" }
+      ]
+    },
+
+    "arms_covered": {
+      "description": "Cover upper and lower arms. Does not affect hands.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperArmsCoverage", "value": "covered" },
+        { "key": "lowerArmsCoverage", "value": "covered" }
+      ]
+    },
+
+    "hands_exposed": {
+      "description": "Expose hands.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "handsCoverage", "value": "exposed" }
+      ]
+    },
+
+    "hands_covered": {
+      "description": "Cover hands.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "handsCoverage", "value": "covered" }
+      ]
+    },
+
+    "lower_body_exposed": {
+      "description": "Expose the full lower body: pelvic region, and legs.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "pelvicCoverage",    "value": "exposed" },
+        { "key": "vaginaCoverage",    "value": "exposed" },
+        { "key": "penisCoverage",     "value": "exposed" },
+        { "key": "buttCoverage",      "value": "exposed" },
+        { "key": "upperLegsCoverage", "value": "exposed" },
+        { "key": "lowerLegsCoverage", "value": "exposed" }
+      ]
+    },
+
+    "lower_body_covered": {
+      "description": "Cover the full lower body: pelvic region, and legs.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "pelvicCoverage",    "value": "covered" },
+        { "key": "vaginaCoverage",    "value": "covered" },
+        { "key": "penisCoverage",     "value": "covered" },
+        { "key": "buttCoverage",      "value": "covered" },
+        { "key": "upperLegsCoverage", "value": "covered" },
+        { "key": "lowerLegsCoverage", "value": "covered" }
+      ]
+    },
+
+    "pelvic_exposed": {
+      "description": "Expose pelvic sub-regions: pelvic area, vagina, penis, and butt. Does not affect legs or feet.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "pelvicCoverage", "value": "exposed" },
+        { "key": "vaginaCoverage", "value": "exposed" },
+        { "key": "penisCoverage",  "value": "exposed" },
+        { "key": "buttCoverage",   "value": "exposed" }
+      ]
+    },
+
+    "pelvic_covered": {
+      "description": "Cover pelvic sub-regions: pelvic area, vagina, penis, and butt. Does not affect legs or feet.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "pelvicCoverage", "value": "covered" },
+        { "key": "vaginaCoverage", "value": "covered" },
+        { "key": "penisCoverage",  "value": "covered" },
+        { "key": "buttCoverage",   "value": "covered" }
+      ]
+    },
+
+    "legs_exposed": {
+      "description": "Expose upper and lower legs. Does not affect feet.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperLegsCoverage", "value": "exposed" },
+        { "key": "lowerLegsCoverage", "value": "exposed" }
+      ]
+    },
+
+    "legs_covered": {
+      "description": "Cover upper and lower legs. Does not affect feet.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "upperLegsCoverage", "value": "covered" },
+        { "key": "lowerLegsCoverage", "value": "covered" }
+      ]
+    },
+
+    "feet_exposed": {
+      "description": "Expose feet.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "feetCoverage", "value": "exposed" }
+      ]
+    },
+
+    "feet_covered": {
+      "description": "Cover feet.",
+      "tags": [], "removeTags": [],
+      "kv": [
+        { "key": "feetCoverage", "value": "covered" }
+      ]
+    }
+
+  }
+}

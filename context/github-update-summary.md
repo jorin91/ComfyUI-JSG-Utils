@@ -1,0 +1,26 @@
+- Registered new ComfyUI nodes in `__init__.py`: Prompt Builder V2, Normalize Number, Value Stepper, Model Info, LoRA Stack Loader/Advanced, and Image Size Calculator.
+- Added utility nodes for image size calculation, numeric normalization, auto-stepping numeric values, LoRA stack loading with metadata capture, and model/LoRA info extraction.
+- Added `js/JSGValueStepper.js` so Value Stepper updates its `value` widget after successful execution, and updated the Formatted String Viewer DOM widget to remain display-only without serializing into `widgets_values`.
+- Updated `JSGCombineStrings` so prefix and suffix are joined as standalone prompt parts around the normalized options.
+- Upgraded the original Random Prompt Builder to output positive prompt, negative prompt, and debug state; added `data/random_prompt_generator/state.json` for initial tags, key/value state, triggers, and default negative prompt.
+- Migrated the original Random Prompt Builder JSON schema to structured values with `positiveText`, `negativeText`, `tags`, `removeTags`, `kv`, `triggers`, `filtersRequired`, `filtersAny`, `includeInPrompt`, and optional `evaluationOrder`.
+- Reworked the original Random Prompt Builder evaluation to stream in evaluation order, accumulate tags and key/value state, apply part/value filters, re-pick from valid values when a selected value fails validation, and support logic-only values through `includeInPrompt=false`.
+- Added Prompt Builder V2 under `nodes/JSGRandomPromptBuilderV2.py` with JSON-driven categories, shared generators, state profiles, presets, debug state output, and manual category override support.
+- Removed lazy-loading validation behavior; V2 now depends on explicit `resolve_order` and documented state-producing category order.
+- Added state-profile debug ignore arrays for state keys and tags; ignored checks bypass only that specific state/tag check while sibling checks still validate normally.
+- Updated Subject generation so random Subject always emits a concrete value and validates generated gender against `profile.gender_mode`.
+- Updated Environment empty weighting: the base rule remains one empty entry per 10 values, while room/area and surface use documented multipliers; generator-backed template builders avoid duplicate builder-level empty chances.
+- Replaced the broad Environment nature location with five outdoor-only nature locations: forest, beach, lake, river, and countryside, each with dedicated room/area values and surface compatibility.
+- Updated Environment room/area validation so each value still requires the matching domain, but accepts either a compatible selected location or a missing location; this keeps valid location-context combinations while allowing room/area and surface output when location skips.
+- Split ethnicity skin tone into a separate builder while keeping validation tied to the selected ethnicity base.
+- Updated ethnicity skin-tone prompt values to explicitly use `skin color` wording for clearer model guidance.
+- Expanded Ethnicity base/mix generators with broader and subregional heritage labels, and expanded compatible skin-color ranges so repeated ethnicity output has more visible variation without adding stereotype feature assumptions.
+- Corrected breast/body-detail wording so breast generators use breast-specific language rather than chest wording.
+- Corrected neutral breast-development age-phase gates so only absolute no-development values are available for `young_child`, minimal/beginning development starts at `child`, and small visible development starts at `preteen`.
+- Reworked Action as one builder with route values for general, sport, NSFW, sexual, and modular adult routes instead of stacked category builders.
+- Reworked Pose as one builder with route values for general, sport-derived, NSFW, and sexual routes instead of stacked category builders.
+- Added internal `activity.route` for random Action/Pose coordination: random Action requires `activity.route=action`, random Pose requires `activity.route=pose`, and the route is selected only from random-enabled Action/Pose categories.
+- Changed V2 random selection so every picker call uses a fresh non-reused `os.urandom(16)` seed within the current build instead of one shared run seed.
+- Preserved manual Action/Pose override behavior: disabled-random categories with override text emit that text directly, and disabled-random categories with empty override intentionally emit no output.
+- Removed the old partial Action-to-Pose compatibility state writes/checks from Action/Pose categories and shared generators.
+- Updated Prompt Builder V2 context docs for the current builder/value flow, route behavior, manual override semantics, generator validation order, and retired lazy-loading/action-pose compatibility behavior.

@@ -1,0 +1,603 @@
+{
+  "generators": [
+    {
+      "id": "generator.pose.general",
+      "description": "General pose picker for ordinary stance, sitting, lying, leaning, kneeling, squatting, stretching, and non-intimate hand placement poses.",
+      "values": [
+        {
+          "text": "standing"
+        },
+        {
+          "text": "standing in a relaxed pose"
+        },
+        {
+          "text": "standing casually"
+        },
+        {
+          "text": "standing in a neutral pose"
+        },
+        {
+          "text": "standing with one knee raised sideways"
+        },
+        {
+          "text": "standing with one knee raised"
+        },
+        {
+          "text": "one knee raised"
+        },
+        {
+          "text": "standing with legs together"
+        },
+        {
+          "text": "legs together"
+        },
+        {
+          "text": "standing with legs apart"
+        },
+        {
+          "text": "legs apart"
+        },
+        {
+          "text": "standing with a wide stance"
+        },
+        {
+          "text": "wide stance"
+        },
+        {
+          "text": "standing bent forward"
+        },
+        {
+          "text": "bent over"
+        },
+        {
+          "text": "bent over at the waist"
+        },
+        {
+          "text": "leaning forward"
+        },
+        {
+          "text": "standing bent forward with hands supporting the body"
+        },
+        {
+          "text": "leaning back"
+        },
+        {
+          "text": "leaning sideways"
+        },
+        {
+          "text": "sitting"
+        },
+        "",
+        {
+          "text": "sitting cross-legged"
+        },
+        {
+          "text": "sitting with legs spread forward in a V shape"
+        },
+        {
+          "text": "sitting with legs together and extended forward"
+        },
+        {
+          "text": "sitting with knees raised"
+        },
+        {
+          "text": "sitting with knees pulled up"
+        },
+        {
+          "text": "knees raised"
+        },
+        {
+          "text": "sitting while leaning back"
+        },
+        {
+          "text": "sitting with one leg extended and one knee raised"
+        },
+        {
+          "text": "lying on the stomach"
+        },
+        {
+          "text": "lying on the stomach with legs together"
+        },
+        {
+          "text": "lying on the stomach with legs spread"
+        },
+        {
+          "text": "lying on the stomach propped up on both hands"
+        },
+        "",
+        {
+          "text": "lying on the back"
+        },
+        {
+          "text": "lying on the back with one knee raised and one leg extended"
+        },
+        {
+          "text": "lying on the back with both legs raised"
+        },
+        {
+          "text": "lying with legs raised upward"
+        },
+        {
+          "text": "legs raised"
+        },
+        {
+          "text": "lying on the back with both legs extended forward"
+        },
+        {
+          "text": "lying on the side"
+        },
+        {
+          "text": "lying on the side propped up on one elbow"
+        },
+        {
+          "text": "lying on the side with one knee raised"
+        },
+        {
+          "text": "lying on the side with one leg extended upward"
+        },
+        {
+          "text": "lying on the side with one knee tucked up"
+        },
+        {
+          "text": "lying on the side with both knees tucked up"
+        },
+        "",
+        {
+          "text": "squatting"
+        },
+        {
+          "text": "crouching"
+        },
+        {
+          "text": "squatting with legs spread"
+        },
+        {
+          "text": "deep low squat"
+        },
+        {
+          "text": "low squat"
+        },
+        {
+          "text": "wall squat"
+        },
+        {
+          "text": "squatting in side profile"
+        },
+        {
+          "text": "side profile squat"
+        },
+        {
+          "text": "squatting with legs together"
+        },
+        {
+          "text": "squatting while leaning back"
+        },
+        {
+          "text": "hands on hips"
+        },
+        {
+          "text": "hands resting on the knees"
+        },
+        {
+          "text": "hands on the knees"
+        },
+        {
+          "text": "one hand on one knee"
+        },
+        {
+          "text": "hands behind the back"
+        },
+        {
+          "text": "hands on the face"
+        },
+        {
+          "text": "hands gently placed on the face"
+        },
+        {
+          "text": "one hand on the cheek"
+        },
+        {
+          "text": "hands on the neck"
+        },
+        "",
+        {
+          "text": "hands gently placed on the neck"
+        },
+        {
+          "text": "one hand resting on the neck"
+        },
+        {
+          "text": "hands on the lower abdomen"
+        },
+        {
+          "text": "hands gently placed on the lower abdomen"
+        },
+        {
+          "text": "one hand resting on the lower abdomen"
+        },
+        {
+          "text": "hands on the side of the torso"
+        },
+        {
+          "text": "one hand resting on the side of the torso"
+        },
+        {
+          "text": "hands on the upper abdomen"
+        },
+        {
+          "text": "hands gently placed on the upper abdomen"
+        },
+        {
+          "text": "hands in the hair"
+        },
+        "",
+        {
+          "text": "one arm stretched upward"
+        },
+        {
+          "text": "both arms stretched upward"
+        },
+        {
+          "text": "kneeling"
+        },
+        {
+          "text": "resting on one knee"
+        },
+        {
+          "text": "kneeling with one knee on the ground"
+        },
+        {
+          "text": "kneeling while sitting back on the heels"
+        },
+        {
+          "text": "sitting on the heels"
+        },
+        {
+          "text": "sitting on heels"
+        },
+        {
+          "text": "kneeling bent forward on both hands"
+        },
+        {
+          "text": "on hands and knees"
+        },
+        {
+          "text": "on all fours"
+        },
+        {
+          "text": "all fours"
+        },
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "generator.pose.sport.gymnastics_fitness",
+      "description": "Static gymnastics and fitness-derived pose picker. These values are derived from action vocabulary but describe held body forms rather than movement.",
+      "values": [
+        "gymnastics balance pose",
+        "gymnastics landing pose",
+        {
+          "text": "handstand pose"
+        },
+        {
+          "text": "bridge pose"
+        },
+        "split stretch pose",
+        "toe-point pose",
+        "backbend pose",
+        {
+          "text": "plank pose"
+        },
+        {
+          "text": "side plank pose"
+        },
+        "deep squat exercise pose",
+        "",
+        "lunge pose",
+        {
+          "text": "push-up position"
+        },
+        "crunch pose",
+        "box jump landing pose",
+        {
+          "text": "mountain climber position"
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.pose.sport.yoga",
+      "description": "Static yoga-derived pose picker. These values keep yoga body forms available as Pose without turning yoga movement/session wording into Pose.",
+      "values": [
+        "lotus pose",
+        "tree pose",
+        {
+          "text": "cobra pose"
+        },
+        {
+          "text": "downward dog pose"
+        },
+        {
+          "text": "upward dog pose"
+        },
+        "child's pose",
+        "warrior pose",
+        "triangle pose",
+        "camel pose",
+        "boat pose",
+        "",
+        {
+          "text": "crow pose"
+        },
+        {
+          "text": "headstand pose"
+        },
+        "shoulder stand pose",
+        "seated twist pose",
+        "forward fold pose",
+        "standing stretch pose",
+        "leg stretch pose",
+        "spinal twist pose",
+        {
+          "text": "palms together pose"
+        },
+        "eyes-closed meditation pose",
+        "",
+        "peaceful posture",
+        {
+          "text": "reaching upward yoga pose"
+        },
+        {
+          "text": "cat pose"
+        },
+        {
+          "text": "cow pose"
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.pose.sport.dance",
+      "description": "Static dance-derived pose picker. These values keep recognisable dance forms as Pose while movement, choreography, partner interaction, and performance action stay in Action.",
+      "values": [
+        "ballet arabesque pose",
+        "ballet plie pose",
+        "ballet releve pose",
+        "ballet toe-point pose",
+        {
+          "text": "elegant ballet arm pose"
+        },
+        "mid-dance pose",
+        "dramatic dance pose",
+        "contemporary floor pose",
+        "contemporary body extension pose",
+        "camera-facing idol dance pose",
+        "",
+        "cute idol dance pose",
+        "K-pop performance pose",
+        "tango leg-hook pose",
+        {
+          "text": "ballroom dance frame pose"
+        },
+        "salsa hip pose",
+        "expressive dance pose",
+        ""
+      ]
+    },
+    {
+      "id": "generator.pose.nsfw",
+      "description": "Adult-only NSFW pose picker for sensitive, revealing, intimate, suggestive, and static sensitive-area hand-placement poses that are gated but not necessarily sexual acts.",
+      "values": [
+        {
+          "text": "provocative pose"
+        },
+        {
+          "text": "in a provocative pose"
+        },
+        {
+          "text": "suggestive pose"
+        },
+        {
+          "text": "in a suggestive pose"
+        },
+        {
+          "text": "legs spread open"
+        },
+        {
+          "text": "legs spread suggestively"
+        },
+        {
+          "text": "hands between the legs"
+        },
+        {
+          "text": "hands placed between the legs"
+        },
+        {
+          "text": "hips pushed forward"
+        },
+        {
+          "text": "hips pushed forward in a pose"
+        },
+        {
+          "text": "visible thigh gap"
+        },
+        {
+          "text": "standing with a visible thigh gap"
+        },
+        {
+          "text": "looking seductively"
+        },
+        {
+          "text": "looking seductively at the camera"
+        },
+        {
+          "text": "arched back"
+        },
+        {
+          "text": "arched back pose"
+        },
+        {
+          "text": "bent over suggestively"
+        },
+        {
+          "text": "suggestive all-fours pose"
+        },
+        {
+          "text": "provocative camera-facing breast display",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "provocative camera-facing vulva display",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "provocative camera-facing penis display",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "provocative camera-facing buttocks display"
+        },
+        {
+          "text": "provocative camera-facing anus display"
+        },
+        "",
+        {
+          "text": "hands on the breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "hands gently placed on the breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "one hand resting on a breast",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "one hand cupped over a breast",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "hands placed over the nipples"
+        },
+        {
+          "text": "fingers gently resting on the nipples"
+        },
+        {
+          "text": "hands resting over the mons pubis"
+        },
+        {
+          "text": "one hand resting on the bikini line"
+        },
+        {
+          "text": "fingers resting on the bikini line"
+        },
+        {
+          "text": "hands on the butt"
+        },
+        "",
+        {
+          "text": "hands gently placed on the butt"
+        },
+        {
+          "text": "hands on the buttocks"
+        },
+        {
+          "text": "hands gently placed on the buttocks"
+        },
+        {
+          "text": "one hand resting on the buttocks"
+        },
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "generator.pose.sexual",
+      "description": "Adult-only sexual pose picker. Reserved for explicit sexual acts or sex-contextual poses; NSFW but non-sexual sensitive poses belong in generator.pose.nsfw.",
+      "values": [
+        {
+          "text": "labia held open with the fingers",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "buttocks held spread to reveal the anus"
+        },
+        {
+          "text": "hand near the mouth in a suggestive oral-sex gesture"
+        },
+        {
+          "text": "open mouth with tongue out, posed as if expecting oral ejaculation"
+        },
+        ""
+      ]
+    }
+  ]
+}

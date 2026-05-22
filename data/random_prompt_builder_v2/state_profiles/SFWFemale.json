@@ -1,0 +1,20 @@
+{
+  "schema": "jsg_random_prompt_builder_v2.state_profile.v1",
+  "description": "SFW female startup state. Allows SFW routes, blocks NSFW routes, and seeds female subject gender as an overrideable fallback.",
+  "state_set": {
+    "content.sfw_allowed": true,
+    "content.nsfw_allowed": false,
+    "profile.content_mode": "sfw",
+    "profile.gender_mode": "female",
+    "subject.adult": true,
+    "subject.gender": "female"
+  },
+  "state_priority": {
+    "subject.adult": -1,
+    "subject.gender": -1
+  },
+  "ignore_state_keys": [],
+  "ignore_tags": [],
+  "tags_add": [],
+  "tags_remove": []
+}

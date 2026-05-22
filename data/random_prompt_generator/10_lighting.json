@@ -1,6 +1,7 @@
 {
   "name": "Lighting",
   "index": 10,
+  "evaluationOrder": 10,
   "description": "Lighting category describing light quality, direction, and mood.",
   "separator": false,
   "subIndexes": [
@@ -16,9 +17,9 @@
           "values": [
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [],
-          "includeInPrompt": true
+          "includeInPrompt": true,
+          "filtersRequired": [],
+          "filtersAny": []
         }
       ]
     }

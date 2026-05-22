@@ -1,0 +1,85 @@
+{
+  "id": "body_build",
+  "label": "Body Build",
+  "order": 2,
+  "description": "General whole-body build category. One builder selects at most one broad physical trait across weight, muscularity, tone, or bone visibility; a second builder may add overall proportions.",
+  "builders": [
+    {
+      "id": "builder.body_build.general.physical_trait",
+      "description": "Optional whole-body physical trait builder. Weight, muscularity, tone, and general bone visibility are sibling routes so only one of these broad steering aspects can emit per prompt.",
+      "values": [
+        {
+          "template": "{weight}",
+          "slots": {
+            "weight": {
+              "generator": "generator.body_build.weight"
+            }
+          },
+          "state_export": {
+            "body_build.weight": {
+              "slot": "weight"
+            }
+          }
+        },
+        {
+          "template": "{muscularity}",
+          "slots": {
+            "muscularity": {
+              "generator": "generator.body_build.muscularity"
+            }
+          },
+          "state_export": {
+            "body_build.muscularity": {
+              "slot": "muscularity"
+            }
+          }
+        },
+        {
+          "template": "{toning}",
+          "slots": {
+            "toning": {
+              "generator": "generator.body_build.toning"
+            }
+          },
+          "state_export": {
+            "body_build.toning": {
+              "slot": "toning"
+            }
+          }
+        },
+        {
+          "template": "{bone_visibility}",
+          "slots": {
+            "bone_visibility": {
+              "generator": "generator.body_build.bone_visibility"
+            }
+          },
+          "state_export": {
+            "body_build.bone_visibility": {
+              "slot": "bone_visibility"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.body_build.general.proportions",
+      "description": "Optional whole-body proportions and silhouette builder. Values stay general and avoid naming body regions.",
+      "values": [
+        {
+          "template": "{proportions}",
+          "slots": {
+            "proportions": {
+              "generator": "generator.body_build.proportions"
+            }
+          },
+          "state_export": {
+            "body_build.proportions": {
+              "slot": "proportions"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

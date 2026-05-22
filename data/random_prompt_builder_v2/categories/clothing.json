@@ -1,0 +1,287 @@
+{
+  "id": "clothing",
+  "label": "Clothing",
+  "order": 3,
+  "description": "Clothing category. First chooses the nude/clothed state, then broad style, then optional complete clothing prompts for whole body, upper body, and lower body.",
+  "builders": [
+    {
+      "id": "builder.clothing.coverage",
+      "description": "Logic-only nude/clothed coverage route. Nude is adult NSFW-gated; clothed is SFW-gated, emits no text, and enables clothing prompt routes.",
+      "values": [
+        {
+          "text": "nude",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "environment.clothing.theme.nude",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          },
+          "state_set": {
+            "clothing.coverage": "nude"
+          },
+          "allow_empty": true
+        },
+        {
+          "text": "",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          },
+          "state_set": {
+            "clothing.coverage": "clothed"
+          },
+          "allow_empty": true
+        }
+      ]
+    },
+    {
+      "id": "builder.clothing.style",
+      "description": "Broad clothing style prompt for clothed subjects. Styles remain broad and may be combined with future complete clothing prompts only when the authored values stay coherent.",
+      "state_set": {
+        "clothing.action.exist": true,
+        "clothing.action.upper_body.exist": true,
+        "clothing.action.lower_body.exist": true
+      },
+      "values": [
+        {
+          "template": "{style}",
+          "slots": {
+            "style": {
+              "generator": "generator.clothing.style"
+            }
+          },
+          "state_export": {
+            "clothing.style": {
+              "slot": "style"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "all": [
+          {
+            "state": "clothing.coverage",
+            "op": "equals",
+            "value": "clothed"
+          }
+        ]
+      }
+    },
+    {
+      "id": "builder.clothing.whole",
+      "description": "Complete whole-body clothing prompt route. Values must be pre-composed coherent prompts and may contain commas.",
+      "state_set": {
+        "clothing.action.exist": true,
+        "clothing.action.upper_body.exist": true,
+        "clothing.action.lower_body.exist": true
+      },
+      "values": [
+        {
+          "template": "{clothing}",
+          "slots": {
+            "clothing": {
+              "generator": "generator.clothing.sfw.whole"
+            }
+          },
+          "state_export": {
+            "clothing.whole": {
+              "slot": "clothing"
+            }
+          }
+        },
+        {
+          "template": "{clothing}",
+          "slots": {
+            "clothing": {
+              "generator": "generator.clothing.nsfw.whole"
+            }
+          },
+          "state_export": {
+            "clothing.whole": {
+              "slot": "clothing"
+            }
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "conditions": {
+        "all": [
+          {
+            "state": "clothing.coverage",
+            "op": "equals",
+            "value": "clothed"
+          },
+          {
+            "state": "clothing.style",
+            "op": "missing"
+          }
+        ]
+      }
+    },
+    {
+      "id": "builder.clothing.upper_body",
+      "description": "Complete upper-body clothing prompt route. Values must be pre-composed coherent prompts and may contain commas.",
+      "state_set": {
+        "clothing.action.exist": true,
+        "clothing.action.upper_body.exist": true
+      },
+      "values": [
+        {
+          "template": "{clothing}",
+          "slots": {
+            "clothing": {
+              "generator": "generator.clothing.sfw.upper_body"
+            }
+          },
+          "state_export": {
+            "clothing.upper_body": {
+              "slot": "clothing"
+            }
+          }
+        },
+        {
+          "template": "{clothing}",
+          "slots": {
+            "clothing": {
+              "generator": "generator.clothing.nsfw.upper_body"
+            }
+          },
+          "state_export": {
+            "clothing.upper_body": {
+              "slot": "clothing"
+            }
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "conditions": {
+        "all": [
+          {
+            "state": "clothing.coverage",
+            "op": "equals",
+            "value": "clothed"
+          },
+          {
+            "state": "clothing.style",
+            "op": "missing"
+          },
+          {
+            "state": "clothing.whole",
+            "op": "missing"
+          }
+        ]
+      }
+    },
+    {
+      "id": "builder.clothing.lower_body",
+      "description": "Complete lower-body clothing prompt route. Values must be pre-composed coherent prompts and may contain commas.",
+      "state_set": {
+        "clothing.action.exist": true,
+        "clothing.action.lower_body.exist": true
+      },
+      "values": [
+        {
+          "template": "{clothing}",
+          "slots": {
+            "clothing": {
+              "generator": "generator.clothing.sfw.lower_body"
+            }
+          },
+          "state_export": {
+            "clothing.lower_body": {
+              "slot": "clothing"
+            }
+          }
+        },
+        {
+          "template": "{clothing}",
+          "slots": {
+            "clothing": {
+              "generator": "generator.clothing.nsfw.lower_body"
+            }
+          },
+          "state_export": {
+            "clothing.lower_body": {
+              "slot": "clothing"
+            }
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        }
+      ],
+      "conditions": {
+        "all": [
+          {
+            "state": "clothing.coverage",
+            "op": "equals",
+            "value": "clothed"
+          },
+          {
+            "state": "clothing.style",
+            "op": "missing"
+          },
+          {
+            "state": "clothing.whole",
+            "op": "missing"
+          }
+        ]
+      }
+    }
+  ]
+}

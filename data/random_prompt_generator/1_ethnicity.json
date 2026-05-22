@@ -1,109 +1,910 @@
-{
+ {
   "name": "Ethnicity",
   "index": 1,
+  "evaluationOrder": 1,
   "description": "Ethnicity category with optional mix and separate skin-tone nuance.",
   "separator": false,
   "subIndexes": [
     {
       "subIndex": 0,
-      "description": "Base ethnicity and mix subIndex.",
+      "description": "Base ethnicity and mix subIndex. Semantic tag: ethnicity_base. Semantic kv key: ethnicity.",
       "separator": true,
       "parts": [
         {
           "partsIndex": 0,
-          "description": "Base ethnicity anchor. This value is the main ethnicity reference for the later parts in this subIndex.",
+          "description": "Base ethnicity values. Semantic tag: ethnicity_base. Semantic kv key: ethnicity.",
           "separator": false,
           "values": [
-            "European ethnicity",
-            "Northern European ethnicity",
-            "Western European ethnicity",
-            "Eastern European ethnicity",
-            "Southern European ethnicity",
+            {
+              "positiveText": "European ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "european"
+                }
+              ]
+            },
+            {
+              "positiveText": "Northern European ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "northern_european"
+                }
+              ]
+            },
+            {
+              "positiveText": "Western European ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "western_european"
+                }
+              ]
+            },
+            {
+              "positiveText": "Eastern European ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "eastern_european"
+                }
+              ]
+            },
+            {
+              "positiveText": "Southern European ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "southern_european"
+                }
+              ]
+            },
             "",
-            "Mediterranean ethnicity",
-            "Middle Eastern ethnicity",
-            "North African ethnicity",
-            "Sub-Saharan African ethnicity",
-            "East Asian ethnicity",
+            {
+              "positiveText": "Mediterranean ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "mediterranean"
+                }
+              ]
+            },
+            {
+              "positiveText": "Middle Eastern ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "middle_eastern"
+                }
+              ]
+            },
+            {
+              "positiveText": "North African ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "north_african"
+                }
+              ]
+            },
+            {
+              "positiveText": "Sub-Saharan African ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "sub_saharan_african"
+                }
+              ]
+            },
+            {
+              "positiveText": "East Asian ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "east_asian"
+                }
+              ]
+            },
             "",
-            "Southeast Asian ethnicity",
-            "South Asian ethnicity",
-            "Central Asian ethnicity",
-            "Latina ethnicity",
+            {
+              "positiveText": "Southeast Asian ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "southeast_asian"
+                }
+              ]
+            },
+            {
+              "positiveText": "South Asian ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "south_asian"
+                }
+              ]
+            },
+            {
+              "positiveText": "Central Asian ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "central_asian"
+                }
+              ]
+            },
+            {
+              "positiveText": "Latina ethnicity",
+              "tags": [
+                "ethnicity_base"
+              ],
+              "kv": [
+                {
+                  "key": "ethnicity",
+                  "value": "latina"
+                }
+              ]
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [],
-          "includeInPrompt": true
+          "includeInPrompt": true,
+          "filtersRequired": [],
+          "filtersAny": []
         },
         {
           "partsIndex": 1,
-          "description": "Mixed ethnicity. This part depends on the base ethnicity anchor and should stay interpretable as an ethnicity extension when earlier optional parts are absent. Custom empty-string rule: 1 empty string per 3 non-empty values, rounded upward, placement must be preserved unless explicitly changed.",
+          "description": "Mixed ethnicity values. Uses semantic tag: ethnicity_base. Uses semantic kv key: ethnicity.",
           "separator": false,
           "values": [
-            "with mixed European ethnicity",
-            "with mixed Northern European ethnicity",
-            "with mixed Western European ethnicity",
+            {
+              "positiveText": "with mixed European ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "european"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "with mixed Northern European ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "northern_european"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "with mixed Western European ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "western_european"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
             "",
-            "with mixed Eastern European ethnicity",
-            "with mixed Southern European ethnicity",
-            "with mixed Mediterranean ethnicity",
+            {
+              "positiveText": "with mixed Eastern European ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "eastern_european"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "with mixed Southern European ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "southern_european"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "with mixed Mediterranean ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "mediterranean"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
             "",
-            "with mixed Middle Eastern ethnicity",
-            "with mixed North African ethnicity",
-            "with mixed Sub-Saharan African ethnicity",
+            {
+              "positiveText": "with mixed Middle Eastern ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "middle_eastern"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "with mixed North African ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "north_african"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "with mixed Sub-Saharan African ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "sub_saharan_african"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
             "",
-            "with mixed East Asian ethnicity",
-            "with mixed Southeast Asian ethnicity",
-            "with mixed South Asian ethnicity",
+            {
+              "positiveText": "with mixed East Asian ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "east_asian"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "with mixed Southeast Asian ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "southeast_asian"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "with mixed South Asian ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "south_asian"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
             "",
-            "with mixed Central Asian ethnicity",
-            "with mixed Latina ethnicity",
+            {
+              "positiveText": "with mixed Central Asian ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "central_asian"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "with mixed Latina ethnicity",
+              "filtersRequired": [
+                {
+                  "kvBlacklist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "latina"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [
+          "includeInPrompt": true,
+          "filtersRequired": [
             {
-              "targetIndex": 1,
-              "targetSubIndex": 0,
-              "targetPartsIndex": 0,
-              "blacklist": ""
+              "tagWhitelist": [
+                "ethnicity_base"
+              ]
             }
           ],
-          "includeInPrompt": true
+          "filtersAny": []
         }
       ]
     },
     {
       "subIndex": 1,
-      "description": "Skin tone subIndex that may also work independently of ethnicity.",
+      "description": "Skin tone subIndex. Uses semantic kv key: ethnicity.",
       "separator": true,
       "parts": [
         {
           "partsIndex": 0,
-          "description": "Skin tone anchor for ethnicity-related or independent skin tone prompting.",
+          "description": "Skin tone values. Uses semantic kv key: ethnicity.",
           "separator": false,
           "values": [
-            "very fair skin",
-            "fair skin",
-            "light skin",
-            "light warm-toned skin",
-            "light olive skin",
+            {
+              "positiveText": "very fair skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "northern_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "western_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "eastern_european"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "positiveText": "fair skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "northern_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "western_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "eastern_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "southern_european"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "positiveText": "light skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "northern_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "western_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "eastern_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "southern_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "east_asian"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "positiveText": "light warm-toned skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "mediterranean"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "middle_eastern"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "south_asian"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "latina"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "positiveText": "light olive skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "mediterranean"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "middle_eastern"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "southern_european"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "latina"
+                    }
+                  ]
+                }
+              ]
+            },
             "",
-            "olive skin",
-            "golden skin",
-            "tan skin",
-            "light brown skin",
-            "medium brown skin",
+            {
+              "positiveText": "olive skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "mediterranean"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "middle_eastern"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "north_african"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "latina"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "central_asian"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "positiveText": "golden skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "southeast_asian"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "east_asian"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "south_asian"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "latina"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "positiveText": "tan skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "mediterranean"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "middle_eastern"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "north_african"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "latina"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "south_asian"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "positiveText": "light brown skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "south_asian"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "southeast_asian"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "north_african"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "latina"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "positiveText": "medium brown skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "south_asian"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "north_african"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "sub_saharan_african"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "latina"
+                    }
+                  ]
+                }
+              ]
+            },
             "",
-            "rich brown skin",
-            "deep brown skin",
-            "dark skin",
+            {
+              "positiveText": "rich brown skin",
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "sub_saharan_african"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "south_asian"
+                    }
+                  ]
+                },
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "north_african"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "positiveText": "deep brown skin",
+              "filtersRequired": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "sub_saharan_african"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "dark skin",
+              "filtersRequired": [
+                {
+                  "kvWhitelist": [
+                    {
+                      "key": "ethnicity",
+                      "value": "sub_saharan_african"
+                    }
+                  ]
+                }
+              ],
+              "filtersAny": []
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [],
-          "includeInPrompt": true
+          "includeInPrompt": true,
+          "filtersRequired": [],
+          "filtersAny": []
         }
       ]
     }

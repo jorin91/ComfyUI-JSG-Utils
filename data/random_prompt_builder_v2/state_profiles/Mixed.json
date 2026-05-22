@@ -1,0 +1,18 @@
+{
+  "schema": "jsg_random_prompt_builder_v2.state_profile.v1",
+  "description": "Mixed startup state for both genders. Allows both SFW and NSFW routes and does not seed subject gender.",
+  "state_set": {
+    "content.sfw_allowed": true,
+    "content.nsfw_allowed": true,
+    "profile.content_mode": "mixed",
+    "profile.gender_mode": "any",
+    "subject.adult": true
+  },
+  "state_priority": {
+    "subject.adult": -1
+  },
+  "ignore_state_keys": [],
+  "ignore_tags": [],
+  "tags_add": [],
+  "tags_remove": []
+}

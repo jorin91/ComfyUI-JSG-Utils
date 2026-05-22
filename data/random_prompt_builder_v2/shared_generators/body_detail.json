@@ -1,0 +1,1538 @@
+{
+  "generators": [
+    {
+      "id": "generator.body_detail.hair_style",
+      "description": "General hairstyle values for Body Detail. Values are safe for all ages; gendered wording validates against subject.gender.",
+      "values": [
+        "short hair",
+        "medium-length hair",
+        "long hair",
+        "shoulder-length hair",
+        "straight hair",
+        "wavy hair",
+        "curly hair",
+        "messy hair",
+        "neatly combed hair",
+        "hair with bangs",
+        "",
+        {
+          "text": "buzz cut",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "crew cut",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "fade haircut",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "undercut hairstyle",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "side-parted haircut",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "slicked-back hair",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "short textured haircut",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "shaved hairstyle",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "spiky hair",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        {
+          "text": "short quiff hairstyle",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "male"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "bob cut",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "pixie cut",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "layered hair",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "long straight hair",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "long wavy hair",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "ponytail hairstyle",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "braided hair",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "pigtails",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "hair bun",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        {
+          "text": "half-up hairstyle",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.gender",
+                "op": "equals",
+                "value": "female"
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.body_detail.hair_color",
+      "description": "Hair color values for Body Detail, mixing natural colors with stylized fantasy dye colors.",
+      "values": [
+        "black hair",
+        "dark brown hair",
+        "medium brown hair",
+        "light brown hair",
+        "chestnut brown hair",
+        "auburn hair",
+        "copper red hair",
+        "ginger red hair",
+        "strawberry blonde hair",
+        "golden blonde hair",
+        "",
+        "ash blonde hair",
+        "platinum blonde hair",
+        "silver hair",
+        "gray hair",
+        "white hair",
+        "salt-and-pepper hair",
+        "pastel pink hair",
+        "hot pink hair",
+        "lavender purple hair",
+        "deep purple hair",
+        "",
+        "light blue hair",
+        "electric blue hair",
+        "teal hair",
+        "turquoise hair",
+        "mint green hair",
+        "emerald green hair",
+        "bright red hair",
+        "orange hair",
+        "rainbow-streaked hair",
+        "split-dyed hair",
+        ""
+      ]
+    },
+    {
+      "id": "generator.body_detail.breasts.size_cup",
+      "description": "Neutral female breast-size values paired with cup-size context. Each value owns its own age-phase max-size condition; missing age phase keeps the full scale available for manual Subject overrides.",
+      "values": [
+        {
+          "text": "nearly flat breasts (AAA cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very petite breasts (AA cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "petite breasts (A cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "small breasts (B cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "modest breasts (C cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "medium breasts (D cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "full breasts (DD cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "large breasts (E cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very large breasts (F cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "huge breasts (G cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "extremely large breasts (H cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "enormous breasts (I cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "massive breasts (J cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "extreme oversized breasts (K cup)",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.body_detail.breasts.development",
+      "description": "Neutral breast-development wording. Absolute no-development values are valid for every phase; minimal or beginning development starts at child; small visible development starts at preteen; higher values keep max-development conditions. Missing age phase keeps the full scale available for manual Subject overrides.",
+      "values": [
+        "no breast development",
+        "completely undeveloped breasts",
+        "no visible breast development",
+        {
+          "text": "underdeveloped breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "flat undeveloped breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "barely any breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "minimal breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very low breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "low breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "slight breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child"
+                ]
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "petite breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "small breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "modest breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "moderate breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "full breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very full breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "extreme breast development",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.body_detail.breasts.nsfw_size",
+      "description": "NSFW-gated breast-size wording using more sensual or sexualized vocabulary without cup-size notation. Prompt text avoids age words; values validate through adult/content state and age phase.",
+      "values": [
+        {
+          "text": "flat breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "flat-breasted body",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "nearly flat breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "barely-there tits",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very tiny tits",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "tiny flat tits",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "tiny tits",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very small tits",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "small tits",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "small perky tits",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "modest sensual breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "handful-sized breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "perky breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "soft rounded breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "full sensual breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "ample breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "voluptuous breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "busty breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "large voluptuous breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "big soft breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "heavy breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "huge tits",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "massive tits",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "oversized breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "enormous soft breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "gigantic breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "hyper-sized breasts",
+          "conditions": {
+            "all": [
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "subject.age_phase",
+                "op": "not_in",
+                "value": [
+                  "young_child",
+                  "child",
+                  "preteen",
+                  "teen",
+                  "late_teen"
+                ]
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    }
+  ]
+}

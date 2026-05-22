@@ -1,0 +1,129 @@
+{
+  "id": "pose",
+  "label": "Pose",
+  "order": 6,
+  "description": "Pose category. Random Pose output is mutually exclusive with random Action output through the internal activity.route state; manual Pose override text bypasses this random route validation.",
+  "builders": [
+    {
+      "id": "builder.pose",
+      "description": "Single Pose route picker. General, sport-derived, NSFW, and sexual pose routes are mutually exclusive values because the subject should receive one pose concept, not stacked pose concepts from every family.",
+      "conditions": {
+        "all": [
+          {
+            "state": "activity.route",
+            "op": "equals",
+            "value": "pose"
+          }
+        ]
+      },
+      "values": [
+        {
+          "template": "{pose}",
+          "slots": {
+            "pose": {
+              "generator": "generator.pose.general"
+            }
+          },
+          "state_export": {
+            "pose.general": {
+              "slot": "pose"
+            }
+          }
+        },
+        {
+          "template": "{pose}",
+          "slots": {
+            "pose": {
+              "generator": "generator.pose.sport.gymnastics_fitness"
+            }
+          },
+          "state_export": {
+            "pose.general": {
+              "slot": "pose"
+            }
+          }
+        },
+        {
+          "template": "{pose}",
+          "slots": {
+            "pose": {
+              "generator": "generator.pose.sport.yoga"
+            }
+          },
+          "state_export": {
+            "pose.general": {
+              "slot": "pose"
+            }
+          }
+        },
+        {
+          "template": "{pose}",
+          "slots": {
+            "pose": {
+              "generator": "generator.pose.sport.dance"
+            }
+          },
+          "state_export": {
+            "pose.general": {
+              "slot": "pose"
+            }
+          }
+        },
+        {
+          "template": "{pose}",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          },
+          "slots": {
+            "pose": {
+              "generator": "generator.pose.nsfw"
+            }
+          },
+          "state_export": {
+            "pose.nsfw": {
+              "slot": "pose"
+            }
+          }
+        },
+        {
+          "template": "{pose}",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          },
+          "slots": {
+            "pose": {
+              "generator": "generator.pose.sexual"
+            }
+          },
+          "state_export": {
+            "pose.sexual": {
+              "slot": "pose"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

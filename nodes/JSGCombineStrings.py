@@ -47,11 +47,12 @@ class JSGCombineStrings:
 
     def combine(self, prefix="", suffix="", separator=", ", always_load=False, **kwargs):
         options = self._normalized_options(kwargs)
-        if not options:
-            return ("",)
 
-        combined = separator.join(
-            f"{prefix}{option}{suffix}"
-            for option in options
-        )
-        return (combined,)
+        parts = []
+        if prefix.strip():
+            parts.append(prefix.strip())
+        parts.extend(options)
+        if suffix.strip():
+            parts.append(suffix.strip())
+
+        return (separator.join(parts),)

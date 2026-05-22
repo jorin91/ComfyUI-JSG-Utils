@@ -1,0 +1,4746 @@
+{
+  "generators": [
+    {
+      "id": "generator.environment.location",
+      "description": "General location picker. A location sets place state; indoor/outdoor compatibility belongs on room/area values.",
+      "values": [
+        {
+          "text": "at home",
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.sleep": true,
+            "environment.clothing.theme.work": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "at a primary school",
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.work": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "at a secondary school",
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.work": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "at a university",
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.sleep": true,
+            "environment.clothing.theme.work": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "at a library",
+          "state_set": {
+            "environment.clothing.theme.work": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "at a public swimming pool",
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "at a private swimming pool",
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "at a clothing store",
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.work": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "in a forest",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          },
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "at a beach",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          },
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        "",
+        {
+          "text": "by a lake",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          },
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "by a river",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          },
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        {
+          "text": "in the countryside",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          },
+          "state_set": {
+            "environment.clothing.theme.underwear_swimwear": true,
+            "environment.clothing.theme.sport": true,
+            "environment.clothing.theme.casual": true,
+            "environment.clothing.theme.seasonal": true,
+            "environment.clothing.theme.party": true,
+            "environment.clothing.theme.nude": true
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.environment.room_area",
+      "description": "Room or area picker. Values validate against environment.domain and either a compatible environment.location or missing environment.location.",
+      "values": [
+        {
+          "text": "in a living room",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a hallway",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at home",
+                      "at a primary school",
+                      "at a secondary school",
+                      "at a university"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on a landing",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a kitchen",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a laundry room",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a toilet room",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at home",
+                      "at a primary school",
+                      "at a secondary school",
+                      "at a university"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a bathroom",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a classroom",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a primary school",
+                      "at a secondary school"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a cafeteria",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a primary school",
+                      "at a secondary school"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a gymnasium",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a primary school",
+                      "at a secondary school"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a library",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a primary school",
+                      "at a secondary school",
+                      "at a university"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on a playground",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a primary school",
+                      "at a secondary school"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a principal office",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a primary school",
+                      "at a secondary school"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a changing room",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a primary school",
+                      "at a secondary school",
+                      "at a public swimming pool"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a science lab",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a secondary school"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a computer lab",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a secondary school"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on a sports field",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a secondary school"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a lecture hall",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a university"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a seminar room",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a university"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a laboratory",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a university"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on campus",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a university"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a lounge",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a university"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a dorm room",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a university"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a campus courtyard",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a university"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a bedroom",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a walk-in closet",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a garden",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a shed",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a basement",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in an attic",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at home"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "in a reading area",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a library"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a study area",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a library"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "between bookshelves",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a library"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "at a reception desk",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a library"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a computer area",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a library"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a swimming pool",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a public swimming pool"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "in",
+                "value": [
+                  "indoor",
+                  "outdoor"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "beside the swimming pool",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a public swimming pool"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "in",
+                "value": [
+                  "indoor",
+                  "outdoor"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a shower room",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a public swimming pool"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a locker area",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a public swimming pool"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a visitor area",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a public swimming pool"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in an indoor built-in pool",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a private swimming pool",
+                      "at home"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a built-in garden pool",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a private swimming pool",
+                      "at home"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a frame garden pool",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a private swimming pool",
+                      "at home"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in an inflatable garden pool",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a private swimming pool",
+                      "at home"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "beside a private pool",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "in",
+                    "value": [
+                      "at a private swimming pool",
+                      "at home"
+                    ]
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "among clothing racks",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a clothing store"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a fitting room",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a clothing store"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a fitting booth",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a clothing store"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "at a checkout counter",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a clothing store"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a display area",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a clothing store"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a storage room",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a clothing store"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a public toilet",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a clothing store"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "behind a display window",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a clothing store"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "indoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "among tall trees",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in a forest"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on a forest trail",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in a forest"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a forest clearing",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in a forest"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "at the woodland edge",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in a forest"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "near a mossy grove",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in a forest"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on the sandy beach",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a beach"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "near the shoreline",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a beach"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "in the dunes",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a beach"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on a rocky beach",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a beach"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "near a tide pool",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "at a beach"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on the lakeshore",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a lake"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on a lakeside dock",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a lake"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "among reeds by the lake",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a lake"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "near a quiet cove",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a lake"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "beside a small lake",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a lake"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on the riverbank",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a river"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on a riverside path",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a river"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "near a waterfall",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a river"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "by shallow rapids",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a river"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on a wooden bridge",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "by a river"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a meadow",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in the countryside"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a field",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in the countryside"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "in a wildflower field",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in the countryside"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "on a hill",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in the countryside"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "beside a country road",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in the countryside"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        {
+          "text": "near a wooden fence",
+          "conditions": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "state": "environment.location",
+                    "op": "equals",
+                    "value": "in the countryside"
+                  },
+                  {
+                    "state": "environment.location",
+                    "op": "missing"
+                  }
+                ]
+              },
+              {
+                "state": "environment.domain",
+                "op": "equals",
+                "value": "outdoor"
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.environment.surface",
+      "description": "Person-contact surface picker. Values validate against environment.room_area. Phrase assembly belongs to the environment.surface builder.",
+      "values": [
+        {
+          "text": "the sofa",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a living room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a chair",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a living room",
+                  "in a kitchen",
+                  "in a classroom",
+                  "in a cafeteria",
+                  "in a library",
+                  "in a principal office",
+                  "in a science lab",
+                  "in a computer lab",
+                  "in a lecture hall",
+                  "in a seminar room",
+                  "in a laboratory",
+                  "in a lounge",
+                  "in a dorm room",
+                  "in a bedroom",
+                  "in a shed",
+                  "in an attic",
+                  "in a reading area",
+                  "in a study area",
+                  "at a reception desk",
+                  "in a computer area",
+                  "in a visitor area",
+                  "in a fitting room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the coffee table",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a living room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the windowsill",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a living room",
+                  "in a hallway",
+                  "on a landing",
+                  "in a kitchen",
+                  "in a classroom",
+                  "in a cafeteria",
+                  "in a library",
+                  "in a principal office",
+                  "in a science lab",
+                  "in a computer lab",
+                  "in a seminar room",
+                  "in a laboratory",
+                  "in a lounge",
+                  "in a dorm room",
+                  "in a bedroom",
+                  "in an attic",
+                  "in a reading area",
+                  "in a study area",
+                  "at a reception desk",
+                  "in a computer area",
+                  "in a visitor area",
+                  "in a display area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the rug",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a living room",
+                  "on a landing",
+                  "in a bedroom"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the floor",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a living room",
+                  "in a hallway",
+                  "on a landing",
+                  "in a kitchen",
+                  "in a laundry room",
+                  "in a toilet room",
+                  "in a bathroom",
+                  "in a classroom",
+                  "in a cafeteria",
+                  "in a gymnasium",
+                  "in a library",
+                  "in a principal office",
+                  "in a changing room",
+                  "in a science lab",
+                  "in a computer lab",
+                  "in a lecture hall",
+                  "in a seminar room",
+                  "in a laboratory",
+                  "in a lounge",
+                  "in a dorm room",
+                  "in a bedroom",
+                  "in a walk-in closet",
+                  "in a shed",
+                  "in a basement",
+                  "in an attic",
+                  "in a reading area",
+                  "in a study area",
+                  "between bookshelves",
+                  "at a reception desk",
+                  "in a computer area",
+                  "in a shower room",
+                  "in a locker area",
+                  "in a visitor area",
+                  "among clothing racks",
+                  "in a fitting room",
+                  "in a fitting booth",
+                  "at a checkout counter",
+                  "in a display area",
+                  "in a storage room",
+                  "in a public toilet",
+                  "behind a display window"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the stairs",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on a landing",
+                  "in a basement",
+                  "in an attic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the wall",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a living room",
+                  "in a hallway",
+                  "on a landing",
+                  "in a kitchen",
+                  "in a laundry room",
+                  "in a toilet room",
+                  "in a bathroom",
+                  "in a classroom",
+                  "in a cafeteria",
+                  "in a gymnasium",
+                  "in a library",
+                  "in a principal office",
+                  "in a changing room",
+                  "in a science lab",
+                  "in a computer lab",
+                  "in a lecture hall",
+                  "in a seminar room",
+                  "in a laboratory",
+                  "in a lounge",
+                  "in a dorm room",
+                  "in a bedroom",
+                  "in a walk-in closet",
+                  "in a garden",
+                  "in a shed",
+                  "in a basement",
+                  "in an attic",
+                  "in a reading area",
+                  "in a study area",
+                  "between bookshelves",
+                  "at a reception desk",
+                  "in a computer area",
+                  "in a shower room",
+                  "in a locker area",
+                  "in a visitor area",
+                  "among clothing racks",
+                  "in a fitting room",
+                  "in a fitting booth",
+                  "at a checkout counter",
+                  "in a display area",
+                  "in a storage room",
+                  "in a public toilet",
+                  "behind a display window"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the kitchen counter",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a kitchen"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the dining table",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a kitchen"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a dining chair",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a kitchen"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the washing machine",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a laundry room",
+                  "in a basement"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the dryer",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a laundry room",
+                  "in a basement"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the toilet",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a toilet room",
+                  "in a bathroom",
+                  "in a public toilet"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the sink",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a kitchen",
+                  "in a laundry room",
+                  "in a toilet room",
+                  "in a bathroom",
+                  "in a public toilet"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the shower",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a shower room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the shower tray",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a bathroom"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the shower wall",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bathroom",
+                  "in a shower room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the bathtub",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a bathroom"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the bed",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bedroom",
+                  "in a dorm room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the wardrobe",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a bedroom",
+                  "in a dorm room",
+                  "in a walk-in closet",
+                  "in an attic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the bedside table",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a bedroom"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a seat cushion",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a living room",
+                  "in a bedroom",
+                  "in a garden"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the garden bench",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a garden"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a garden chair",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a garden"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a garden lounge chair",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a garden"
+              }
+            ]
+          }
+        },
+        {
+          "text": "sand",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a garden",
+                  "on the sandy beach",
+                  "near the shoreline",
+                  "in the dunes",
+                  "near a tide pool"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "grass",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a garden",
+                  "on a playground",
+                  "on a sports field",
+                  "on campus",
+                  "among tall trees",
+                  "in a forest clearing",
+                  "at the woodland edge",
+                  "on the lakeshore",
+                  "among reeds by the lake",
+                  "near a quiet cove",
+                  "beside a small lake",
+                  "on the riverbank",
+                  "near a waterfall",
+                  "in a meadow",
+                  "in a field",
+                  "in a wildflower field",
+                  "on a hill",
+                  "beside a country road",
+                  "near a wooden fence"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the workbench",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a shed",
+                  "in a basement",
+                  "in an attic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the door",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a living room",
+                  "in a hallway",
+                  "on a landing",
+                  "in a kitchen",
+                  "in a laundry room",
+                  "in a toilet room",
+                  "in a bathroom",
+                  "in a classroom",
+                  "in a cafeteria",
+                  "in a gymnasium",
+                  "in a library",
+                  "in a principal office",
+                  "in a changing room",
+                  "in a science lab",
+                  "in a computer lab",
+                  "in a lecture hall",
+                  "in a seminar room",
+                  "in a laboratory",
+                  "in a lounge",
+                  "in a dorm room",
+                  "in a bedroom",
+                  "in a walk-in closet",
+                  "in a garden",
+                  "in a shed",
+                  "in a basement",
+                  "in an attic",
+                  "in a reading area",
+                  "in a study area",
+                  "between bookshelves",
+                  "at a reception desk",
+                  "in a computer area",
+                  "in a shower room",
+                  "in a locker area",
+                  "in a visitor area",
+                  "among clothing racks",
+                  "in a fitting room",
+                  "in a fitting booth",
+                  "at a checkout counter",
+                  "in a display area",
+                  "in a storage room",
+                  "in a public toilet",
+                  "behind a display window"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the large mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a living room",
+                  "on a landing",
+                  "in a bathroom",
+                  "in a bedroom",
+                  "in a walk-in closet"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the small mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on a landing",
+                  "in a toilet room",
+                  "in a bathroom",
+                  "in a bedroom",
+                  "in a walk-in closet",
+                  "in a public toilet"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a desk",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a classroom",
+                  "in a principal office"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the teacher desk",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a classroom"
+              }
+            ]
+          }
+        },
+        {
+          "text": "lockers",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.location",
+                "op": "in",
+                "value": [
+                  "at a primary school",
+                  "at a secondary school",
+                  "at a public swimming pool"
+                ]
+              },
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a hallway",
+                  "in a locker area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a bench",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.location",
+                "op": "in",
+                "value": [
+                  "at a primary school",
+                  "at a secondary school",
+                  "at a university",
+                  "at a public swimming pool",
+                  "at a private swimming pool",
+                  "at a clothing store",
+                  "in a forest",
+                  "at a beach",
+                  "by a lake",
+                  "by a river",
+                  "in the countryside"
+                ]
+              },
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a hallway",
+                  "on a playground",
+                  "in a changing room",
+                  "on a sports field",
+                  "on campus",
+                  "in a campus courtyard",
+                  "in a locker area",
+                  "in a visitor area",
+                  "beside the swimming pool",
+                  "beside a private pool",
+                  "in a fitting room",
+                  "at the woodland edge",
+                  "on the sandy beach",
+                  "on a lakeside dock",
+                  "beside a small lake",
+                  "on a riverside path",
+                  "near a waterfall",
+                  "on a hill"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a table",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a cafeteria",
+                  "in a library",
+                  "in a seminar room",
+                  "in a lounge",
+                  "in a reading area",
+                  "in a study area",
+                  "in a computer area",
+                  "in a visitor area",
+                  "in a display area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the cafeteria counter",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a cafeteria"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the gym bench",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a climbing frame",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a gymnasium",
+                  "on a playground"
+                ]
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "a gym mat",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a gymnasium"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a bookshelf",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a library",
+                  "between bookshelves",
+                  "in a reading area",
+                  "in a study area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a slide",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "on a playground"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a swing",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "on a playground"
+              }
+            ]
+          }
+        },
+        {
+          "text": "pavement",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on a playground",
+                  "on campus",
+                  "in a campus courtyard"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a sandbox",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "on a playground"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a cabinet",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a principal office"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a toilet stall",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a toilet room",
+                  "in a public toilet"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a lab bench",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a science lab",
+                  "in a laboratory"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "science equipment",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a science lab"
+              }
+            ]
+          }
+        },
+        {
+          "text": "an equipment cabinet",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a science lab",
+                  "in a laboratory"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a computer desk",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a computer lab",
+                  "in a computer area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a keyboard",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a computer lab",
+                  "in a computer area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a monitor",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a computer lab",
+                  "in a computer area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a computer",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a computer lab",
+                  "in a computer area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "artificial turf",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "on a sports field"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a running track",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "on a sports field"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a football goal",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "on a sports field"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a football goal post",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "on a sports field"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a fence",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on a sports field",
+                  "on campus",
+                  "at the woodland edge",
+                  "beside a small lake",
+                  "on a riverside path",
+                  "in a meadow",
+                  "in a field",
+                  "on a hill",
+                  "beside a country road",
+                  "near a wooden fence"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a football",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "on a sports field"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a podium",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a lecture hall"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a projector",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a lecture hall",
+                  "in a seminar room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a projector screen",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a lecture hall",
+                  "in a seminar room"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a lounge sofa",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a lounge"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a vending machine",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a lounge"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a coffee table",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a lounge"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a fountain",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a campus courtyard"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the rug",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.location",
+                "op": "equals",
+                "value": "at home"
+              },
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a hallway"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the stairs",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.location",
+                "op": "equals",
+                "value": "at home"
+              },
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a hallway"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the large mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.location",
+                "op": "equals",
+                "value": "at home"
+              },
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a hallway"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the small mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.location",
+                "op": "equals",
+                "value": "at home"
+              },
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a hallway"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a divider wall",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a study area"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a rolling ladder",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "between bookshelves"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a stool",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "between bookshelves"
+              }
+            ]
+          }
+        },
+        {
+          "text": "books",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "between bookshelves",
+                  "in a reading area",
+                  "in a study area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a book",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "between bookshelves",
+                  "in a reading area",
+                  "in a study area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the reception desk",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "at a reception desk"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a computer mouse",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a computer area",
+                  "in a computer lab"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the pool floor",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a swimming pool",
+                  "in an indoor built-in pool",
+                  "in a built-in garden pool",
+                  "in a frame garden pool",
+                  "in an inflatable garden pool"
+                ]
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "the pool ladder",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a swimming pool",
+                  "in an indoor built-in pool",
+                  "in a built-in garden pool",
+                  "in a frame garden pool",
+                  "in an inflatable garden pool"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the pool edge",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a swimming pool",
+                  "in an indoor built-in pool",
+                  "in a built-in garden pool",
+                  "in a frame garden pool",
+                  "in an inflatable garden pool",
+                  "beside the swimming pool",
+                  "beside a private pool"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a pool noodle",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a swimming pool",
+                  "in an indoor built-in pool",
+                  "in a built-in garden pool",
+                  "in a frame garden pool",
+                  "in an inflatable garden pool"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a floating mat",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a swimming pool",
+                  "in an indoor built-in pool",
+                  "in a built-in garden pool",
+                  "in a frame garden pool",
+                  "in an inflatable garden pool"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "an inflatable ring",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a swimming pool",
+                  "in an indoor built-in pool",
+                  "in a built-in garden pool",
+                  "in a frame garden pool",
+                  "in an inflatable garden pool"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a ball",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a swimming pool",
+                  "in an indoor built-in pool",
+                  "in a built-in garden pool",
+                  "in a frame garden pool",
+                  "in an inflatable garden pool",
+                  "on the sandy beach",
+                  "in a meadow",
+                  "in a field"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a towel",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "beside the swimming pool",
+                  "beside a private pool",
+                  "in a changing room",
+                  "in a locker area",
+                  "on the sandy beach",
+                  "near the shoreline",
+                  "on the lakeshore",
+                  "on a lakeside dock",
+                  "beside a small lake",
+                  "near a waterfall"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a towel rack",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "beside the swimming pool",
+                  "beside a private pool",
+                  "in a changing room",
+                  "in a locker area"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a bag",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "beside the swimming pool",
+                  "beside a private pool",
+                  "in a changing room",
+                  "in a locker area",
+                  "among tall trees",
+                  "on a forest trail",
+                  "in a forest clearing",
+                  "on the sandy beach",
+                  "in the dunes",
+                  "on a rocky beach",
+                  "on the lakeshore",
+                  "on a lakeside dock",
+                  "beside a small lake",
+                  "on a riverside path",
+                  "near a waterfall",
+                  "on a wooden bridge",
+                  "in a meadow",
+                  "in a field",
+                  "in a wildflower field",
+                  "on a hill",
+                  "beside a country road"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a backpack",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "beside the swimming pool",
+                  "beside a private pool",
+                  "in a changing room",
+                  "in a locker area",
+                  "among tall trees",
+                  "on a forest trail",
+                  "in a forest clearing",
+                  "on the sandy beach",
+                  "in the dunes",
+                  "on a rocky beach",
+                  "on the lakeshore",
+                  "on a lakeside dock",
+                  "beside a small lake",
+                  "on a riverside path",
+                  "near a waterfall",
+                  "on a wooden bridge",
+                  "in a meadow",
+                  "in a field",
+                  "in a wildflower field",
+                  "on a hill",
+                  "beside a country road"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the shower head",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a shower room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the shower drain",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a shower room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a glass shower wall",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a shower room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a shower bench",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a shower room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "the shower door",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a shower room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a glass shower door",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a shower room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "clothing racks",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "among clothing racks"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a mirror",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a fitting room",
+                  "in a fitting booth"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a curtain",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a fitting room",
+                  "in a fitting booth"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a clothes hanger",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a fitting room",
+                  "in a fitting booth"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "clothing",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a fitting room",
+                  "in a fitting booth"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "new clothing",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a fitting room",
+                  "in a fitting booth"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "personal clothing",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a fitting room",
+                  "in a fitting booth"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a cash register",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "at a checkout counter"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a shopping basket",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "at a checkout counter"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a shopping bag",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "at a checkout counter"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a checkout counter",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "at a checkout counter"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a counter display",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "at a checkout counter"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a mannequin",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a display area",
+                  "behind a display window"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a display table",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a display area",
+                  "behind a display window"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "storage racks",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a storage room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "pallets",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a storage room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "cardboard boxes",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a storage room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a concrete floor",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a storage room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a roll container",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a storage room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a waste container",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a storage room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "old paper",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "in a storage room"
+              }
+            ]
+          }
+        },
+        {
+          "text": "a display window",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "equals",
+                "value": "behind a display window"
+              }
+            ]
+          }
+        },
+        {
+          "text": "moss",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "among tall trees",
+                  "on a forest trail",
+                  "in a forest clearing",
+                  "near a mossy grove",
+                  "near a waterfall",
+                  "by shallow rapids"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a tree trunk",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "among tall trees",
+                  "on a forest trail",
+                  "in a forest clearing",
+                  "at the woodland edge",
+                  "near a mossy grove",
+                  "beside a small lake",
+                  "on the riverbank",
+                  "on a riverside path",
+                  "near a waterfall",
+                  "in a meadow",
+                  "in a field",
+                  "on a hill"
+                ]
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "a fallen log",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "among tall trees",
+                  "on a forest trail",
+                  "in a forest clearing",
+                  "near a mossy grove",
+                  "beside a small lake",
+                  "on the riverbank",
+                  "on a riverside path",
+                  "near a waterfall"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a dirt path",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on a forest trail",
+                  "at the woodland edge",
+                  "beside a small lake",
+                  "on the riverbank",
+                  "on a riverside path",
+                  "in a meadow",
+                  "in a field",
+                  "on a hill",
+                  "beside a country road"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a beach towel",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on the sandy beach",
+                  "near the shoreline",
+                  "in the dunes",
+                  "on the lakeshore",
+                  "beside a small lake",
+                  "near a waterfall"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the shoreline",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "near the shoreline",
+                  "on a rocky beach",
+                  "near a tide pool",
+                  "on the lakeshore",
+                  "near a quiet cove",
+                  "beside a small lake"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the lakeshore",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on the lakeshore",
+                  "among reeds by the lake",
+                  "near a quiet cove",
+                  "beside a small lake"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "the riverbank",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on the riverbank",
+                  "on a riverside path",
+                  "by shallow rapids"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a dock",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on the lakeshore",
+                  "on a lakeside dock",
+                  "beside a small lake"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a rock",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "among tall trees",
+                  "on a forest trail",
+                  "in a forest clearing",
+                  "near a mossy grove",
+                  "near the shoreline",
+                  "on a rocky beach",
+                  "near a tide pool",
+                  "on the lakeshore",
+                  "near a quiet cove",
+                  "beside a small lake",
+                  "on the riverbank",
+                  "on a riverside path",
+                  "near a waterfall",
+                  "by shallow rapids",
+                  "on a hill"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "wildflowers",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a forest clearing",
+                  "at the woodland edge",
+                  "in a meadow",
+                  "in a field",
+                  "in a wildflower field",
+                  "on a hill",
+                  "near a wooden fence"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a hay bale",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a field",
+                  "on a hill",
+                  "beside a country road",
+                  "near a wooden fence"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a wooden fence",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "at the woodland edge",
+                  "in a meadow",
+                  "in a field",
+                  "on a hill",
+                  "beside a country road",
+                  "near a wooden fence"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a wooden bridge",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on a forest trail",
+                  "on a riverside path",
+                  "near a waterfall",
+                  "on a wooden bridge"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a dune",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in the dunes"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a picnic blanket",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "in a forest clearing",
+                  "on the sandy beach",
+                  "on the lakeshore",
+                  "near a quiet cove",
+                  "beside a small lake",
+                  "on the riverbank",
+                  "in a meadow",
+                  "in a field",
+                  "in a wildflower field",
+                  "on a hill"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "reeds",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "among reeds by the lake",
+                  "beside a small lake",
+                  "on the riverbank"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "leaf litter",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "among tall trees",
+                  "on a forest trail",
+                  "near a mossy grove"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a tree stump",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "among tall trees",
+                  "in a forest clearing",
+                  "near a mossy grove"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "driftwood",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "near the shoreline",
+                  "on a rocky beach",
+                  "near a tide pool"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "pebbles",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "near the shoreline",
+                  "on a rocky beach",
+                  "near a tide pool",
+                  "by shallow rapids"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a beach chair",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "on the sandy beach"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "a country road",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.room_area",
+                "op": "in",
+                "value": [
+                  "beside a country road"
+                ]
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.environment.surface_relation",
+      "description": "Surface relation picker. Values avoid pose/action wording. Slot existence validation belongs to the builder slot definition.",
+      "values": [
+        "on",
+        "in",
+        "against",
+        "beside",
+        "in front of",
+        "behind",
+        "under",
+        ""
+      ]
+    },
+    {
+      "id": "generator.environment.condition",
+      "description": "Sparse environment condition picker. Use only for meaningful setting states and validate individual values where needed.",
+      "values": [
+        ""
+      ]
+    },
+    {
+      "id": "generator.environment.season",
+      "description": "Neutral season picker. Builder exports the selected value into environment.season for weather compatibility.",
+      "values": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter",
+        ""
+      ]
+    },
+    {
+      "id": "generator.environment.weather",
+      "description": "Outdoor weather picker. Values are season-aware where needed; builder exports the selected value into environment.weather.",
+      "values": [
+        "clear weather",
+        "sunny weather",
+        "cloudy weather",
+        "overcast weather",
+        "rainy weather",
+        {
+          "text": "foggy weather",
+          "conditions": {
+            "any": [
+              {
+                "state": "environment.season",
+                "op": "missing"
+              },
+              {
+                "state": "environment.season",
+                "op": "in",
+                "value": [
+                  "autumn",
+                  "winter",
+                  "spring"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "snowy weather",
+          "conditions": {
+            "any": [
+              {
+                "state": "environment.season",
+                "op": "missing"
+              },
+              {
+                "state": "environment.season",
+                "op": "equals",
+                "value": "winter"
+              }
+            ]
+          }
+        },
+        {
+          "text": "hot summer weather",
+          "conditions": {
+            "any": [
+              {
+                "state": "environment.season",
+                "op": "missing"
+              },
+              {
+                "state": "environment.season",
+                "op": "equals",
+                "value": "summer"
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.environment.time",
+      "description": "Neutral daypart/time picker. Builder exports the selected value into environment.time; detailed lighting remains in Lighting.",
+      "values": [
+        "early morning",
+        "morning",
+        "midday",
+        "afternoon",
+        "evening",
+        "sunset",
+        "night",
+        "late night",
+        ""
+      ]
+    },
+    {
+      "id": "generator.environment.social_context",
+      "description": "Sparse social context picker for public/private, crowded/empty, or similar scene occupancy cues.",
+      "values": [
+        ""
+      ]
+    },
+    {
+      "id": "generator.environment.props",
+      "description": "Sparse environment props picker. Values should add useful set context around the person rather than clutter.",
+      "values": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "sd15",
+  "label": "SD 1.5",
+  "description": "Baseline SD 1.5 quality preset with common positive quality terms and broad artifact/anatomy negatives.",
+  "positive": [
+    "masterpiece",
+    "best quality",
+    "high quality"
+  ],
+  "negative": [
+    "lowres",
+    "bad anatomy",
+    "bad hands",
+    "text",
+    "error",
+    "missing fingers",
+    "extra digit",
+    "fewer digits",
+    "cropped",
+    "worst quality",
+    "low quality",
+    "normal quality",
+    "jpeg artifacts",
+    "signature",
+    "watermark",
+    "username",
+    "blurry"
+  ]
+}

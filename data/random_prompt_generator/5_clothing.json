@@ -1,391 +1,920 @@
-{
+ {
   "name": "Clothing",
   "index": 5,
-  "description": "Clothing category covering overall clothing state, general clothing categories, and grouped individual clothing branches.",
+  "evaluationOrder": 2,
+  "description": "Clothing category. Build clothing from the innermost layer toward the outermost layer. Every nude choice, clothing state, general clothing value, and concrete clothing item must explicitly set every current coverage state to either covered or exposed, even when the result seems obvious, so no stale state is left behind and no region is forgotten. When a clothing value leaves coverage uncertain, set the uncertain regions to covered for safety. Only set regions to exposed when the clothing meaning makes that exposure logically clear. Apply gender filters only when a clothing item is actually gender-specific in the literal sense: is it made for one sex, or can it be worn by both. Do not decide gender-specificity from social habit, stereotypes, or what is more common. When unsure which coverage regions a state should affect, consult `Tags_And_KV.md` before editing so region logic stays consistent, especially for distinctions such as pelvicCoverage versus vaginaCoverage. Because the clothing layers are intentionally ordered from inner to outer, equal kv priority already overwrites correctly in sequence, so explicit priority is only needed when a harder or exceptional override rule must break the normal layer order.",
   "separator": false,
   "subIndexes": [
     {
       "subIndex": 0,
-      "description": "Primary clothing state subIndex. This is the first clothing gate and determines whether the subject is nude or wearing clothing.",
+      "description": "Global clothing state subIndex. Semantic tag: fully_nude. Reserved semantic kv keys: upperTorsoCoverage, lowerTorsoCoverage, pelvicCoverage, breastsCoverage, vaginaCoverage, buttCoverage, penisCoverage, feetCoverage, upperLegsCoverage, lowerLegsCoverage, upperArmsCoverage, lowerArmsCoverage, handsCoverage, headwearType.",
       "separator": true,
       "parts": [
         {
           "partsIndex": 0,
-          "description": "Primary clothing state values.",
+          "description": "Global clothing state values. Semantic tag: fully_nude. Reserved semantic kv keys: upperTorsoCoverage, lowerTorsoCoverage, pelvicCoverage, breastsCoverage, vaginaCoverage, buttCoverage, penisCoverage, feetCoverage, upperLegsCoverage, lowerLegsCoverage, upperArmsCoverage, lowerArmsCoverage, handsCoverage, headwearType.",
           "separator": false,
           "values": [
-            "nude",
-            "with clothing"
+            {
+              "positiveText": "nude",
+              "tags": ["fully_nude"],
+              "triggers": ["all_exposed"]
+            },
+            {
+              "positiveText": "clothed"
+            },
+            ""
           ],
-          "filtersRequireAll": true,
-          "filters": [],
-          "includeInPrompt": true
+          "includeInPrompt": true,
+          "filtersRequired": [],
+          "filtersAny": []
         }
       ]
     },
     {
       "subIndex": 1,
-      "description": "General clothing category subIndex. This subIndex should only exist when the primary clothing state is not nude.",
+      "description": "General clothing category subIndex. Uses semantic tags: fully_nude, general_clothing_selected. Reserved semantic kv keys: upperTorsoCoverage, lowerTorsoCoverage, pelvicCoverage, breastsCoverage, vaginaCoverage, buttCoverage, penisCoverage, feetCoverage, upperLegsCoverage, lowerLegsCoverage, upperArmsCoverage, lowerArmsCoverage, handsCoverage, headwearType.",
       "separator": true,
       "parts": [
         {
           "partsIndex": 0,
-          "description": "General clothing category values.",
+          "description": "General, situation-bound, and seasonal clothing values. Uses semantic tags: fully_nude, general_clothing_selected. Reserved semantic kv keys: upperTorsoCoverage, lowerTorsoCoverage, pelvicCoverage, breastsCoverage, vaginaCoverage, buttCoverage, penisCoverage, feetCoverage, upperLegsCoverage, lowerLegsCoverage, upperArmsCoverage, lowerArmsCoverage, handsCoverage, headwearType.",
           "separator": false,
           "values": [
-            "wearing underwear",
-            "wearing lingerie",
-            "wearing sleepwear",
-            "wearing nightwear",
+            {
+              "positiveText": "casual clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "formal clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "eveningwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "sleepwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "nightwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
             "",
-            "wearing loungewear",
-            "wearing casualwear",
-            "wearing streetwear",
-            "wearing denimwear",
-            "wearing knitwear",
+            {
+              "positiveText": "loungewear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "homewear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "indoor clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "outdoor clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "workwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
             "",
-            "wearing sportswear",
-            "wearing activewear",
-            "wearing gymwear",
-            "wearing dancewear",
-            "wearing gymnastics wear",
+            {
+              "positiveText": "officewear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "businesswear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "partywear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "clubwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "festivalwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
             "",
-            "wearing swimwear",
-            "wearing beachwear",
-            "wearing outdoor wear",
-            "wearing a bikini",
-            "wearing a swimsuit",
+            {
+              "positiveText": "sportswear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "activewear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "gymwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "dancewear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "swimwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["torso_covered", "pelvic_covered"]
+            },
             "",
-            "wearing summerwear",
-            "wearing springwear",
-            "wearing autumnwear",
-            "wearing winterwear",
-            "wearing eveningwear",
+            {
+              "positiveText": "beachwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["torso_covered", "pelvic_covered"]
+            },
+            {
+              "positiveText": "resortwear",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "summer clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "spring clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "autumn clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
             "",
-            "wearing formalwear",
-            "wearing partywear",
-            "wearing clubwear",
-            "wearing officewear",
-            "wearing businesswear",
+            {
+              "positiveText": "winter clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "rainy weather clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "cold weather clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "traditional clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "historical clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
             "",
-            "wearing workwear",
-            "wearing homewear",
-            "wearing resortwear",
-            "wearing festivalwear",
-            "wearing cosplay",
-            "",
-            "wearing fantasy clothing",
-            "wearing historical clothing",
-            "wearing traditional clothing",
+            {
+              "positiveText": "fantasy clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
+            {
+              "positiveText": "cosplay clothing",
+              "tags": ["general_clothing_selected"],
+              "triggers": ["all_covered"]
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [
+          "includeInPrompt": true,
+          "filtersRequired": [
             {
-              "targetIndex": 5,
-              "targetSubIndex": 0,
-              "targetPartsIndex": 0,
-              "blacklist": "nude"
+              "tagBlacklist": ["fully_nude"]
             }
           ],
-          "includeInPrompt": true
+          "filtersAny": []
         }
       ]
     },
     {
       "subIndex": 2,
-      "description": "Foot clothing branch placeholder. Use this grouped subIndex for foot-related clothing items, ordered from outer or visible footwear toward inner or supporting foot layers, with nude as the final no-clothing layer so partial clothing remains possible.",
+      "description": "Random clothing selection subIndex. Uses semantic tags: fully_nude, general_clothing_selected, no_upper_clothing, no_lower_clothing, no_feet_clothing. Uses semantic kv keys: upperTorsoCoverage, lowerTorsoCoverage, pelvicCoverage, breastsCoverage, vaginaCoverage, buttCoverage, penisCoverage, feetCoverage, upperLegsCoverage, lowerLegsCoverage, upperArmsCoverage, lowerArmsCoverage, handsCoverage, headwearType.",
       "separator": true,
       "parts": [
         {
           "partsIndex": 0,
-          "description": "Foot clothing core toggle placeholder.",
+          "description": "Upper random clothing decision values. Uses semantic tag: no_upper_clothing. Uses semantic kv keys: upperTorsoCoverage, lowerTorsoCoverage, breastsCoverage, upperArmsCoverage, lowerArmsCoverage.",
           "separator": false,
           "values": [
-            "foot clothing",
+            {
+              "positiveText": "clothed",
+              "includeInPrompt": false
+            },
+            {
+              "positiveText": "nude upper body",
+              "tags": ["no_upper_clothing"],
+              "triggers": ["upper_body_exposed"],
+              "includeInPrompt": true
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [
+          "includeInPrompt": true,
+          "filtersRequired": [
             {
-              "targetIndex": 5,
-              "targetSubIndex": 0,
-              "targetPartsIndex": 0,
-              "blacklist": "nude"
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
             }
           ],
-          "includeInPrompt": true
+          "filtersAny": []
         },
         {
           "partsIndex": 1,
-          "description": "Foot outer visible clothing type placeholder, such as shoes or other visible footwear.",
+          "description": "Lower random clothing decision values. Uses semantic tag: no_lower_clothing. Uses semantic kv keys: pelvicCoverage, vaginaCoverage, buttCoverage, penisCoverage, upperLegsCoverage, lowerLegsCoverage.",
           "separator": false,
           "values": [
+            {
+              "positiveText": "clothed",
+              "includeInPrompt": false
+            },
+            {
+              "positiveText": "nude lower body",
+              "tags": ["no_lower_clothing"],
+              "triggers": ["lower_body_exposed"],
+              "includeInPrompt": true
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [
+          "includeInPrompt": true,
+          "filtersRequired": [
             {
-              "targetIndex": 5,
-              "targetSubIndex": 2,
-              "targetPartsIndex": 0,
-              "blacklist": ""
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
             }
           ],
-          "includeInPrompt": true
+          "filtersAny": []
         },
         {
           "partsIndex": 2,
-          "description": "Foot inner or supporting layer placeholder, such as socks or similar foot-adjacent layers.",
+          "description": "Feet random clothing decision values. Uses semantic tag: no_feet_clothing. Uses semantic kv key: feetCoverage.",
           "separator": false,
           "values": [
+            {
+              "positiveText": "clothed",
+              "includeInPrompt": false
+            },
+            {
+              "positiveText": "bare feet",
+              "tags": ["no_feet_clothing"],
+              "triggers": ["feet_exposed"],
+              "includeInPrompt": true
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [
+          "includeInPrompt": true,
+          "filtersRequired": [
             {
-              "targetIndex": 5,
-              "targetSubIndex": 2,
-              "targetPartsIndex": 0,
-              "blacklist": ""
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
             }
           ],
-          "includeInPrompt": true
+          "filtersAny": []
         },
         {
           "partsIndex": 3,
-          "description": "Foot uncovered layer placeholder. Use uncovered or bare wording here and do not use the word nude in values for this layer because later filters may need branch-specific matching without triggering on every nude-related value.",
-          "separator": false,
+          "description": "Upper underwear or swimwear layer values. Uses semantic tag: no_upper_clothing. This layer should form its own separated clothing prompt item.",
+          "separator": true,
           "values": [
-            "bare feet",
+            {
+              "positiveText": "no upper underwear or swimwear"
+            },
+            {
+              "positiveText": "wearing a bra",
+              "kv": [
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "wearing a soft bra",
+              "kv": [
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "wearing a sports bra",
+              "kv": [
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "wearing a lace bra",
+              "kv": [
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            "",
+            {
+              "positiveText": "wearing a bikini top",
+              "kv": [
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "wearing a triangle bikini top",
+              "kv": [
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "wearing a bandeau bikini top",
+              "kv": [
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            "",
+            {
+              "positiveText": "wearing a camisole",
+              "kv": [
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing a crop camisole",
+              "kv": [
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing a tank top",
+              "kv": [
+                {
+                  "key": "upperTorsoCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "lowerTorsoCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing a cropped tank top",
+              "kv": [
+                {
+                  "key": "upperTorsoCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "breastsCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [
+          "includeInPrompt": true,
+          "filtersRequired": [
             {
-              "targetIndex": 5,
-              "targetSubIndex": 2,
-              "targetPartsIndex": 0,
-              "blacklist": ""
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
+            },
+            {
+              "tagBlacklist": ["no_upper_clothing"]
             }
           ],
-          "includeInPrompt": true
-        }
-      ]
-    },
-    {
-      "subIndex": 3,
-      "description": "Lower-body clothing branch placeholder. Use this grouped subIndex for lower-body clothing items, ordered from outermost visible layers toward inner lower-body layers, with nude as the final no-clothing layer so partial clothing remains possible.",
-      "separator": true,
-      "parts": [
-        {
-          "partsIndex": 0,
-          "description": "Lower-body clothing core toggle placeholder.",
-          "separator": false,
-          "values": [
-            "lower-body clothing",
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
-            {
-              "targetIndex": 5,
-              "targetSubIndex": 0,
-              "targetPartsIndex": 0,
-              "blacklist": "nude"
-            }
-          ],
-          "includeInPrompt": true
-        },
-        {
-          "partsIndex": 1,
-          "description": "Lower-body outer clothing type placeholder, such as pants, skirt, or shorts.",
-          "separator": false,
-          "values": [
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
-            {
-              "targetIndex": 5,
-              "targetSubIndex": 3,
-              "targetPartsIndex": 0,
-              "blacklist": ""
-            }
-          ],
-          "includeInPrompt": true
-        },
-        {
-          "partsIndex": 2,
-          "description": "Lower-body leg layer placeholder, such as pantyhose, tights, or stockings.",
-          "separator": false,
-          "values": [
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
-            {
-              "targetIndex": 5,
-              "targetSubIndex": 3,
-              "targetPartsIndex": 0,
-              "blacklist": ""
-            }
-          ],
-          "includeInPrompt": true
-        },
-        {
-          "partsIndex": 3,
-          "description": "Lower-body inner clothing type placeholder, such as underwear or swimwear bottoms.",
-          "separator": false,
-          "values": [
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
-            {
-              "targetIndex": 5,
-              "targetSubIndex": 3,
-              "targetPartsIndex": 0,
-              "blacklist": ""
-            }
-          ],
-          "includeInPrompt": true
+          "filtersAny": []
         },
         {
           "partsIndex": 4,
-          "description": "Lower-body uncovered layer placeholder. Use uncovered or bare wording here and do not use the word nude in values for this layer because later filters may need branch-specific matching without triggering on every nude-related value.",
-          "separator": false,
+          "description": "Upper shirt layer values. Uses semantic tag: no_upper_clothing. This layer should form its own separated clothing prompt item.",
+          "separator": true,
           "values": [
-            "bare lower body",
+            {
+              "positiveText": "no shirt"
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [
+          "includeInPrompt": true,
+          "filtersRequired": [
             {
-              "targetIndex": 5,
-              "targetSubIndex": 3,
-              "targetPartsIndex": 0,
-              "blacklist": ""
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
+            },
+            {
+              "tagBlacklist": ["no_upper_clothing"]
             }
           ],
-          "includeInPrompt": true
-        }
-      ]
-    },
-    {
-      "subIndex": 4,
-      "description": "Upper-body clothing branch placeholder. Use this grouped subIndex for upper-body clothing items, ordered from outermost visible layers toward inner upper-body layers, with nude as the final no-clothing layer so partial clothing remains possible.",
-      "separator": true,
-      "parts": [
-        {
-          "partsIndex": 0,
-          "description": "Upper-body clothing core toggle placeholder.",
-          "separator": false,
-          "values": [
-            "upper-body clothing",
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
-            {
-              "targetIndex": 5,
-              "targetSubIndex": 0,
-              "targetPartsIndex": 0,
-              "blacklist": "nude"
-            }
-          ],
-          "includeInPrompt": true
-        },
-        {
-          "partsIndex": 1,
-          "description": "Upper-body outer clothing type placeholder, such as jacket or outer layer.",
-          "separator": false,
-          "values": [
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
-            {
-              "targetIndex": 5,
-              "targetSubIndex": 4,
-              "targetPartsIndex": 0,
-              "blacklist": ""
-            }
-          ],
-          "includeInPrompt": true
-        },
-        {
-          "partsIndex": 2,
-          "description": "Upper-body mid clothing type placeholder, such as cardigan, sweater, or similar middle layer.",
-          "separator": false,
-          "values": [
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
-            {
-              "targetIndex": 5,
-              "targetSubIndex": 4,
-              "targetPartsIndex": 0,
-              "blacklist": ""
-            }
-          ],
-          "includeInPrompt": true
-        },
-        {
-          "partsIndex": 3,
-          "description": "Upper-body base clothing type placeholder, such as shirt, top, or undershirt layer.",
-          "separator": false,
-          "values": [
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
-            {
-              "targetIndex": 5,
-              "targetSubIndex": 4,
-              "targetPartsIndex": 0,
-              "blacklist": ""
-            }
-          ],
-          "includeInPrompt": true
-        },
-        {
-          "partsIndex": 4,
-          "description": "Upper-body inner clothing type placeholder, such as underwear or swimwear upper-body layers.",
-          "separator": false,
-          "values": [
-            ""
-          ],
-          "filtersRequireAll": true,
-          "filters": [
-            {
-              "targetIndex": 5,
-              "targetSubIndex": 4,
-              "targetPartsIndex": 0,
-              "blacklist": ""
-            }
-          ],
-          "includeInPrompt": true
+          "filtersAny": []
         },
         {
           "partsIndex": 5,
-          "description": "Upper-body uncovered layer placeholder. Use uncovered or bare wording here and do not use the word nude in values for this layer because later filters may need branch-specific matching without triggering on every nude-related value.",
-          "separator": false,
+          "description": "Upper sweater or cardigan layer values. Uses semantic tag: no_upper_clothing. This layer should form its own separated clothing prompt item.",
+          "separator": true,
           "values": [
-            "bare upper body",
+            {
+              "positiveText": "no sweater or cardigan"
+            },
             ""
           ],
-          "filtersRequireAll": true,
-          "filters": [
+          "includeInPrompt": true,
+          "filtersRequired": [
             {
-              "targetIndex": 5,
-              "targetSubIndex": 4,
-              "targetPartsIndex": 0,
-              "blacklist": ""
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
+            },
+            {
+              "tagBlacklist": ["no_upper_clothing"]
             }
           ],
-          "includeInPrompt": true
+          "filtersAny": []
+        },
+        {
+          "partsIndex": 6,
+          "description": "Lower underwear or swimwear layer values. Uses semantic tags: no_lower_clothing, male, female. Uses semantic kv keys: pelvicCoverage, vaginaCoverage, penisCoverage, buttCoverage, upperLegsCoverage. This layer should form its own separated clothing prompt item.",
+          "separator": true,
+          "values": [
+            {
+              "positiveText": "no lower underwear or swimwear"
+            },
+            {
+              "positiveText": "wearing boxer shorts",
+              "kv": [
+                {
+                  "key": "pelvicCoverage",
+                  "value": "covered"
+                },
+
+                {
+                  "key": "vaginaCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "penisCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "buttCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing briefs",
+              "kv": [
+                {
+                  "key": "pelvicCoverage",
+                  "value": "covered"
+                },
+
+                {
+                  "key": "vaginaCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "penisCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "buttCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["male"]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "wearing panties",
+              "kv": [
+                {
+                  "key": "pelvicCoverage",
+                  "value": "covered"
+                },
+
+                {
+                  "key": "vaginaCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "penisCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "buttCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "wearing narrow panties",
+              "kv": [
+                {
+                  "key": "vaginaCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "penisCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "buttCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            "",
+            {
+              "positiveText": "wearing a thong",
+              "kv": [
+                {
+                  "key": "vaginaCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "penisCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [],
+              "filtersAny": [
+                {
+                  "tagWhitelist": ["female"]
+                },
+                {
+                  "tagWhitelist": ["male"]
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing swim briefs",
+              "kv": [
+                {
+                  "key": "pelvicCoverage",
+                  "value": "covered"
+                },
+
+                {
+                  "key": "vaginaCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "penisCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "buttCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["male"]
+                }
+              ],
+              "filtersAny": []
+            },
+            {
+              "positiveText": "wearing swim shorts",
+              "kv": [
+                {
+                  "key": "pelvicCoverage",
+                  "value": "covered"
+                },
+
+                {
+                  "key": "vaginaCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "penisCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "buttCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing a bikini bottom",
+              "kv": [
+                {
+                  "key": "vaginaCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "penisCoverage",
+                  "value": "covered"
+                },
+                {
+                  "key": "buttCoverage",
+                  "value": "covered"
+                }
+              ],
+              "filtersRequired": [
+                {
+                  "tagWhitelist": ["female"]
+                }
+              ],
+              "filtersAny": []
+            },
+            ""
+          ],
+          "includeInPrompt": true,
+          "filtersRequired": [
+            {
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
+            },
+            {
+              "tagBlacklist": ["no_lower_clothing"]
+            }
+          ],
+          "filtersAny": []
+        },
+        {
+          "partsIndex": 7,
+          "description": "Lower panties or leggings layer values. Uses semantic tag: no_lower_clothing. This layer should form its own separated clothing prompt item.",
+          "separator": true,
+          "values": [
+            {
+              "positiveText": "no panties or leggings"
+            },
+            ""
+          ],
+          "includeInPrompt": true,
+          "filtersRequired": [
+            {
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
+            },
+            {
+              "tagBlacklist": ["no_lower_clothing"]
+            }
+          ],
+          "filtersAny": []
+        },
+        {
+          "partsIndex": 8,
+          "description": "Lower outer clothing layer values such as shorts, skirts, or pants. Uses semantic tag: no_lower_clothing. This layer should form its own separated clothing prompt item.",
+          "separator": true,
+          "values": [
+            {
+              "positiveText": "no outer lower clothing"
+            },
+            ""
+          ],
+          "includeInPrompt": true,
+          "filtersRequired": [
+            {
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
+            },
+            {
+              "tagBlacklist": ["no_lower_clothing"]
+            }
+          ],
+          "filtersAny": []
+        },
+        {
+          "partsIndex": 9,
+          "description": "Feet socks layer values. Uses semantic tag: no_feet_clothing. This layer should form its own separated clothing prompt item.",
+          "separator": true,
+          "values": [
+            {
+              "positiveText": "no socks"
+            },
+            {
+              "positiveText": "wearing socks",
+              "kv": [
+                {
+                  "key": "feetCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing ankle socks",
+              "kv": [
+                {
+                  "key": "feetCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing crew socks",
+              "kv": [
+                {
+                  "key": "feetCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing knee-high socks",
+              "kv": [
+                {
+                  "key": "feetCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing thick socks",
+              "kv": [
+                {
+                  "key": "feetCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            "",
+            {
+              "positiveText": "wearing soft socks",
+              "kv": [
+                {
+                  "key": "feetCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            {
+              "positiveText": "wearing sport socks",
+              "kv": [
+                {
+                  "key": "feetCoverage",
+                  "value": "covered"
+                }
+              ]
+            },
+            ""
+          ],
+          "includeInPrompt": true,
+          "filtersRequired": [
+            {
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
+            },
+            {
+              "tagBlacklist": ["no_feet_clothing"]
+            }
+          ],
+          "filtersAny": []
+        },
+        {
+          "partsIndex": 10,
+          "description": "Feet footwear layer values such as slippers, sandals, or shoes. Uses semantic tag: no_feet_clothing. This layer should form its own separated clothing prompt item.",
+          "separator": true,
+          "values": [
+            {
+              "positiveText": "no footwear"
+            },
+            ""
+          ],
+          "includeInPrompt": true,
+          "filtersRequired": [
+            {
+              "tagBlacklist": ["fully_nude"]
+            },
+            {
+              "tagBlacklist": ["general_clothing_selected"]
+            },
+            {
+              "tagBlacklist": ["no_feet_clothing"]
+            }
+          ],
+          "filtersAny": []
         }
       ]
     }

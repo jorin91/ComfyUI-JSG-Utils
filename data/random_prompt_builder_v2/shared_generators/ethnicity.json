@@ -1,0 +1,2051 @@
+{
+  "generators": [
+    {
+      "id": "generator.ethnicity.base",
+      "description": "Universal base ethnicity and heritage picker. Selected values set ethnicity.base so other universal ethnicity generators can validate by state instead of builder slots.",
+      "values": [
+        {
+          "text": "European ethnicity",
+          "state_set": {
+            "ethnicity.base": "European ethnicity"
+          }
+        },
+        {
+          "text": "Nordic ethnicity",
+          "state_set": {
+            "ethnicity.base": "Nordic ethnicity"
+          }
+        },
+        {
+          "text": "Baltic ethnicity",
+          "state_set": {
+            "ethnicity.base": "Baltic ethnicity"
+          }
+        },
+        {
+          "text": "Celtic ethnicity",
+          "state_set": {
+            "ethnicity.base": "Celtic ethnicity"
+          }
+        },
+        {
+          "text": "Western European ethnicity",
+          "state_set": {
+            "ethnicity.base": "Western European ethnicity"
+          }
+        },
+        {
+          "text": "Central European ethnicity",
+          "state_set": {
+            "ethnicity.base": "Central European ethnicity"
+          }
+        },
+        {
+          "text": "Eastern European ethnicity",
+          "state_set": {
+            "ethnicity.base": "Eastern European ethnicity"
+          }
+        },
+        {
+          "text": "Slavic ethnicity",
+          "state_set": {
+            "ethnicity.base": "Slavic ethnicity"
+          }
+        },
+        {
+          "text": "Balkan ethnicity",
+          "state_set": {
+            "ethnicity.base": "Balkan ethnicity"
+          }
+        },
+        {
+          "text": "Southern European ethnicity",
+          "state_set": {
+            "ethnicity.base": "Southern European ethnicity"
+          }
+        },
+        "",
+        {
+          "text": "Mediterranean European ethnicity",
+          "state_set": {
+            "ethnicity.base": "Mediterranean European ethnicity"
+          }
+        },
+        {
+          "text": "Iberian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Iberian ethnicity"
+          }
+        },
+        {
+          "text": "Italian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Italian ethnicity"
+          }
+        },
+        {
+          "text": "Greek ethnicity",
+          "state_set": {
+            "ethnicity.base": "Greek ethnicity"
+          }
+        },
+        {
+          "text": "Mediterranean ethnicity",
+          "state_set": {
+            "ethnicity.base": "Mediterranean ethnicity"
+          }
+        },
+        {
+          "text": "Turkish Anatolian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Turkish Anatolian ethnicity"
+          }
+        },
+        {
+          "text": "Levantine ethnicity",
+          "state_set": {
+            "ethnicity.base": "Levantine ethnicity"
+          }
+        },
+        {
+          "text": "Arabian Peninsula ethnicity",
+          "state_set": {
+            "ethnicity.base": "Arabian Peninsula ethnicity"
+          }
+        },
+        {
+          "text": "Persian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Persian ethnicity"
+          }
+        },
+        {
+          "text": "Kurdish ethnicity",
+          "state_set": {
+            "ethnicity.base": "Kurdish ethnicity"
+          }
+        },
+        "",
+        {
+          "text": "Middle Eastern ethnicity",
+          "state_set": {
+            "ethnicity.base": "Middle Eastern ethnicity"
+          }
+        },
+        {
+          "text": "North African ethnicity",
+          "state_set": {
+            "ethnicity.base": "North African ethnicity"
+          }
+        },
+        {
+          "text": "Amazigh North African ethnicity",
+          "state_set": {
+            "ethnicity.base": "Amazigh North African ethnicity"
+          }
+        },
+        {
+          "text": "Egyptian North African ethnicity",
+          "state_set": {
+            "ethnicity.base": "Egyptian North African ethnicity"
+          }
+        },
+        {
+          "text": "Sub-Saharan African ethnicity",
+          "state_set": {
+            "ethnicity.base": "Sub-Saharan African ethnicity"
+          }
+        },
+        {
+          "text": "West African ethnicity",
+          "state_set": {
+            "ethnicity.base": "West African ethnicity"
+          }
+        },
+        {
+          "text": "East African ethnicity",
+          "state_set": {
+            "ethnicity.base": "East African ethnicity"
+          }
+        },
+        {
+          "text": "Horn African ethnicity",
+          "state_set": {
+            "ethnicity.base": "Horn African ethnicity"
+          }
+        },
+        {
+          "text": "Central African ethnicity",
+          "state_set": {
+            "ethnicity.base": "Central African ethnicity"
+          }
+        },
+        {
+          "text": "Southern African ethnicity",
+          "state_set": {
+            "ethnicity.base": "Southern African ethnicity"
+          }
+        },
+        "",
+        {
+          "text": "East Asian ethnicity",
+          "state_set": {
+            "ethnicity.base": "East Asian ethnicity"
+          }
+        },
+        {
+          "text": "Han Chinese ethnicity",
+          "state_set": {
+            "ethnicity.base": "Han Chinese ethnicity"
+          }
+        },
+        {
+          "text": "Japanese ethnicity",
+          "state_set": {
+            "ethnicity.base": "Japanese ethnicity"
+          }
+        },
+        {
+          "text": "Korean ethnicity",
+          "state_set": {
+            "ethnicity.base": "Korean ethnicity"
+          }
+        },
+        {
+          "text": "Mongolian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Mongolian ethnicity"
+          }
+        },
+        {
+          "text": "Southeast Asian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Southeast Asian ethnicity"
+          }
+        },
+        {
+          "text": "Mainland Southeast Asian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Mainland Southeast Asian ethnicity"
+          }
+        },
+        {
+          "text": "Maritime Southeast Asian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Maritime Southeast Asian ethnicity"
+          }
+        },
+        {
+          "text": "Filipino ethnicity",
+          "state_set": {
+            "ethnicity.base": "Filipino ethnicity"
+          }
+        },
+        {
+          "text": "South Asian ethnicity",
+          "state_set": {
+            "ethnicity.base": "South Asian ethnicity"
+          }
+        },
+        "",
+        {
+          "text": "North Indian ethnicity",
+          "state_set": {
+            "ethnicity.base": "North Indian ethnicity"
+          }
+        },
+        {
+          "text": "South Indian ethnicity",
+          "state_set": {
+            "ethnicity.base": "South Indian ethnicity"
+          }
+        },
+        {
+          "text": "Pakistani ethnicity",
+          "state_set": {
+            "ethnicity.base": "Pakistani ethnicity"
+          }
+        },
+        {
+          "text": "Bengali ethnicity",
+          "state_set": {
+            "ethnicity.base": "Bengali ethnicity"
+          }
+        },
+        {
+          "text": "Sri Lankan ethnicity",
+          "state_set": {
+            "ethnicity.base": "Sri Lankan ethnicity"
+          }
+        },
+        {
+          "text": "Central Asian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Central Asian ethnicity"
+          }
+        },
+        {
+          "text": "Turkic Central Asian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Turkic Central Asian ethnicity"
+          }
+        },
+        {
+          "text": "Caucasus ethnicity",
+          "state_set": {
+            "ethnicity.base": "Caucasus ethnicity"
+          }
+        },
+        {
+          "text": "Latin American ethnicity",
+          "state_set": {
+            "ethnicity.base": "Latin American ethnicity"
+          }
+        },
+        {
+          "text": "Caribbean ethnicity",
+          "state_set": {
+            "ethnicity.base": "Caribbean ethnicity"
+          }
+        },
+        "",
+        {
+          "text": "Andean Latin American ethnicity",
+          "state_set": {
+            "ethnicity.base": "Andean Latin American ethnicity"
+          }
+        },
+        {
+          "text": "Indigenous American ethnicity",
+          "state_set": {
+            "ethnicity.base": "Indigenous American ethnicity"
+          }
+        },
+        {
+          "text": "Pacific Islander ethnicity",
+          "state_set": {
+            "ethnicity.base": "Pacific Islander ethnicity"
+          }
+        },
+        {
+          "text": "Polynesian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Polynesian ethnicity"
+          }
+        },
+        {
+          "text": "Melanesian ethnicity",
+          "state_set": {
+            "ethnicity.base": "Melanesian ethnicity"
+          }
+        },
+        {
+          "text": "Maori ethnicity",
+          "state_set": {
+            "ethnicity.base": "Maori ethnicity"
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.ethnicity.mix",
+      "description": "Universal mixed-ethnicity phrase picker. Values filter against ethnicity.base state to avoid repeating the already selected base.",
+      "values": [
+        {
+          "text": "with mixed European ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "European ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Nordic ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Nordic ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Baltic ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Baltic ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Celtic ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Celtic ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Western European ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Western European ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Central European ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Central European ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Eastern European ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Eastern European ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Slavic ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Slavic ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Balkan ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Balkan ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Southern European ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Southern European ethnicity"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "with mixed Mediterranean European ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Mediterranean European ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Iberian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Iberian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Italian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Italian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Greek ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Greek ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Mediterranean ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Mediterranean ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Turkish Anatolian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Turkish Anatolian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Levantine ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Levantine ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Arabian Peninsula ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Arabian Peninsula ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Persian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Persian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Kurdish ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Kurdish ethnicity"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "with mixed Middle Eastern ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Middle Eastern ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed North African ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "North African ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Amazigh North African ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Amazigh North African ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Egyptian North African ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Egyptian North African ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Sub-Saharan African ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Sub-Saharan African ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed West African ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "West African ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed East African ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "East African ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Horn African ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Horn African ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Central African ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Central African ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Southern African ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Southern African ethnicity"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "with mixed East Asian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "East Asian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Han Chinese ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Han Chinese ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Japanese ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Japanese ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Korean ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Korean ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Mongolian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Mongolian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Southeast Asian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Southeast Asian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Mainland Southeast Asian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Mainland Southeast Asian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Maritime Southeast Asian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Maritime Southeast Asian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Filipino ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Filipino ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed South Asian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "South Asian ethnicity"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "with mixed North Indian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "North Indian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed South Indian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "South Indian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Pakistani ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Pakistani ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Bengali ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Bengali ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Sri Lankan ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Sri Lankan ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Central Asian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Central Asian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Turkic Central Asian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Turkic Central Asian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Caucasus ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Caucasus ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Latin American ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Latin American ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Caribbean ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Caribbean ethnicity"
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "with mixed Andean Latin American ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Andean Latin American ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Indigenous American ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Indigenous American ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Pacific Islander ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Pacific Islander ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Polynesian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Polynesian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Melanesian ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Melanesian ethnicity"
+              }
+            ]
+          }
+        },
+        {
+          "text": "with mixed Maori ethnicity",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "not_equals",
+                "value": "Maori ethnicity"
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.ethnicity.skin_tone",
+      "description": "Universal skin-tone picker for ethnicity output. Prompt values explicitly say skin color for clarity. Values filter by ethnicity.base state so skin tone stays compatible without reading builder slots.",
+      "values": [
+        {
+          "text": "porcelain fair skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Nordic ethnicity",
+                  "Baltic ethnicity",
+                  "Celtic ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Eastern European ethnicity",
+                  "Slavic ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very fair cool-toned skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Nordic ethnicity",
+                  "Baltic ethnicity",
+                  "Celtic ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Eastern European ethnicity",
+                  "Slavic ethnicity",
+                  "Japanese ethnicity",
+                  "Korean ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very fair neutral skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Nordic ethnicity",
+                  "Baltic ethnicity",
+                  "Celtic ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Eastern European ethnicity",
+                  "Slavic ethnicity",
+                  "East Asian ethnicity",
+                  "Han Chinese ethnicity",
+                  "Japanese ethnicity",
+                  "Korean ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "fair pink-toned skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Nordic ethnicity",
+                  "Baltic ethnicity",
+                  "Celtic ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Eastern European ethnicity",
+                  "Slavic ethnicity",
+                  "Balkan ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "fair neutral skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Nordic ethnicity",
+                  "Baltic ethnicity",
+                  "Celtic ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Eastern European ethnicity",
+                  "Slavic ethnicity",
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "East Asian ethnicity",
+                  "Han Chinese ethnicity",
+                  "Japanese ethnicity",
+                  "Korean ethnicity",
+                  "Mongolian ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "fair warm-toned skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Celtic ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Eastern European ethnicity",
+                  "Slavic ethnicity",
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "Greek ethnicity",
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "East Asian ethnicity",
+                  "Han Chinese ethnicity",
+                  "Japanese ethnicity",
+                  "Korean ethnicity",
+                  "Mongolian ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "light beige skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Nordic ethnicity",
+                  "Baltic ethnicity",
+                  "Celtic ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Eastern European ethnicity",
+                  "Slavic ethnicity",
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "Greek ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Persian ethnicity",
+                  "East Asian ethnicity",
+                  "Han Chinese ethnicity",
+                  "Japanese ethnicity",
+                  "Korean ethnicity",
+                  "Mongolian ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "light neutral skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Nordic ethnicity",
+                  "Baltic ethnicity",
+                  "Celtic ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Eastern European ethnicity",
+                  "Slavic ethnicity",
+                  "East Asian ethnicity",
+                  "Han Chinese ethnicity",
+                  "Japanese ethnicity",
+                  "Korean ethnicity",
+                  "Mongolian ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "light warm skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Baltic ethnicity",
+                  "Celtic ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Eastern European ethnicity",
+                  "Slavic ethnicity",
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "Greek ethnicity",
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "East Asian ethnicity",
+                  "Han Chinese ethnicity",
+                  "Japanese ethnicity",
+                  "Korean ethnicity",
+                  "Mongolian ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "light golden skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "Greek ethnicity",
+                  "Mediterranean ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Egyptian North African ethnicity",
+                  "East Asian ethnicity",
+                  "Han Chinese ethnicity",
+                  "Japanese ethnicity",
+                  "Korean ethnicity",
+                  "Mongolian ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Latin American ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "light olive skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "European ethnicity",
+                  "Western European ethnicity",
+                  "Central European ethnicity",
+                  "Slavic ethnicity",
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "Greek ethnicity",
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity",
+                  "Andean Latin American ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "olive skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "Greek ethnicity",
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity",
+                  "Andean Latin American ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "warm olive skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Greek ethnicity",
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "golden beige skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "Greek ethnicity",
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Horn African ethnicity",
+                  "East Asian ethnicity",
+                  "Han Chinese ethnicity",
+                  "Japanese ethnicity",
+                  "Korean ethnicity",
+                  "Mongolian ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Polynesian ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "golden tan skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "Greek ethnicity",
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Horn African ethnicity",
+                  "East Asian ethnicity",
+                  "Han Chinese ethnicity",
+                  "Mongolian ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Polynesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "tan skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Balkan ethnicity",
+                  "Southern European ethnicity",
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Italian ethnicity",
+                  "Greek ethnicity",
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Horn African ethnicity",
+                  "Mongolian ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "South Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Sri Lankan ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Caucasus ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Polynesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "warm tan skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Mediterranean European ethnicity",
+                  "Iberian ethnicity",
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Horn African ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "South Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Sri Lankan ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Polynesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "honey skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Mediterranean ethnicity",
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "East African ethnicity",
+                  "Horn African ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "South Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Sri Lankan ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Polynesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "caramel skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Levantine ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "East African ethnicity",
+                  "Horn African ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "South Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Sri Lankan ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Polynesian ethnicity",
+                  "Melanesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "light brown skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Turkish Anatolian ethnicity",
+                  "Levantine ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Sub-Saharan African ethnicity",
+                  "East African ethnicity",
+                  "Horn African ethnicity",
+                  "Southern African ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "South Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Sri Lankan ethnicity",
+                  "Central Asian ethnicity",
+                  "Turkic Central Asian ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Polynesian ethnicity",
+                  "Melanesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "warm light brown skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "South Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Sri Lankan ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "medium brown skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Levantine ethnicity",
+                  "Arabian Peninsula ethnicity",
+                  "Persian ethnicity",
+                  "Kurdish ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Sub-Saharan African ethnicity",
+                  "West African ethnicity",
+                  "East African ethnicity",
+                  "Horn African ethnicity",
+                  "Central African ethnicity",
+                  "Southern African ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Mainland Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "South Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Sri Lankan ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Polynesian ethnicity",
+                  "Melanesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "golden brown skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Arabian Peninsula ethnicity",
+                  "Middle Eastern ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Sub-Saharan African ethnicity",
+                  "West African ethnicity",
+                  "East African ethnicity",
+                  "Horn African ethnicity",
+                  "Central African ethnicity",
+                  "Southern African ethnicity",
+                  "Southeast Asian ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "Filipino ethnicity",
+                  "South Asian ethnicity",
+                  "North Indian ethnicity",
+                  "South Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Sri Lankan ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Polynesian ethnicity",
+                  "Melanesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "warm brown skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Arabian Peninsula ethnicity",
+                  "North African ethnicity",
+                  "Amazigh North African ethnicity",
+                  "Egyptian North African ethnicity",
+                  "Sub-Saharan African ethnicity",
+                  "West African ethnicity",
+                  "East African ethnicity",
+                  "Horn African ethnicity",
+                  "Central African ethnicity",
+                  "Southern African ethnicity",
+                  "Maritime Southeast Asian ethnicity",
+                  "South Asian ethnicity",
+                  "South Indian ethnicity",
+                  "Pakistani ethnicity",
+                  "Bengali ethnicity",
+                  "Sri Lankan ethnicity",
+                  "Latin American ethnicity",
+                  "Caribbean ethnicity",
+                  "Andean Latin American ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Polynesian ethnicity",
+                  "Melanesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "rich brown skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Arabian Peninsula ethnicity",
+                  "North African ethnicity",
+                  "Sub-Saharan African ethnicity",
+                  "West African ethnicity",
+                  "East African ethnicity",
+                  "Horn African ethnicity",
+                  "Central African ethnicity",
+                  "Southern African ethnicity",
+                  "South Asian ethnicity",
+                  "South Indian ethnicity",
+                  "Sri Lankan ethnicity",
+                  "Caribbean ethnicity",
+                  "Indigenous American ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Melanesian ethnicity",
+                  "Maori ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "deep brown skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Sub-Saharan African ethnicity",
+                  "West African ethnicity",
+                  "East African ethnicity",
+                  "Horn African ethnicity",
+                  "Central African ethnicity",
+                  "Southern African ethnicity",
+                  "South Indian ethnicity",
+                  "Caribbean ethnicity",
+                  "Pacific Islander ethnicity",
+                  "Melanesian ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "dark brown skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Sub-Saharan African ethnicity",
+                  "West African ethnicity",
+                  "East African ethnicity",
+                  "Horn African ethnicity",
+                  "Central African ethnicity",
+                  "Southern African ethnicity",
+                  "Caribbean ethnicity",
+                  "Melanesian ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very dark brown skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Sub-Saharan African ethnicity",
+                  "West African ethnicity",
+                  "East African ethnicity",
+                  "Central African ethnicity",
+                  "Southern African ethnicity",
+                  "Caribbean ethnicity",
+                  "Melanesian ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "dark skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Sub-Saharan African ethnicity",
+                  "West African ethnicity",
+                  "East African ethnicity",
+                  "Central African ethnicity",
+                  "Southern African ethnicity",
+                  "Melanesian ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "very dark skin color",
+          "conditions": {
+            "all": [
+              {
+                "state": "ethnicity.base",
+                "op": "in",
+                "value": [
+                  "Sub-Saharan African ethnicity",
+                  "West African ethnicity",
+                  "Central African ethnicity",
+                  "Southern African ethnicity"
+                ]
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    }
+  ]
+}

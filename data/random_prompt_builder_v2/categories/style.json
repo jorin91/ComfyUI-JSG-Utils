@@ -1,0 +1,7 @@
+{
+  "id": "style",
+  "label": "Style",
+  "order": 10,
+  "description": "Style category scaffold.",
+  "builders": []
+}

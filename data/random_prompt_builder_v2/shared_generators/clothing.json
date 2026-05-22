@@ -1,0 +1,238 @@
+{
+  "generators": [
+    {
+      "id": "generator.clothing.style",
+      "description": "Broad clothing style picker. These are style directions, not complete garment prompts.",
+      "values": [
+        {
+          "text": "underwear outfit",
+          "state_set": {
+            "clothing.action.underwear.exist": true
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "environment.clothing.theme.underwear_swimwear",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "swimwear outfit",
+          "state_set": {
+            "clothing.action.swimwear.exist": true
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.underwear_swimwear",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "everyday outfit",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.casual",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "sportswear",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.sport",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "evening wear",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.party",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "sleepwear",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.sleep",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "pajamas",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.sleep",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "leisurewear",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.casual",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "workwear",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.work",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "party outfit",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.party",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "spring outfit",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.seasonal",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        "",
+        {
+          "text": "summer outfit",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.seasonal",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "autumn outfit",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.seasonal",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "winter outfit",
+          "conditions": {
+            "all": [
+              {
+                "state": "environment.clothing.theme.seasonal",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          }
+        },
+        ""
+      ]
+    },
+    {
+      "id": "generator.clothing.sfw.whole",
+      "description": "SFW complete whole-body clothing prompts. Values may contain commas and must be authored as coherent complete prompt fragments.",
+      "values": [
+        ""
+      ]
+    },
+    {
+      "id": "generator.clothing.nsfw.whole",
+      "description": "NSFW complete whole-body clothing prompts. Values may contain commas and must be authored as coherent adult-only complete prompt fragments.",
+      "values": [
+        ""
+      ]
+    },
+    {
+      "id": "generator.clothing.sfw.upper_body",
+      "description": "SFW complete upper-body clothing prompts. Values may contain commas and must be authored as coherent complete prompt fragments.",
+      "values": [
+        ""
+      ]
+    },
+    {
+      "id": "generator.clothing.nsfw.upper_body",
+      "description": "NSFW complete upper-body clothing prompts. Values may contain commas and must be authored as coherent adult-only complete prompt fragments.",
+      "values": [
+        ""
+      ]
+    },
+    {
+      "id": "generator.clothing.sfw.lower_body",
+      "description": "SFW complete lower-body clothing prompts. Values may contain commas and must be authored as coherent complete prompt fragments.",
+      "values": [
+        ""
+      ]
+    },
+    {
+      "id": "generator.clothing.nsfw.lower_body",
+      "description": "NSFW complete lower-body clothing prompts. Values may contain commas and must be authored as coherent adult-only complete prompt fragments.",
+      "values": [
+        ""
+      ]
+    }
+  ]
+}

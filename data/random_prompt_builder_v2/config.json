@@ -1,0 +1,123 @@
+{
+  "schema": "jsg_random_prompt_builder_v2.config.v1",
+  "description": "Random Prompt Builder V2 configuration. Prompt text starts intentionally empty and should be filled gradually.",
+  "default_preset": "none",
+  "default_state_profile": "Mixed Female",
+  "presets": [
+    "none",
+    "sd15",
+    "sdxl10",
+    "pony",
+    "illustrious",
+    "flux"
+  ],
+  "state_profiles": [
+    "SFW",
+    "NSFW",
+    "Mixed",
+    "SFW Female",
+    "NSFW Female",
+    "Mixed Female",
+    "SFW Male",
+    "NSFW Male",
+    "Mixed Male"
+  ],
+  "categories": [
+    {
+      "id": "subject",
+      "label": "Subject",
+      "order": 0,
+      "resolve_order": 0,
+      "file": "categories/subject.json",
+      "description": "Generated subject category; establishes subject state used by later categories."
+    },
+    {
+      "id": "ethnicity",
+      "label": "Ethnicity",
+      "order": 1,
+      "resolve_order": 7,
+      "file": "categories/ethnicity.json",
+      "description": "Ethnicity and compatible skin-tone category. No active downstream category depends on ethnicity state, so validation resolves after the dependency-producing categories."
+    },
+    {
+      "id": "body_build",
+      "label": "Body Build",
+      "order": 2,
+      "resolve_order": 6,
+      "file": "categories/body_build.json",
+      "description": "General whole-body build category. No active downstream category depends on body-build state, so validation resolves after the dependency-producing categories while prompt output stays early."
+    },
+    {
+      "id": "body_detail",
+      "label": "Body Detail",
+      "order": 3,
+      "resolve_order": 5,
+      "file": "categories/body_detail.json",
+      "description": "Regional body detail category. It depends on Subject state, but no active downstream category depends on body-detail state, so validation resolves after the dependency-producing chain while prompt output stays before Clothing."
+    },
+    {
+      "id": "clothing",
+      "label": "Clothing",
+      "order": 4,
+      "resolve_order": 2,
+      "file": "categories/clothing.json",
+      "description": "Clothing category; resolves after Environment so clothing theme state exists, and before Action so clothing.action.* state exists."
+    },
+    {
+      "id": "action",
+      "label": "Action",
+      "order": 5,
+      "resolve_order": 3,
+      "file": "categories/action.json",
+      "description": "Action category for subject activity and movement context. Random Action validates against the internal activity.route state; manual override text bypasses that random route."
+    },
+    {
+      "id": "pose",
+      "label": "Pose",
+      "order": 6,
+      "resolve_order": 4,
+      "file": "categories/pose.json",
+      "description": "Pose category for static posture/form/expression. Random Pose validates against the internal activity.route state; manual override text bypasses that random route."
+    },
+    {
+      "id": "environment",
+      "label": "Environment",
+      "order": 7,
+      "resolve_order": 1,
+      "file": "categories/environment.json",
+      "description": "Environment category for setting and scene context; resolves immediately after Subject because Clothing and Action depend on environment domain/location/theme/room/surface state."
+    },
+    {
+      "id": "composition",
+      "label": "Composition",
+      "order": 8,
+      "resolve_order": 8,
+      "file": "categories/composition.json",
+      "description": "Composition category for framing, focus/perspective, and simple camera angle or position decisions."
+    },
+    {
+      "id": "lighting",
+      "label": "Lighting",
+      "order": 9,
+      "resolve_order": 9,
+      "file": "categories/lighting.json",
+      "description": "Lighting category placeholder for scene light and mood."
+    },
+    {
+      "id": "style",
+      "label": "Style",
+      "order": 10,
+      "resolve_order": 10,
+      "file": "categories/style.json",
+      "description": "Image style category placeholder, separate from clothing style."
+    },
+    {
+      "id": "quality",
+      "label": "Quality",
+      "order": 11,
+      "resolve_order": 11,
+      "file": "categories/quality.json",
+      "description": "Quality category placeholder for final quality/detail prompt terms."
+    }
+  ]
+}

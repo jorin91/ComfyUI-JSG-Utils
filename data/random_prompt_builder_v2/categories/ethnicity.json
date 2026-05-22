@@ -1,0 +1,68 @@
+{
+  "id": "ethnicity",
+  "label": "Ethnicity",
+  "order": 1,
+  "description": "Ethnicity category. One builder creates ethnicity origin wording, and a second builder adds compatible skin-tone wording as a separate prompt element.",
+  "builders": [
+    {
+      "id": "builder.ethnicity.base_mix",
+      "description": "Builds one ethnicity origin phrase from base and optional mixed-ethnicity values. Skin tone is intentionally handled by a separate builder so the prompt stays easier for the model to follow.",
+      "values": [
+        {
+          "template": "{base} {mix}",
+          "slots": {
+            "base": {
+              "generator": "generator.ethnicity.base"
+            },
+            "mix": {
+              "generator": "generator.ethnicity.mix",
+              "conditions": {
+                "all": [
+                  {
+                    "slot": "base",
+                    "op": "exists"
+                  }
+                ]
+              }
+            }
+          },
+          "state_export": {
+            "ethnicity.base": {
+              "slot": "base"
+            },
+            "ethnicity.mix": {
+              "slot": "mix"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.ethnicity.skin_tone",
+      "description": "Adds a compatible skin-tone phrase as its own prompt element after ethnicity.base exists.",
+      "values": [
+        {
+          "template": "{skin_tone}",
+          "slots": {
+            "skin_tone": {
+              "generator": "generator.ethnicity.skin_tone"
+            }
+          },
+          "state_export": {
+            "ethnicity.skin_tone": {
+              "slot": "skin_tone"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "all": [
+          {
+            "state": "ethnicity.base",
+            "op": "exists"
+          }
+        ]
+      }
+    }
+  ]
+}

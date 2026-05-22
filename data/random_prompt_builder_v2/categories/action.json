@@ -1,0 +1,381 @@
+{
+  "id": "action",
+  "label": "Action",
+  "order": 5,
+  "description": "Action category. Random Action output is mutually exclusive with random Pose output through the internal activity.route state; manual Action override text bypasses this random route validation.",
+  "builders": [
+    {
+      "id": "builder.action",
+      "description": "Single Action route picker. General, sport, NSFW, and sexual routes are mutually exclusive values because the subject should receive one action concept, not stacked actions from every family. A future profession route should be added here as another value, not as another builder.",
+      "conditions": {
+        "all": [
+          {
+            "state": "activity.route",
+            "op": "equals",
+            "value": "action"
+          }
+        ]
+      },
+      "values": [
+        {
+          "template": "{action}",
+          "slots": {
+            "action": {
+              "generator": "generator.action.general"
+            }
+          },
+          "state_export": {
+            "action.general": {
+              "slot": "action"
+            }
+          }
+        },
+        {
+          "template": "{action}",
+          "slots": {
+            "action": {
+              "generator": "generator.action.sport"
+            }
+          },
+          "state_export": {
+            "action.sport": {
+              "slot": "action"
+            }
+          }
+        },
+        {
+          "template": "{action}",
+          "slots": {
+            "action": {
+              "generator": "generator.action.nsfw"
+            }
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          },
+          "state_export": {
+            "action.nsfw": {
+              "slot": "action"
+            }
+          }
+        },
+        {
+          "template": "{action}",
+          "slots": {
+            "action": {
+              "generator": "generator.action.sexual"
+            }
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          },
+          "state_export": {
+            "action.sexual": {
+              "slot": "action"
+            }
+          }
+        },
+        {
+          "template": "{penetration_bodypart_route}{penetration_action_route}{penetration_prefix} {penetration_object} {penetration_suffix}",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          },
+          "slots": {
+            "penetration_bodypart_route": {
+              "generator": "generator.action.sexual.penetration.bodypart"
+            },
+            "penetration_action_route": {
+              "generator": "generator.action.sexual.penetration.action"
+            },
+            "penetration_prefix": {
+              "values": [
+                {
+                  "text": "performing anal self-penetration of the anus with",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.bodypart",
+                        "op": "equals",
+                        "value": "anus"
+                      },
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "self_penetrating"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "self-penetrating the vagina with",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.bodypart",
+                        "op": "equals",
+                        "value": "vagina"
+                      },
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "self_penetrating"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "putting",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.bodypart",
+                        "op": "equals",
+                        "value": "mouth"
+                      },
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "oral_object"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "riding",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "riding"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "sitting down onto",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "sitting_onto"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "using",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "using_for_penetration"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "penetration_object": {
+              "generator": "generator.action.sexual.penetration.object"
+            },
+            "penetration_suffix": {
+              "values": [
+                {
+                  "text": "",
+                  "allow_empty": true,
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "self_penetrating"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "in the mouth for oral sex",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "oral_object"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "for vagina penetration",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.bodypart",
+                        "op": "equals",
+                        "value": "vagina"
+                      },
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "in",
+                        "value": [
+                          "riding",
+                          "sitting_onto"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "for anal penetration of the anus",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.bodypart",
+                        "op": "equals",
+                        "value": "anus"
+                      },
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "in",
+                        "value": [
+                          "riding",
+                          "sitting_onto"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "for vagina penetration",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.bodypart",
+                        "op": "equals",
+                        "value": "vagina"
+                      },
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "using_for_penetration"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "text": "for anal penetration of the anus",
+                  "conditions": {
+                    "all": [
+                      {
+                        "state": "action.sexual.penetration.bodypart",
+                        "op": "equals",
+                        "value": "anus"
+                      },
+                      {
+                        "state": "action.sexual.penetration.action",
+                        "op": "equals",
+                        "value": "using_for_penetration"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "state_export": {
+            "action.sexual": {
+              "template": "{penetration_prefix} {penetration_object} {penetration_suffix}"
+            },
+            "action.sexual.penetration.object": {
+              "slot": "penetration_object"
+            }
+          }
+        },
+        {
+          "template": "{stimulation_target_route}{stimulation_action} {stimulation_surface}",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          },
+          "slots": {
+            "stimulation_target_route": {
+              "generator": "generator.action.sexual.stimulation.target"
+            },
+            "stimulation_action": {
+              "generator": "generator.action.sexual.stimulation.action"
+            },
+            "stimulation_surface": {
+              "generator": "generator.action.sexual.stimulation.surface",
+              "conditions": {
+                "all": [
+                  {
+                    "state": "action.sexual.stimulation.target",
+                    "op": "in",
+                    "value": [
+                      "vulva_surface",
+                      "penis_surface"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "state_export": {
+            "action.sexual": {
+              "template": "{stimulation_action} {stimulation_surface}"
+            },
+            "action.sexual.stimulation.surface": {
+              "slot": "stimulation_surface"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

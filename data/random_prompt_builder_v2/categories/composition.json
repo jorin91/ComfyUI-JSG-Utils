@@ -1,0 +1,92 @@
+{
+  "id": "composition",
+  "label": "Composition",
+  "order": 8,
+  "description": "Composition category for simple subject framing, focus/perspective, and camera angle or position prompt fragments.",
+  "builders": [
+    {
+      "id": "builder.composition.framing",
+      "description": "General framing picker for shot distance, crop, and subject placement.",
+      "values": [
+        {
+          "template": "{framing}",
+          "slots": {
+            "framing": {
+              "generator": "generator.composition.framing"
+            }
+          },
+          "state_export": {
+            "composition.framing": {
+              "slot": "framing"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.composition.focus_perspective",
+      "description": "Focus and perspective picker for simple visual emphasis, with an optional adult-only NSFW body-region route.",
+      "values": [
+        {
+          "template": "{focus_perspective}",
+          "slots": {
+            "focus_perspective": {
+              "generator": "generator.composition.focus_perspective.general"
+            }
+          },
+          "state_export": {
+            "composition.focus_perspective": {
+              "slot": "focus_perspective"
+            }
+          }
+        },
+        {
+          "template": "{focus_perspective}",
+          "conditions": {
+            "all": [
+              {
+                "state": "subject.adult",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "state": "content.nsfw_allowed",
+                "op": "equals",
+                "value": true
+              }
+            ]
+          },
+          "slots": {
+            "focus_perspective": {
+              "generator": "generator.composition.focus_perspective.nsfw"
+            }
+          },
+          "state_export": {
+            "composition.focus_perspective": {
+              "slot": "focus_perspective"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "builder.composition.angle_position",
+      "description": "Simple camera angle and position picker for viewpoint variation.",
+      "values": [
+        {
+          "template": "{angle_position}",
+          "slots": {
+            "angle_position": {
+              "generator": "generator.composition.angle_position"
+            }
+          },
+          "state_export": {
+            "composition.angle_position": {
+              "slot": "angle_position"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

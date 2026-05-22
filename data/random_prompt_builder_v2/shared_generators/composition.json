@@ -1,0 +1,93 @@
+{
+  "generators": [
+    {
+      "id": "generator.composition.framing",
+      "description": "General framing values for shot distance, crop, and subject placement without changing clothing, action, or setting context.",
+      "values": [
+        "full body shot",
+        "head-to-toe framing",
+        "three-quarter body shot",
+        "half body shot",
+        "waist-up shot",
+        "upper body shot",
+        "shoulders-up portrait",
+        "close-up portrait",
+        "face close-up",
+        "extreme close-up",
+        "",
+        "wide shot",
+        "medium shot",
+        "tight crop",
+        "loose crop",
+        "centered framing",
+        "off-center framing",
+        ""
+      ]
+    },
+    {
+      "id": "generator.composition.focus_perspective.general",
+      "description": "General focus and perspective values for visual emphasis around a solo subject.",
+      "values": [
+        "face-focused composition",
+        "expression-focused composition",
+        "upper-body focus",
+        "full-figure focus",
+        "silhouette-focused composition",
+        "hands-in-frame focus",
+        "body-line focus",
+        "posture-focused composition",
+        "foreground subject focus",
+        "direct subject focus",
+        "",
+        "soft background separation",
+        "shallow depth subject focus",
+        ""
+      ]
+    },
+    {
+      "id": "generator.composition.focus_perspective.nsfw",
+      "description": "Adult-only NSFW focus values for sensitive body-region emphasis; selected only through an NSFW-gated builder route.",
+      "values": [
+        "breast-focused composition",
+        "nipple-focused composition",
+        "cleavage-focused composition",
+        "abdomen-focused composition",
+        "hip-focused composition",
+        "waist-focused composition",
+        "butt-focused composition",
+        "thigh-focused composition",
+        "groin-focused composition",
+        "crotch-focused composition",
+        "",
+        "pelvis-focused composition",
+        "body-curves focus",
+        "genital-focused composition",
+        ""
+      ]
+    },
+    {
+      "id": "generator.composition.angle_position",
+      "description": "Simple camera angle and position values for viewpoint variation, excluding orientation because latent resolution owns orientation.",
+      "values": [
+        "front view",
+        "side view",
+        "rear view",
+        "three-quarter view",
+        "profile view",
+        "eye-level view",
+        "high angle view",
+        "low angle view",
+        "slightly above view",
+        "slightly below view",
+        "",
+        "overhead view",
+        "ground-level view",
+        "close camera position",
+        "distant camera position",
+        "camera facing the subject",
+        "camera beside the subject",
+        ""
+      ]
+    }
+  ]
+}

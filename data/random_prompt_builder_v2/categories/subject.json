@@ -1,0 +1,654 @@
+{
+  "id": "subject",
+  "label": "Subject",
+  "order": 0,
+  "description": "Subject category. Values include explicit age ranges, adult state, gender state, and broad age_phase state. Subject must always emit a non-empty output when random Subject is enabled.",
+  "builders": [
+    {
+      "id": "builder.subject",
+      "description": "Subject builder. Uses explicit age-range labels. Values set subject.adult, subject.gender, subject.age_range, and subject.age_phase. Values validate against profile.gender_mode when a gender-specific profile is selected.",
+      "values": [
+        {
+          "text": "young child boy (age 3-5)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "male",
+            "subject.age_range": "young child boy (age 3-5)",
+            "subject.age_phase": "young_child"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "male"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "young child girl (age 3-5)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "female",
+            "subject.age_range": "young child girl (age 3-5)",
+            "subject.age_phase": "young_child"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "female"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "child boy (age 6-9)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "male",
+            "subject.age_range": "child boy (age 6-9)",
+            "subject.age_phase": "child"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "male"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "child girl (age 6-9)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "female",
+            "subject.age_range": "child girl (age 6-9)",
+            "subject.age_phase": "child"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "female"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "preteen boy (age 10-12)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "male",
+            "subject.age_range": "preteen boy (age 10-12)",
+            "subject.age_phase": "preteen"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "male"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "preteen girl (age 10-12)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "female",
+            "subject.age_range": "preteen girl (age 10-12)",
+            "subject.age_phase": "preteen"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "female"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "teen boy (age 13-15)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "male",
+            "subject.age_range": "teen boy (age 13-15)",
+            "subject.age_phase": "teen"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "male"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "teen girl (age 13-15)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "female",
+            "subject.age_range": "teen girl (age 13-15)",
+            "subject.age_phase": "teen"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "female"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "late teen boy (age 16-17)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "male",
+            "subject.age_range": "late teen boy (age 16-17)",
+            "subject.age_phase": "late_teen"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "male"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "late teen girl (age 16-17)",
+          "state_set": {
+            "subject.adult": false,
+            "subject.gender": "female",
+            "subject.age_range": "late teen girl (age 16-17)",
+            "subject.age_phase": "late_teen"
+          },
+          "conditions": {
+            "all": [
+              {
+                "state": "content.sfw_allowed",
+                "op": "equals",
+                "value": true
+              },
+              {
+                "any": [
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "missing"
+                  },
+                  {
+                    "state": "profile.gender_mode",
+                    "op": "in",
+                    "value": [
+                      "any",
+                      "female"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "young adult man (age 18-23)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "male",
+            "subject.age_range": "young adult man (age 18-23)",
+            "subject.age_phase": "young_adult"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "male"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "young adult woman (age 18-23)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "female",
+            "subject.age_range": "young adult woman (age 18-23)",
+            "subject.age_phase": "young_adult"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "female"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "adult man (age 24-34)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "male",
+            "subject.age_range": "adult man (age 24-34)",
+            "subject.age_phase": "adult"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "male"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "adult woman (age 24-34)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "female",
+            "subject.age_range": "adult woman (age 24-34)",
+            "subject.age_phase": "adult"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "female"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "prime adult man (age 35-44)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "male",
+            "subject.age_range": "prime adult man (age 35-44)",
+            "subject.age_phase": "prime_adult"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "male"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "prime adult woman (age 35-44)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "female",
+            "subject.age_range": "prime adult woman (age 35-44)",
+            "subject.age_phase": "prime_adult"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "female"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "middle-aged man (age 45-59)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "male",
+            "subject.age_range": "middle-aged man (age 45-59)",
+            "subject.age_phase": "middle_aged"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "male"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "middle-aged woman (age 45-59)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "female",
+            "subject.age_range": "middle-aged woman (age 45-59)",
+            "subject.age_phase": "middle_aged"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "female"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "older adult man (age 60-74)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "male",
+            "subject.age_range": "older adult man (age 60-74)",
+            "subject.age_phase": "older_adult"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "male"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "older adult woman (age 60-74)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "female",
+            "subject.age_range": "older adult woman (age 60-74)",
+            "subject.age_phase": "older_adult"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "female"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "elderly man (age 75+)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "male",
+            "subject.age_range": "elderly man (age 75+)",
+            "subject.age_phase": "elderly"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "male"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "text": "elderly woman (age 75+)",
+          "state_set": {
+            "subject.adult": true,
+            "subject.gender": "female",
+            "subject.age_range": "elderly woman (age 75+)",
+            "subject.age_phase": "elderly"
+          },
+          "conditions": {
+            "any": [
+              {
+                "state": "profile.gender_mode",
+                "op": "missing"
+              },
+              {
+                "state": "profile.gender_mode",
+                "op": "in",
+                "value": [
+                  "any",
+                  "female"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

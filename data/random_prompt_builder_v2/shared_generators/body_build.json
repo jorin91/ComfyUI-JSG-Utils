@@ -1,0 +1,79 @@
+{
+  "generators": [
+    {
+      "id": "generator.body_build.weight",
+      "description": "Whole-body weight and mass picker, separate from muscle amount, tone, or proportions.",
+      "values": [
+        "extremely underweight body",
+        "very underweight body",
+        "underweight body",
+        "lean lightweight body",
+        "average body weight",
+        "sturdy heavier body",
+        "overweight body",
+        "very overweight body",
+        "extremely overweight body",
+        ""
+      ]
+    },
+    {
+      "id": "generator.body_build.muscularity",
+      "description": "Whole-body muscle-mass picker, separate from surface definition and visible toning.",
+      "values": [
+        "extremely frail low-muscle build",
+        "very low muscle mass",
+        "slim low-muscle build",
+        "lightly athletic build",
+        "moderate muscle mass",
+        "muscular athletic build",
+        "very muscular build",
+        "extremely muscular bodybuilder build",
+        ""
+      ]
+    },
+    {
+      "id": "generator.body_build.toning",
+      "description": "Whole-body visible tone and definition picker, describing surface definition rather than underlying muscle size.",
+      "values": [
+        "extremely soft body with no visible muscle definition",
+        "very soft body with minimal surface definition",
+        "soft body with subtle shape definition",
+        "smooth body with light muscle definition",
+        "visibly toned body",
+        "highly defined body with clear muscle separation",
+        "extremely defined body with sharp visible muscle definition",
+        ""
+      ]
+    },
+    {
+      "id": "generator.body_build.bone_visibility",
+      "description": "General whole-body bone visibility picker, not tied to a named bone, region, or body part.",
+      "values": [
+        "no visible bone definition",
+        "very low bone visibility",
+        "subtle bone structure visibility",
+        "moderate bone structure visibility",
+        "clear visible bone structure",
+        "pronounced visible bone structure",
+        "extremely prominent visible bone structure",
+        ""
+      ]
+    },
+    {
+      "id": "generator.body_build.proportions",
+      "description": "Whole-body proportion and silhouette picker, avoiding region-specific body-part wording.",
+      "values": [
+        "very slight body proportions",
+        "narrow straight body proportions",
+        "petite body proportions",
+        "compact small-framed body proportions",
+        "slender balanced body proportions",
+        "average balanced body proportions",
+        "softly curved body proportions",
+        "full rounded body proportions",
+        "very full rounded body proportions",
+        ""
+      ]
+    }
+  ]
+}

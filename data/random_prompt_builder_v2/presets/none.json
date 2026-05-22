@@ -1,0 +1,7 @@
+{
+  "id": "none",
+  "label": "None",
+  "description": "No model-specific preset fragments; leaves positive and negative preset contributions empty.",
+  "positive": [],
+  "negative": []
+}

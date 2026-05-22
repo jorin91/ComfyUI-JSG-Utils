@@ -1,0 +1,7 @@
+{
+  "id": "lighting",
+  "label": "Lighting",
+  "order": 9,
+  "description": "Lighting category scaffold.",
+  "builders": []
+}
